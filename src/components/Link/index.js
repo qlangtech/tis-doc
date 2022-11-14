@@ -4,6 +4,9 @@ import styles from './css.css';
 import clsx from "clsx";
 
 export default function TisLink({children, href, anchor}) {
+    if(!href.metadata){
+        return <></>
+    }
     let to = href.metadata.permalink;
     if (anchor) {
         to += ('#' + anchor);

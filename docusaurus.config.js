@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
     title: '大数据领域的Jenkins',
     tagline: 'TIS集成大数据领域优秀组件（FlinkX-CDC，Chunjun，DataX，Flink等）为您提供一站式、开箱即用的DataOps数据中台，大幅提高ETL实时数仓构建效率',
-    url: 'http://tis.pub',
+    url: 'https://tis.pub',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -16,8 +16,8 @@ const config = {
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
-    organizationName: 'facebook', // Usually your GitHub org/user name.
-    projectName: 'docusaurus', // Usually your repo name.
+    organizationName: 'qlangtech', // Usually your GitHub org/user name.
+    projectName: 'tis-doc', // Usually your repo name.
 
     // Even if you don't use internalization, you can use this field to set useful
     // metadata like html lang. For example, if your site is Chinese, you may want
@@ -38,7 +38,8 @@ const config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl:
-                        'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+                     "https://github.com/qlangtech/tis-doc/blob/master/"
+                    // 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
                 },
                 blog: {
                     showReadingTime: true,
@@ -49,6 +50,10 @@ const config = {
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
+                },
+                googleAnalytics: {
+                    trackingID: 'UA-140709779-1',
+                    anonymizeIP: true,
                 },
             }),
         ],
@@ -72,7 +77,7 @@ const config = {
                     },
                     // {to: '/blog', label: 'Blog', position: 'left'},
                     {
-                        href: 'https://github.com/facebook/docusaurus',
+                        href: 'https://github.com/qlangtech/tis',
                         label: 'GitHub',
                         position: 'right',
                     },
@@ -90,43 +95,43 @@ const config = {
                         title: 'Docs',
                         items: [
                             {
-                                label: 'Tutorial',
-                                to: '/docs/intro',
+                                label: '文档',
+                                to: '/docs/',
                             },
                         ],
                     },
-                    {
-                        title: 'Community',
-                        items: [
-                            {
-                                label: 'Stack Overflow',
-                                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-                            },
-                            {
-                                label: 'Discord',
-                                href: 'https://discordapp.com/invite/docusaurus',
-                            },
-                            {
-                                label: 'Twitter',
-                                href: 'https://twitter.com/docusaurus',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'More',
-                        items: [
-                            {
-                                label: 'Blog',
-                                to: '/blog',
-                            },
-                            {
-                                label: 'GitHub',
-                                href: 'https://github.com/facebook/docusaurus',
-                            },
-                        ],
-                    },
+                    // {
+                    //     title: 'Community',
+                    //     items: [
+                    //         {
+                    //             label: 'Stack Overflow',
+                    //             href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                    //         },
+                    //         {
+                    //             label: 'Discord',
+                    //             href: 'https://discordapp.com/invite/docusaurus',
+                    //         },
+                    //         {
+                    //             label: 'Twitter',
+                    //             href: 'https://twitter.com/docusaurus',
+                    //         },
+                    //     ],
+                    // },
+                    // {
+                    //     title: 'More',
+                    //     items: [
+                    //         {
+                    //             label: 'Blog',
+                    //             to: '/blog',
+                    //         },
+                    //         {
+                    //             label: 'GitHub',
+                    //             href: 'https://github.com/facebook/docusaurus',
+                    //         },
+                    //     ],
+                    // },
                 ],
-                copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+                copyright: `Copyright © ${new Date().getFullYear()}  杭州晴朗网络科技有限公司 浙ICP备18035911号-1 https://beian.miit.gov.cn`,
             },
             prism: {
                 additionalLanguages: ['java'],

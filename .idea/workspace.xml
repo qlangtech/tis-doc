@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="" />
+    <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/install/flink-cluster/standalone.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/flink-cluster/standalone.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/plugin/plugin-develop/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/plugin/plugin-develop/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/plugin/plugins.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/plugin/plugins.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/plugin/source-sink-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/plugin/source-sink-table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/plugin/tpis.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/plugin/tpis.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Link/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Link/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/static/img" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2HA9zlqxhKOIeJJonNk6z1Hil4r" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -55,7 +70,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667717285299</updated>
-      <workItem from="1667717286488" duration="49976000" />
+      <workItem from="1667717286488" duration="57501000" />
+      <workItem from="1668134291019" duration="2053000" />
+      <workItem from="1668161140922" duration="538000" />
+      <workItem from="1668419393852" duration="555000" />
     </task>
     <servers />
   </component>
@@ -67,7 +85,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

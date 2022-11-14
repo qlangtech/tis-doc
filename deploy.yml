@@ -1,0 +1,28 @@
+---
+# init all hosts
+- name: build hugo site
+  hosts: tis-pub
+  vars:
+    remote_path: "/usr/share/tomcat/webapps/ROOT"
+  tasks:
+  - shell: 'npm run build'
+    args:
+      chdir: "./"
+    delegate_to: "localhost"
+  - name: deploy to remote server
+    synchronize:
+      src: ./build/
+      dest: '{{remote_path}}'
+      delete: yes
+  - name: set dir mode
+    file:
+      path: '{{remote_path}}'
+      owner: "tomcat"
+      group: "tomcat"
+      mode: '0777'
+      recurse: yes
+#  - name: delete local public
+#    file:
+#      path: ./public/
+#      state: absent
+#    delegate_to: "localhost"

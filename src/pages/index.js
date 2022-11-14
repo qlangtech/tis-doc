@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Support agile DataOps Based on DataX and Flink-CDC, Chunjun with Web-UI">
       <HomepageHeader />
       <main>
           <HomepageFeatures />

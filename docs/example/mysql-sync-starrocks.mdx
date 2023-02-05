@@ -27,7 +27,7 @@ TIS可以快速为企业构建实时数仓库服务，基于批(DataX)流(Flink-
 TIS底层整合了[DataX](https://github.com/alibaba/DataX)，[Flink CDC](https://github.com/ververica/flink-cdc-connectors)等组件，借鉴[Jenkins](https://github.com/jenkinsci/jenkins)的微内核架构，将各个
 功能模块封装成了可插拔的组件模块，在TIS运行期以插件为单位按需加载。
 
-用户业务场景中，如只需要进行T+1离线数据分析那就只加载DataX相关的插件进行批量导入即可。如需要给MMP数据库如StarRock中同步数据，则需要开启基于[Flink CDC](https://github.com/ververica/flink-cdc-connectors)
+用户业务场景中，如只需要进行T+1离线数据分析那就只加载DataX相关的插件进行批量导入即可。如需要给MMP数据库如StarRocks中同步数据，则需要开启基于[Flink CDC](https://github.com/ververica/flink-cdc-connectors)
 
 ## TIS安装
 
@@ -70,7 +70,7 @@ TIS的安装非常方便，只需三个步骤：下载一个tar压缩包，解�
 |Flink集群启动之后，在TIS中添加Flink集群对应配置 <br/> <br/>表单填写完成之后，点击`保存&下一步`按钮进入下一步Sink，Source相关属性设置|  <Figure img={require('./mysql-syn-starrocks/add-flink-cluster.png')} />  <Figure img={require('./mysql-syn-starrocks/add-flink-cluster-2.png')} />  |
 |在该步骤添加Flink SourceFunction对应的[flink-connector-mysql-cdc](https://github.com/ververica/flink-cdc-connectors/tree/master/flink-connector-mysql-cdc)插件 和 Fink Sink对应的StarRocks 插件<br/><br/>设置完成之后进入下一步| <Figure img={require('./mysql-syn-starrocks/add-flink-cluster-3.png')} /> |
 |TIS会解析Reader选取的表元数据信息，自动生成Flink Stream Code<br/><br/>在该版本中，自动生成的Flink Stream Code还不支持用户自定义编写业务逻辑  <br/><br/>点击`部署`按钮，进入向Flink Cluster中部署流处理逻辑| <Figure img={require('./mysql-syn-starrocks/add-flink-cluster-4-confirm-streamcode.png')} /> |
-|至此，MySQL与StarRock数据增量通道已经添加完成，MySQL到StarRock实时数据同步可以保证在毫秒级完成| <Figure img={require('./mysql-syn-starrocks/add-flink-cluster-success.png')} />
+|至此，MySQL与StarRock数据增量通道已经添加完成，MySQL到StarRocks实时数据同步可以保证在毫秒级完成| <Figure img={require('./mysql-syn-starrocks/add-flink-cluster-success.png')} />
 
 
 

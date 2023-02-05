@@ -1,13 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/example/chunjun-integrate.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/chunjun-integrate.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/plugin/plugins.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/plugin/plugins.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/plugin/plugins.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.6.0/plugin/plugins.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Contact/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Contact/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/develop/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/develop/compile-running.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/enhance-extra/add-elastic-writer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/enhance-extra/add-mysql-reader.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/enhance-extra/datax-add-step2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/enhance-extra/datax-exec-status.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/enhance-extra/datax-exec-success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/enhance-extra/select-tab-cols.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/enhance-extra/tis-datax-arch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/chunjun-integrate.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-flink-cluster-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-flink-cluster-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-flink-cluster-4-confirm-streamcode.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-flink-cluster-4-success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-flink-cluster-success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-2-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-2-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-3-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-3-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-3-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-4-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-4-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-4-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-7-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-7-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/add-step-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/hudi/hudi-arttecth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-hudi.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-flink-cluster-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-flink-cluster-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-flink-cluster-4-confirm-streamcode.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-flink-cluster-success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-flink-cluster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-2-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-2-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-2-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-2-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-2-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-2-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-3-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-3-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-5-tab-mapper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/add-step-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/b-store-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/data-channel-index.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/enter-tis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/install-flink-plugin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/instance-list.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/trigger-batch-doing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/trigger-batch-success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-syn-starrocks/trigger-batch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-sync-starrocks.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/collection/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/collection/add-collection-step-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/collection/add-collection-step-2-expert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/collection/add-collection-step-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/collection/add-collection-step-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/collection/add-collection-step-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/collection/manage-collection-query.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/collection/manage-collection-start-build.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/collection/manage-collection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/dataflow.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/dataflow/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/dataflow/add-joiner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/dataflow/add-table.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/dataflow/define-entity-detail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/dataflow/define-er-confirm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/dataflow/entry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/dataflow/exec-dataflow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/dataflow/save-dataflow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/dataflow/save-er.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/dataflow/set-dataflow-name.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/dataflow/view-dataflow-build-status.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/datasource/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/datasource/add-ds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/datasource/add-table.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/datasource/index.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/datasource/multi-ds-rule.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/datasource/op-ds-define.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/datasource/table-config-view.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/datasource/table-sql-confirm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/incr-sync/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/incr-sync/incr-channel-success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/incr-sync/incr-entry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/incr-sync/incr-k8s-spec.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/incr-sync/incr-panel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/incr-sync/index.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/guide/solrj-client/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/home-background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/rocket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/show-case/df-define.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/show-case/ds-define.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/show-case/exec-visual.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/show-case/incr-monitor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/show-case/query-define.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/show-case/schema-define.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/tis/tis-niaohan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/tis/tis-synoptic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/tis/tis-synoptic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/tis/tis-synoptic.png_bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/images/tis/tis-vision.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/index.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/install/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/install/flink-cluster/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/install/flink-cluster/native.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/install/flink-cluster/standalone.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/install/tis/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/install/tis/multi-nodes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/install/tis/uber.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/plugin/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/plugin/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/plugin/plugin-develop/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/plugin/plugins.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/plugin/source-sink-table-bak.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/plugin/source-sink-table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/plugin/source-sink.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/plugin/source-sink.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/plugin/tpis.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/develop/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/develop/compile-running.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/enhance-extra/add-elastic-writer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/enhance-extra/add-mysql-reader.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/enhance-extra/datax-add-step2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/enhance-extra/datax-exec-status.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/enhance-extra/datax-exec-success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/enhance-extra/select-tab-cols.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/enhance-extra/tis-datax-arch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/chunjun-integrate.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-flink-cluster-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-flink-cluster-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-flink-cluster-4-confirm-streamcode.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-flink-cluster-4-success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-flink-cluster-success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-2-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-2-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-3-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-3-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-3-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-4-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-4-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-4-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-7-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-7-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/add-step-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/hudi/hudi-arttecth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-hudi.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-flink-cluster-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-flink-cluster-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-flink-cluster-4-confirm-streamcode.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-flink-cluster-success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-flink-cluster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-2-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-2-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-2-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-2-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-2-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-2-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-3-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-3-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-5-tab-mapper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/add-step-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/b-store-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/data-channel-index.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/enter-tis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/install-flink-plugin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/instance-list.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/trigger-batch-doing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/trigger-batch-success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-syn-starrocks/trigger-batch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/example/mysql-sync-starrocks.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/collection/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/collection/add-collection-step-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/collection/add-collection-step-2-expert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/collection/add-collection-step-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/collection/add-collection-step-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/collection/add-collection-step-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/collection/manage-collection-query.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/collection/manage-collection-start-build.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/collection/manage-collection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/dataflow.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/dataflow/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/dataflow/add-joiner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/dataflow/add-table.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/dataflow/define-entity-detail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/dataflow/define-er-confirm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/dataflow/entry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/dataflow/exec-dataflow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/dataflow/save-dataflow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/dataflow/save-er.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/dataflow/set-dataflow-name.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/dataflow/view-dataflow-build-status.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/datasource/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/datasource/add-ds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/datasource/add-table.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/datasource/index.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/datasource/multi-ds-rule.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/datasource/op-ds-define.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/datasource/table-config-view.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/datasource/table-sql-confirm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/incr-sync/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/incr-sync/incr-channel-success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/incr-sync/incr-entry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/incr-sync/incr-k8s-spec.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/incr-sync/incr-panel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/incr-sync/index.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/guide/solrj-client/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/home-background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/rocket.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/show-case/df-define.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/show-case/ds-define.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/show-case/exec-visual.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/show-case/incr-monitor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/show-case/query-define.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/show-case/schema-define.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/tis/tis-niaohan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/tis/tis-synoptic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/tis/tis-synoptic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/tis/tis-synoptic.png_bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/images/tis/tis-vision.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/index.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/install/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/install/flink-cluster/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/install/flink-cluster/native.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/install/flink-cluster/standalone.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/install/tis/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/install/tis/multi-nodes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/install/tis/uber.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/plugin/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/plugin/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/plugin/plugin-develop/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/plugin/plugins.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/plugin/source-sink-table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/plugin/source-sink.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/plugin/source-sink.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0/plugin/tpis.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_sidebars/version-3.6.0-alpha-sidebars.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_sidebars/version-3.6.0-sidebars.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_sidebars/version-3.7.0-sidebars.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/versions.json" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,21 +270,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2HA9zlqxhKOIeJJonNk6z1Hil4r" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/guide/incr-sync" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/opt/misc/tis-docs2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/img" />
-      <recent name="$PROJECT_DIR$/docs/plugin" />
-      <recent name="$PROJECT_DIR$/docs/images/tis" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs/guide/incr-sync" />
       <recent name="$PROJECT_DIR$/docs/plugin" />
@@ -38,18 +299,11 @@
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/src/components" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/img" />
+      <recent name="$PROJECT_DIR$/docs/plugin" />
+      <recent name="$PROJECT_DIR$/docs/images/tis" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.start">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -79,6 +333,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -96,11 +351,13 @@
       <workItem from="1669534240999" duration="7051000" />
       <workItem from="1669728228578" duration="727000" />
       <workItem from="1671095009489" duration="33000" />
+      <workItem from="1671696164769" duration="555000" />
+      <workItem from="1675564221852" duration="3350000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -117,9 +374,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>

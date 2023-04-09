@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/install/zeppelin/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/zeppelin/add_mysql_datasource.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/zeppelin/click_notebook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/zeppelin/exec_query.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/zeppelin/install.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/example/mysql-sync-starrocks.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/mysql-sync-starrocks.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/install/flink-cluster/standalone.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/flink-cluster/standalone.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +33,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/opt/misc/tis-docs2",
+    "last_opened_file_path": "/opt/misc/tis-docs2/docs/install/zeppelin",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -39,13 +46,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/install/zeppelin" />
       <recent name="$PROJECT_DIR$/docs/guide/incr-sync" />
       <recent name="$PROJECT_DIR$/docs/plugin" />
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/src/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/install/zeppelin" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/docs/plugin" />
       <recent name="$PROJECT_DIR$/docs/images/tis" />
@@ -98,7 +106,9 @@
       <workItem from="1669728228578" duration="727000" />
       <workItem from="1671095009489" duration="33000" />
       <workItem from="1671696164769" duration="555000" />
-      <workItem from="1675564221852" duration="4214000" />
+      <workItem from="1675564221852" duration="4446000" />
+      <workItem from="1681003316399" duration="638000" />
+      <workItem from="1681003984758" duration="8806000" />
     </task>
     <servers />
   </component>

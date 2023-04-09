@@ -43,20 +43,15 @@ export const VerShell = () => {
 
    <VerShell />
 
-2. 解压Tar包
 
-     ```shell script
-        tar xvf flink-tis-1.13.1-bin.tar.gz -C ./flink-tis-1.13.1
-     ```
-
-3. 启动Flink Cluster
+2. 启动Flink Cluster
 
       ```shell script
         cd ./flink-tis-1.13.1
          ./bin/start-cluster.sh
       ```
 
-4. 确认端口是否正常
+3. 确认端口是否正常
 
    ```shell script
     telnet localhost 8081
@@ -71,7 +66,25 @@ export const VerShell = () => {
 
 ## FAQ
 
-### 启动时候由于服务器目录`/opt/data/tis`没有权限，导致tis-flink启动失败(后台没有对应的进程在运行？)
+### 1. Could not acquire the minimum required resources
+
+在Flink中已经添加一个任务之后，再向Flink提交新的任务，Flink JM节点日志报告： Could not acquire the minimum required resources  没有足够的资源进行启动
+
+原因：
+
+Flink运行没有足够的slot资源分配给新任务
+
+方法：
+
+修改Flink配置文件:
+
+```yaml title="{FLINK_HOME}/conf/flink-conf.yaml"
+# The number of task slots that each TaskManager offers. Each slot runs one parallel pipeline.
+taskmanager.numberOfTaskSlots: 1
+```
+默认值是1，需要在单个Flink节点上运行多个Flink任务，课修改成大于1的值就行（一般情况slot代表了服务节点的资源并行处理能力，一般配置于节点CPU核数相一致即可）
+
+### 2. 启动时候由于服务器目录`/opt/data/tis`没有权限，导致tis-flink启动失败(后台没有对应的进程在运行？)
 
 原因：
 
@@ -104,7 +117,7 @@ Caused by: java.io.IOException: Unable to create directory /opt/data/tis
 
 修改方式是在一下配置文件加`env.java.opts`配置项
 
-```bash title="/conf/flink-conf.yaml"
+```bash title="{FLINK_HOME}/conf/flink-conf.yaml"
 #具体目录根据自己情况修改
 
 env.java.opts: "-Ddata.dir=/opt/data/tis"

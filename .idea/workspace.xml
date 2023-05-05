@@ -5,35 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/develop/plugin-develop.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/guide/dataflow/dry-run.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/guide/dataflow/employees_db_er.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/guide/dataflow/register_employee_db.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/guide/dataflow/set_parser_engine_props.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/guide/dataflow/set_parser_engine_type.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/guide/dataflow/set_parser_instance_name.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/guide/datasource/create_mysql_datasource.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/guide/datasource/multi-table-rule.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/guide/datasource/reader_table_split_table_off.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/guide/datasource/reader_table_split_table_on.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/guide/datasource/recognize_split_table_config.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/intro/def_mysql.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/intro/def_oracle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/intro/index.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/intro/process_visual.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/intro/tis_architech.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/intro/tis_useable.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/develop/compile-running.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/develop/compile-running.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guide/dataflow/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/add-joiner.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guide/dataflow/add-joiner.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/add-table.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guide/dataflow/add-table.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/define-er-confirm.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guide/dataflow/define-er-confirm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/save-dataflow.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guide/dataflow/save-dataflow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/set-dataflow-name.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/datasource/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guide/datasource/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/install/zeppelin/install.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/zeppelin/index.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.1/plugin/source-sink-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.1/plugin/source-sink-table.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +111,7 @@
       <workItem from="1681191826497" duration="17051000" />
       <workItem from="1681263169921" duration="15676000" />
       <workItem from="1682301871832" duration="361000" />
+      <workItem from="1683272187455" duration="1977000" />
     </task>
     <servers />
   </component>

@@ -69,12 +69,11 @@ mvn clean package -Dmaven.test.skip=true -Dappname=all
 
 #### 构建 qlangtech/ng-tis
 
-为了加速ng-tis构建速度，需要先执行下载`tis-console-ng-node-modules.tar.gz`,已经事先对本地项目中**node_modules**中npm依赖打包在其中
+安装nodejs依赖的包**node_modules**
 
 ```shell script
 cd ng-tis
-wget http://tis-release.oss-cn-beijing.aliyuncs.com/tis-console-ng-node-modules.tar.gz
-tar xvf tis-console-ng-node-modules.tar.gz
+npm install
 ```
 
 安装Angular cli工具（具体版本要与ng-tis/package.json中Angular的依赖版本相一致）
@@ -110,20 +109,18 @@ npm uninstall -g @angular/cli
 
    以上配置文件中IP相关都可以配置成本地IP地址
 
-### plugin软链接
+### 创建Plugin软链接
 
 由于TIS启动会默认到本地目录`/opt/data/tis/libs/plugins`中加载插件，所以需要将之前plugins项目打包之后生成的plugins软链到 `/opt/data/tis/libs/plugins`
 
 具体执行命令为：
 
 ```shell script
-
 for f in `find ./plugins  -name '*.tpi' -print`
 do
    echo " ln -s $f "
    ln -s $f /opt/data/tis/libs/plugins/${f##*/}
 done ;
-
 ```
 
 ### 启动TIS Console

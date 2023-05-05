@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: '大数据领域的Jenkins',
+    title: '人人都会用的数据集成产品',
     tagline: 'TIS集成大数据领域优秀组件（FlinkX-CDC，Chunjun，DataX，Flink等）为您提供一站式、开箱即用的DataOps数据中台，大幅提高ETL实时数仓构建效率',
     url: 'https://tis.pub',
     baseUrl: '/',

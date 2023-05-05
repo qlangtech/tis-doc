@@ -1,0 +1,126 @@
+---
+title: Flink On Local
+linktitle: Flink单机版
+date: 2021-12-04
+sidebar_position: 1
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+export const VerShell = () => {
+  return (
+    <div>
+      <CodeBlock
+        language="shell">
+        wget http://mirror.qlangtech.com/{metadata.version}/tis/flink-tis-1.13.1-bin.tar.gz && rm -rf flink-tis-1.13.1 && mkdir flink-tis-1.13.1 && tar xvf flink-tis-1.13.1-bin.tar.gz -C ./flink-tis-1.13.1
+      </CodeBlock>
+    </div>
+  );
+}
+
+
+
+
+
+## 环境准备
+
+1. 准备一台2核4G以上配置的Linux机器节点(CentOs、macOS等)
+2. `Java SE Development Kit 8`及以上版本[安装](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+3. 确保本机节点hostname对应的ip正确
+
+   因为进程启动时候会去拿本机的ip地址,所以要保证`/etc/hosts`文件中hostname 对应ip地址正确
+   ```shell script
+     hostname
+     # 得到上面显示的结果，例如：baisui-host-1
+     ping baisui-host-1
+     # 确认ip节点是否为本机ip无误,如不正确，请在/etc/hosts将正确的hostname与ip映射关系加上
+   ```
+4. 确保lsof安装成功，`sudo yum install -y lsof`
+
+## 安装
+
+1. 下载
+
+   <VerShell />
+
+
+2. 启动Flink Cluster
+
+      ```shell script
+        cd ./flink-tis-1.13.1
+         ./bin/start-cluster.sh
+      ```
+
+3. 确认端口是否正常
+
+   ```shell script
+    telnet localhost 8081
+   ```
+
+## 总结
+  恭喜您已经把Flink Standalone模式的集群安装成功了
+
+:::caution
+  TIS中使用Flink Standalon模式是经过TIS团队适配过的，修改了Flink JobManager中ClassLoader执行逻辑，所以此处安装不能使用Flink官方发布的安装包
+:::
+
+## FAQ
+
+### 1. Could not acquire the minimum required resources
+
+在Flink中已经添加一个任务之后，再向Flink提交新的任务，Flink JM节点日志报告： Could not acquire the minimum required resources  没有足够的资源进行启动
+
+原因：
+
+Flink运行没有足够的slot资源分配给新任务
+
+方法：
+
+修改Flink配置文件:
+
+```yaml title="{FLINK_HOME}/conf/flink-conf.yaml"
+# The number of task slots that each TaskManager offers. Each slot runs one parallel pipeline.
+taskmanager.numberOfTaskSlots: 1
+```
+默认值是1，需要在单个Flink节点上运行多个Flink任务，课修改成大于1的值就行（一般情况slot代表了服务节点的资源并行处理能力，一般配置于节点CPU核数相一致即可）
+
+### 2. 启动时候由于服务器目录`/opt/data/tis`没有权限，导致tis-flink启动失败(后台没有对应的进程在运行？)
+
+原因：
+
+tis系统日志默认输出到`/opt/data/tis`目录，如果当前启动用户没有权限创建此目录时，启动flink-tis时会启动失败，失败日志如下：
+
+``` shell
+
+Caused by: java.io.IOException: Unable to create directory /opt/data/tis
+        at org.apache.commons.io.FileUtils.forceMkdir(FileUtils.java:1391) ~[tis-flink-extends-dist-3.6.0-alpha.jar:?]
+        at com.qlangtech.plugins.incr.flink.TISFlinkClassLoaderFactory.makeDataDirUseable(TISFlinkClassLoaderFactory.java:132) ~[tis-flink-extends-dist-3.6.0-alpha.jar:?]
+        at com.qlangtech.plugins.incr.flink.TISFlinkClassLoaderFactory.buildServerLoaderFactory(TISFlinkClassLoaderFactory.java:154) ~[tis-flink-extends-dist-3.6.0-alpha.jar:?]
+        at org.apache.flink.runtime.execution.librarycache.BlobLibraryCacheManager.defaultClassLoaderFactory(BlobLibraryCacheManager.java:196) ~[flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+        at org.apache.flink.runtime.jobmaster.JobManagerSharedServices.fromConfiguration(JobManagerSharedServices.java:124) ~[flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+        at org.apache.flink.runtime.dispatcher.Dispatcher.<init>(Dispatcher.java:171) ~[flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+        at org.apache.flink.runtime.dispatcher.StandaloneDispatcher.<init>(StandaloneDispatcher.java:40) ~[flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+        at org.apache.flink.runtime.dispatcher.SessionDispatcherFactory.createDispatcher(SessionDispatcherFactory.java:44) ~[flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+        at org.apache.flink.runtime.dispatcher.SessionDispatcherFactory.createDispatcher(SessionDispatcherFactory.java:27) ~[flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+        at org.apache.flink.runtime.dispatcher.runner.DefaultDispatcherGatewayServiceFactory.create(DefaultDispatcherGatewayServiceFactory.java:62) ~[flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+        at org.apache.flink.runtime.dispatcher.runner.SessionDispatcherLeaderProcess.createDispatcher(SessionDispatcherLeaderProcess.java:102) ~[flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+        at org.apache.flink.runtime.dispatcher.runner.SessionDispatcherLeaderProcess.lambda$createDispatcherIfRunning$0(SessionDispatcherLeaderProcess.java:96) ~[flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+        at org.apache.flink.runtime.dispatcher.runner.AbstractDispatcherLeaderProcess.runIfState(AbstractDispatcherLeaderProcess.java:222) ~[flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+        at org.apache.flink.runtime.dispatcher.runner.AbstractDispatcherLeaderProcess.runIfStateIs(AbstractDispatcherLeaderProcess.java:212) ~[flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+        at org.apache.flink.runtime.dispatcher.runner.SessionDispatcherLeaderProcess.createDispatcherIfRunning(SessionDispatcherLeaderProcess.java:96) ~[flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+        at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:656) ~[?:1.8.0_151]
+        ... 6 more
+2022-11-14 17:23:58,659 INFO  org.apache.flink.runtime.entrypoint.ClusterEntrypoint        [] - Shutting StandaloneSessionClusterEntrypoint down with application status UNKNOWN. Diagnostics Cluster entrypoint has been closed externally..
+2022-11-14 17:23:58,661 INFO  org.apache.flink.runtime.dispatcher.DispatcherRestEndpoint   [] - Shutting down rest endpoint.
+2022-11-14 17:23:58,780 INFO  akka.remote.RemoteActorRefProvider$RemotingTerminator        [] - Shutting down remote daemon.
+```
+
+修改方式是在一下配置文件加`env.java.opts`配置项
+
+```bash title="{FLINK_HOME}/conf/flink-conf.yaml"
+#具体目录根据自己情况修改
+
+env.java.opts: "-Ddata.dir=/opt/data/tis"
+```
+
+

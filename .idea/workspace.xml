@@ -5,9 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/example/dataflow/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/dataflow/t-plus1-offline-dag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-doris/datasource-impl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-doris/datasource-plugin-install.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-doris/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-doris/tis-doris-architect.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-kafka/add-flink-cluster-4-confirm-streamcode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-kafka/add-flink-cluster-success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-kafka/add-plugins.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-kafka/add-step-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-kafka/close-plugins-panel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-kafka/confirm-create.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-kafka/install-sink-kafka-plugin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-kafka/mysql-sync-kafka.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-kafka/plugin-type-chose.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-kafka/set-chosen-tab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-kafka/set-kafka-writer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-kafka/set-source-sink.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/sink-2-kafka.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/add-joiner.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/add-joiner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/add-table.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/add-table.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/define-entity-detail.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/define-entity-detail.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/define-er-confirm.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/define-er-confirm.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/dry-run.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/dry-run.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/employees_db_er.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/employees_db_er.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/entry.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/entry.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/exec-dataflow.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/exec-dataflow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/register_employee_db.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/register_employee_db.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/save-dataflow.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/save-dataflow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/save-er.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/save-er.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/set_parser_engine_props.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/set_parser_engine_props.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/set_parser_engine_type.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/set_parser_engine_type.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/set_parser_instance_name.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/set_parser_instance_name.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/dataflow/view-dataflow-build-status.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/dataflow/view-dataflow-build-status.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/datasource/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guide/datasource/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/install/flink-cluster/standalone.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/flink-cluster/standalone.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.1/plugin/source-sink-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.1/plugin/source-sink-table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Contact/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Contact/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +87,11 @@
       <recent name="$PROJECT_DIR$/docs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/docs/intro" />
-      <recent name="$PROJECT_DIR$/docs" />
-      <recent name="$PROJECT_DIR$/docs/guide" />
+      <recent name="$PROJECT_DIR$/static/img" />
+      <recent name="$PROJECT_DIR$/docs/example/mysql-sync-doris" />
+      <recent name="$PROJECT_DIR$/docs/example" />
       <recent name="$PROJECT_DIR$/docs/guide/dataflow" />
-      <recent name="$PROJECT_DIR$/docs/guide/datasource" />
+      <recent name="$PROJECT_DIR$/docs/example/mysql-sync-kafka" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -111,7 +149,16 @@
       <workItem from="1681191826497" duration="17051000" />
       <workItem from="1681263169921" duration="15676000" />
       <workItem from="1682301871832" duration="361000" />
-      <workItem from="1683272187455" duration="1977000" />
+      <workItem from="1683272187455" duration="14243000" />
+      <workItem from="1683706439183" duration="38115000" />
+      <workItem from="1684222519062" duration="85000" />
+      <workItem from="1684552903465" duration="609000" />
+      <workItem from="1684633190056" duration="8000" />
+      <workItem from="1684734404950" duration="484000" />
+      <workItem from="1684808476868" duration="275000" />
+      <workItem from="1685003399896" duration="1597000" />
+      <workItem from="1685069815432" duration="9391000" />
+      <workItem from="1685514461919" duration="2222000" />
     </task>
     <servers />
   </component>

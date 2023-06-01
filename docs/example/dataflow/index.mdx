@@ -1,21 +1,46 @@
 ---
-title: 数据流管理
+title: 利用TIS实现T+1离线分析
 date: 2020-07-26
 ---
 import Link from '/src/components/Link';
 import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
 
 ## 功能说明
 
  通过`数据流管理`可以方便实现离线批量数据分析，借助传统Map/Reduce工具（Aliyun ODPS，Hive，Spark等）将抽取得到的数据快速进行离线数据分析，得到所需要的结果。
 
- 离线分析结果可以作为下游实时数仓（Doris，StarRocks，ElasticSearch）的数据源，例如StarRocks作为一款非常优秀的OLAP引擎，内部有强大的多表Join查询能力，如想进一步提高OLAP数据分析能力，可以利用`TIS数据流管理`模块在引擎外部就构建多表关联物化视图
+ 虽然，现在业界实时数仓构建非常火热，但是基于传统MapReduce工具为代表的离线分析工具依然不可或缺，在很多业务场景中发挥着重要作用。他的特点是架构简单、可靠，可以执行复杂的T+1报表分析业务。
+
+ 另外，在实时数仓建设领域，可以有效弥补实时数仓的技术短板。离线分析结果可以作为下游实时数仓（Doris，StarRocks，ElasticSearch）的数据源，例如StarRocks作为一款非常优秀的OLAP引擎，内部有强大的多表Join查询能力，如想进一步提高OLAP数据分析能力，可以利用`TIS数据流管理`模块在引擎外部就构建多表关联物化视图
  ，将物化视图作为数据源导入到StarRocks中，这样免去了StarRocks引擎内部执行多表Join操作。
  
- 目前，`TIS数据流管理`支持三种离线分析引擎，1.Spark 2. Hive 3. AliyunODPS
+ 一套完整的离线分析引擎需要有三部分，
+ 1. `离线分析引擎`
+   目前，`TIS数据流管理`支持三种`离线分析引擎`，
+     1. Spark
+     2. Hive
+     3. [AliyunODPS](https://maxcompute.console.aliyun.com/)
+
+ 2. 任务调度引擎 
+
+    因为一个大离线分析任务往往有N个子任务工程，且子任务与子任务之间是有上下游依赖关系（每个子任务的触发需要依赖它的上游任务完成），这些子任务之间构成了DAG图，业界有专门工具 ，
+    比较成熟的调度工具有 [Apache dolphinscheduler](https://dolphinscheduler.apache.org/) , [Apache Airflow](https://airflow.apache.org/)，[PowerJob](www.powerjob.tech/)
+ 
+ 3. 数据采集工具
+
+    数据采集流程是，离线数据分析的前置步骤，现在业界流行的工具有，[Apache SeaTunnel](https://seatunnel.apache.org/)，阿里巴巴开源工具[DataX](https://github.com/alibaba/DataX)，[Airbyte](https://airbyte.com/)
+
+<Figure img={require('./t-plus1-offline-dag.png')}/> 
+
+>TIS 系统内部集成了以上三部分，选取业界最优秀的工具组件无缝集成，为用户提供一站式、开箱即用的离线分析平台工具。
 
 
 ## 使用说明
+
+
+
+
 
 ### 案例介绍
 
@@ -81,6 +106,7 @@ AS
 
 ### TIS中操作流程
 
+
 |说明|图示|
 |--|--|
 | 初始化[Employees数据库](https://gitee.com/qlangtech/test_db)，并且在TIS中注册employees数据源，以备后续流程中使用|<Figure img={require('./register_employee_db.png')}/> |
@@ -88,7 +114,7 @@ AS
 | 设置离线分析实例名称|<Figure img={require('./set_parser_instance_name.png')}/>|
 | 设置离线引擎类型，本例中选择Aliyun ODPS 作为分析引擎（需要先到Aliyun上申请[ODPS服务](https://maxcompute.console.aliyun.com/)） |<Figure img={require('./set_parser_engine_type.png')}/>|
 | 设置ODPS引擎相关配置参数 | <Figure img={require('./set_parser_engine_props.png')}/>|
-|1. 点击左侧控件栏中的`数据库表`到托盘中 <br/> 2.自动打开数据表选择输入框<br/> 3.`数据库表`下拉选择框中选择需要导入的表（`employees`，`salaries`，`dept_emp`，`departments`），需要在 <Link href={require('../datasource/index.mdx')}>前一步</Link> 中已经定义完成   | <Figure img={require('./add-table.png')}/> |
+|1. 点击左侧控件栏中的`数据库表`到托盘中 <br/> 2.自动打开数据表选择输入框<br/> 3.`数据库表`下拉选择框中选择需要导入的表（`employees`，`salaries`，`dept_emp`，`departments`），需要在 <Link href={require('../../guide/datasource/index.mdx')}>前一步</Link> 中已经定义完成   | <Figure img={require('./add-table.png')}/> |
 |1.点击左侧控件栏中的`JOIN`到托盘中  <br/> 2.设置`名称`JOIN节点名称，选择`依赖节点`，在`SQL`中填写数据处理脚本 <br/> 3.点击保存 | <Figure img={require('./add-joiner.png')}/>|
 | 点击`保存`按钮，对新添加的数据流规则进行保存 | <Figure img={require('./save-dataflow.png')}/> |
 | 保存成功，会跳出确认对话框，询问**是否需要定义表ER关系** <br/> ER关系规则在增量执行流程中使用，如果后期不需要开启增量同步管道，则可以跳过这一步 | <Figure img={require('./define-er-confirm.png')}/> |
@@ -103,3 +129,7 @@ AS
 |在正式开始执行数据分析之前，为保证编写的脚本正确，可以先用**DryRun**模式运行已经完成的dataflow  | <Figure img={require('./dry-run.png')}/> |
 |  以**DryRun**模式运行成功之后，回到列表页面`/offline/wf`，点击右图所示`构建`按钮，开始执行数据流构建  | <Figure img={require('./exec-dataflow.png')}/> |
 | 触发构建流程成功，就可以跳转到 `/offline/wf/build_history/1/6` 数据流构建执行状态查看页面，在该页面中可以查看构建流程中各种状态信息 <br/> 如全流程可顺利执行完成说明数据流定义没有错误  | <Figure img={require('./view-dataflow-build-status.png')}/>|
+
+### 视频教程
+
+<BZhan bvid="BV1du411W7Ns" />

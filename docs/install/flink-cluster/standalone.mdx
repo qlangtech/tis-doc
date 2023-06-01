@@ -123,4 +123,29 @@ Caused by: java.io.IOException: Unable to create directory /opt/data/tis
 env.java.opts: "-Ddata.dir=/opt/data/tis"
 ```
 
+### 3. 执行增量实例Cancel操作出现超时异常
+
+#### 象限描述：
+本Case在创建增量实例时，使用了Chunjun Sink实现了整库表的同步功能，在手动取消（Cancel）实例过程中抛出以下异常，且一旦出现超时异常，Flink会将TM中剩下的全部slot耗尽，导致不能在重新部署新的Flink Job
+
+```shell
+2023-05-13 16:39:39,532 ERROR org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Task did not exit gracefully within 180 + seconds.
+org.apache.flink.util.FlinkRuntimeException: Task did not exit gracefully within 180 + seconds.
+	at org.apache.flink.runtime.taskmanager.Task$TaskCancelerWatchDog.run(Task.java:1735) [flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_191]
+2023-05-13 16:39:39,536 ERROR org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] - Fatal error occurred while executing the TaskManager. Shutting it down...
+org.apache.flink.util.FlinkRuntimeException: Task did not exit gracefully within 180 + seconds.
+	at org.apache.flink.runtime.taskmanager.Task$TaskCancelerWatchDog.run(Task.java:1735) [flink-dist_2.11-tis-1.13.1.jar:tis-1.13.1]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_191]
+```
+
+#### 原因分析：
+由于Chujun Sink 在执行关闭时，需要为每张表对应的`StreamLoadManager`执行`close`操作，而该`close`执行又是比较耗时的，而且从日志执行过程来看每个表对应的close是线性排队执行的，所以当通道本身选择的表
+数据量比较多的情况下，会出现超时异常也就不足为奇了。
+
+#### 解决办法：
+
+在`$FLINK_HOME/conf/flink-conf.yaml`配置文件中设置 配置参数 `task.cancellation.timeout`，详细配置请查阅：https://study.sf.163.com/documents/read/service_support/dsc-t-d-0501
+
+
 

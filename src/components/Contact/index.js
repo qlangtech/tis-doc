@@ -14,7 +14,7 @@ export default function Contact() {
                 </div>
                 <div className={clsx('col col--4 text--center')}>
                     <h3>微信讨论群</h3>
-                    <div><img src={require('/img/weixin.jpeg').default}     width="250"/></div>
+                    <div><img src={require('/img/weixin.jpg').default}     width="250"/></div>
                 </div>
                 <div className={clsx('col col--4 text--center')}>
                     <h3>微信公众号</h3>

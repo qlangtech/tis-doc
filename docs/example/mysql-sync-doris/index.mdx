@@ -124,6 +124,36 @@ TIS 充当了厨师的角色，有各种新鲜的食材，利用厨师厨艺焕�
 
    <BZhan bvid="BV1DN411y7fb" />
 
+## 功能点优化
+
+市场上做数据集成的工具不少，功能边界都差不多，能在用户心智中形成差异化就只能是产品细节，因此TIS的开发者非常关注用户在数据集成时的使用体验。时刻关注用户在使用
+过程中碰到的问题，并且在TIS中提出解决方案。
+
+### 利用Flink侧流减轻数据源压力
+
+经常会看见用户在Flink-CDC社区用户群中咨询以下问题：
+<Figure img={require('./question_1.jpg')}/>
+
+只要利用[Side Outputs](Flink的https://nightlies.apache.org/flink/flink-docs-release-1.17/docs/dev/datastream/side_output/) 机制，统一启动一个Flink-CDC 的MySQL Source Connector，接收到
+MySQL的变更数据之后，根据表名通过**Side Outputs**来作分流，由原来每个表需要分别启动一个MySQL监听客户端，变成多个表监听，只需要启动一个客户端就行，这样就大大减轻了对MySQL的压力。
+
+这个优化已经在TIS中天然集成了，所以在执行MySQL整库同步Doris时不需要担心启动多个MySQL库连接引发的性能问题了。
+
+### 生态共荣
+另外一个反复会在Flink-CDC中提出的问题是
+<Figure img={require('./question_3.png')}/>
+由于Flink-CDC是一个专注于数据库变更数据捕捉的框架工具，目标端（Sink端）写出他并没有涉及。如果使用原生Flink-CDC的需要实现将数据写入到下游数据端中，就需要进过自己二次开发，开发、调试周期会比较长。
+
+为了最大限度地方便用户操作，TIS整合了目前行业中实现写目标端最好的框架Chunjun，因为Chunjun和Flink-CDC都是在
+Flink生态中的，将二者整合在一起难度并不大。经过适配，可以在TIS中实现用Flink-CDC实现的Source端于Chunjun 实现的Sink实现数据互通。
+
+### 优雅实现分库分表
+
+<Figure img={require('./question_2.png')}/>
+
+面对大数据场景，应用会在数据库之上做分库分表的存储策略优化，在做数据集成时，需要将分库分表作为一个统一的逻辑表同步到下游的Doris或者ElasticSearch引擎中，TIS中对这种使用场景给出了优雅的解决方案。
+只需要在数据源表单中开启`表分区策略`即可将分库分表的多张物理表作为一张逻辑表来处理，用户不需要关心后续流程执行，<Link href={require('../../guide/datasource/multi-table-rule.md')}>详细请查看</Link> 
+
 ## 后期规划
 
 

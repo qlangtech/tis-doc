@@ -1,5 +1,5 @@
 ---
-title: 编译&运行
+title: TIS编译&运行
 date: 2020-03-22
 type: book
 weight : 10
@@ -18,7 +18,7 @@ weight : 10
 
 一个完整的TIS应用，由以下三个子工程构成：
 
-1. TIS主干逻辑 [https://github.com/qlangtech/tis](https://github.com/qlangtech/tis)
+1. TIS主干逻辑 [https://github.com/datavane/tis](https://github.com/datavane/tis)
 2. TIS插件 [https://github.com/qlangtech/plugins](https://github.com/qlangtech/plugins)
 3. 前端逻辑 [https://github.com/qlangtech/ng-tis](https://github.com/qlangtech/ng-tis)
 
@@ -26,7 +26,7 @@ weight : 10
 
 ``` bash
 
-    git clone git@github.com:qlangtech/tis.git
+    git clone git@github.com:datavane/tis.git
 
     git clone git@github.com:qlangtech/plugins.git
 
@@ -44,15 +44,15 @@ weight : 10
 
 TIS使用的Maven推荐使用**v3.8.1** 版本
 -->
-#### 编译 qlangtech/tis 项目
+#### 编译 datavane/tis 项目
 
 ```shell script
 cd tis
-mvn clean install -Dmaven.test.skip=true
+mvn clean install -Dmaven.test.skip=true -Ptis-repo
 ```
 
 :::caution
-  由于qlangtech/plugins 项目需要依赖 qlangtech/tis 中的artifact，因此以上Maven执行命令中需要使用**install**
+  由于qlangtech/plugins 项目需要依赖 datavane/tis 中的artifact，因此以上Maven执行命令中需要使用**install**
 :::
 
 
@@ -60,7 +60,7 @@ mvn clean install -Dmaven.test.skip=true
 
 ```shell script
 cd plugins
-mvn clean package -Dmaven.test.skip=true -Dappname=all
+mvn clean package -Dmaven.test.skip=true -Dappname=all -Ptis-repo
 ```
 
 :::caution
@@ -116,7 +116,8 @@ npm uninstall -g @angular/cli
 具体执行命令为：
 
 ```shell script
-for f in `find ./plugins  -name '*.tpi' -print`
+cd 'path of qlangtech/plugins项目'
+for f in `find ./  -name '*.tpi' -print`
 do
    echo " ln -s $f "
    ln -s $f /opt/data/tis/libs/plugins/${f##*/}
@@ -126,7 +127,11 @@ done ;
 ### 启动TIS Console
 
 1. cd tis/tis-console/src/test/java/
-2. 运行 `StartTISWeb` 单元测试
+2. 创建初始化token文件：
+   ```shell
+      touch /opt/data/tis/system_initialized_token
+   ```
+3. 运行 `StartTISWeb` 单元测试
 
    ```shell script
    mvn compile test -Dtest=StartTISWeb
@@ -142,11 +147,16 @@ done ;
 ### 启动TIS Web
 
 1.  cd ng-tis
-2.  运行
-
+2.  编译：
+    ```shell
+     npm run ng:serve-aot
+    ```
+3.  运行
    ```shell
      npm run ng:serve-jit --scripts-prepend-node-path=auto
    ```
+4. 打开 web 入口：`http://localhost:4200/`
+
 
 ### 启动Assemble Web
 

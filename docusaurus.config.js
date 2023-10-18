@@ -77,7 +77,7 @@ const config = {
                     },
                     // {to: '/blog', label: 'Blog', position: 'left'},
                     {
-                        href: 'https://github.com/qlangtech/tis',
+                        href: 'https://github.com/datavane/tis',
                         label: 'GitHub',
                         position: 'right',
                     },

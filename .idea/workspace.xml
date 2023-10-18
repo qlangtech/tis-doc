@@ -5,13 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-doris/question_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-doris/question_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/mysql-sync-doris/question_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/develop/img/add-new-plugin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/develop/img/description.md.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/develop/img/mysqlv5datasourcefactory-inherit-diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/develop/img/plugin-mysql-datasource.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/develop/img/plugin-verify-validateAll.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/develop/img/plugins-arch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/develop/img/plugins-relation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/develop/img/plugins-ui.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/develop/img/properties-desc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/develop/plugin-develop-detail.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/develop/plugin-utils-reference.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Block/css.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Block/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CreateArchShell/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/example/mysql-sync-doris/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/mysql-sync-doris/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/example/mysql-sync-starrocks.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/mysql-sync-starrocks.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.2/example/mysql-sync-starrocks.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.2/example/mysql-sync-starrocks.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/develop/compile-running.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/develop/compile-running.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/develop/plugin-develop.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/develop/plugin-develop.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/example/chunjun-integrate.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/chunjun-integrate.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/example/mysql-hudi.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/mysql-hudi.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/chunjun-integrate.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/chunjun-integrate.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-hudi.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-hudi.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.0/example/chunjun-integrate.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.0/example/chunjun-integrate.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.0/example/mysql-hudi.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.0/example/mysql-hudi.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.1/example/chunjun-integrate.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.1/example/chunjun-integrate.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.1/example/mysql-hudi.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.1/example/mysql-hudi.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.2/example/chunjun-integrate.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.2/example/chunjun-integrate.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.2/example/mysql-hudi.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.2/example/mysql-hudi.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,30 +55,31 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/opt/misc/tis-docs2/docs/intro&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/opt/misc/tis-docs2/static/img&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/docs/intro" />
       <recent name="$PROJECT_DIR$/docs/install/zeppelin" />
       <recent name="$PROJECT_DIR$/docs/guide/incr-sync" />
       <recent name="$PROJECT_DIR$/docs/plugin" />
-      <recent name="$PROJECT_DIR$/docs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/develop/img" />
       <recent name="$PROJECT_DIR$/docs/example/mysql-sync-doris" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/docs/example" />
       <recent name="$PROJECT_DIR$/docs/guide/dataflow" />
-      <recent name="$PROJECT_DIR$/docs/example/mysql-sync-kafka" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -128,6 +150,14 @@
       <workItem from="1685594696018" duration="1199000" />
       <workItem from="1685597863393" duration="2399000" />
       <workItem from="1686198933497" duration="8316000" />
+      <workItem from="1686625504364" duration="869000" />
+      <workItem from="1687596894585" duration="44643000" />
+      <workItem from="1687854166590" duration="23471000" />
+      <workItem from="1688113049509" duration="5980000" />
+      <workItem from="1689655730311" duration="615000" />
+      <workItem from="1689658145961" duration="514000" />
+      <workItem from="1689658745314" duration="241000" />
+      <workItem from="1690354601668" duration="438000" />
     </task>
     <servers />
   </component>
@@ -154,5 +184,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/@docusaurus/theme-classic/src/theme/CodeBlock/index.tsx</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Contact/index.js</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

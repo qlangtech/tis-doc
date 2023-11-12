@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-datax-mysql-reader-select-tabs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-datax-mysql-reader.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-datax-profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-datax-type.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-emr-node-set.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-emr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-hive-sink.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-hiveserver.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-jindofs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-oss-bucket.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/aliyun-jindo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/trigger-sync.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/example/mysql-sync-doris/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/mysql-sync-doris/index.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,11 +63,11 @@
       <recent name="$PROJECT_DIR$/docs/plugin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/example/aliyun-jindo" />
       <recent name="$PROJECT_DIR$/docs/develop/img" />
       <recent name="$PROJECT_DIR$/docs/example/mysql-sync-doris" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/docs/example" />
-      <recent name="$PROJECT_DIR$/docs/guide/dataflow" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -135,7 +147,7 @@
       <workItem from="1689658745314" duration="241000" />
       <workItem from="1690354601668" duration="438000" />
       <workItem from="1698034538144" duration="1476000" />
-      <workItem from="1698204393192" duration="1245000" />
+      <workItem from="1698204393192" duration="39681000" />
     </task>
     <servers />
   </component>

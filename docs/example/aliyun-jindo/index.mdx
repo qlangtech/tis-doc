@@ -1,0 +1,240 @@
+---
+title: TIS借力阿里云 Jindo 快速实现云上数据集成分析
+date: 2020-07-26
+test: https://blog.csdn.net/asmartkiller/article/details/108877276
+---
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+
+## 什么是Jindo
+
+JindoFS 是阿里云基于 Apache Spark / Apache Hadoop 在云上定制的分布式计算和存储引擎。Jindo 在开源基础上做了大量优化和扩展， 深度集成和连接了众多阿里云基础服务。
+JindoFS 完全兼容 Hadoop 文件系统接口，为阿里云 EMR 中所有的计算服务和引擎： Spark、 Flink、 Hive、 MapReduce、 Presto、 Impala 等提供底层存储服务。JindoFS 有两种使用模式， 块存储模式(BLOCK)和缓存模式(CACHE)。
+
+JindoFS比传统的 Hadoop 基于文件系统的HDFS有如下优势：
+1. 免维护
+
+   这个是所有云上PAAS服务的天然优势，在阿里云上只需轻点鼠标就能把一个快速启动一个数仓服务，并且阿里云为数仓提供健全的实时监控能力，为用户的业务系统保驾护航。
+2. 费用低廉
+
+   由于阿里云上Jindo底层直接使用OSS来作为存储介质，使用过OSS的同学都知道它价格非常便宜，平时生产环境中经常用它来作备份存储，冷热分离都在使用它。
+   且使用中随着容量扩大可以做到弹性扩容对上层使用无感知。
+
+3. 稳定、高效
+
+   JindoFS 底层直接使用C++调用操作系统native code，免去了JAVA的GC问题，因此响应更快。
+   JindoFS通过 内部服务组件`JindoStorageService` 实现存储节点高效本地缓存，比传统的HDFS性能有大幅提升。在扩缩容方面，由于StorageService 来管理节点上的存储，保证了数据在 OSS 上有一副本，因此对于节点迁移、 节点下线等场景， JindoFS 无需复杂副本计算， 通过快速的“ 标记” 即可完成下线。
+   避免传统 HDFS运维方式那样的，通常一个存储节点的下线需要小时级别的等待才能完成，基本可以实现秒级完成扩缩容。
+
+## 什么是TIS
+
+TIS是一款面向大数据集成的端到端的基于UI界面的数据集成产品，已经实现了多种类型数据节点之间的数据批量与增量同步功能。相较于其他同类型的产品有显著优势：
+1. 轻量化、安装简单 
+2. 基于UI使用方便，开箱即用 
+3. 基于DataOps，内部经过数据建模，大量执行脚本会自动生成，用户毋需关注底层细节
+
+由于Jindo使得在云上使用分布式离线分析计算比私有云中基于传统HDFS的离线分析高效且经济，使得大量用户正在将自建私有云离线数仓迁移到云上数仓。
+这个想法是不错，但就像给猫脖子上套铃铛的方案一样，能想出这个办法的小老鼠固然是聪明的，关键是怎么把铃铛挂到猫脖子上去呢？
+
+偶然间发现了TIS，让使用阿里云EMR基础设施变得简单了。用户在阿里云上申请好EMR，Hive，等基础设施，后面的工作就交给TIS了。
+
+下图是TIS 支持的 源端和目标端类型：
+<Figure img={require('./aliyun-jindo.png')}/>
+
+## 具体操作
+
+### 准备阿里云EMR环境
+使用场景中需要用到阿里云EMR的Hive环境，我们需要在阿里云上注册两个服务资源。
+1. 阿里云OSS
+
+   由于EMR Hive使用阿里云OSS作为JindoFS的存储层，因此我们需要先申请阿里云OSS资源，[申请地址](https://oss.console.aliyun.com/overview)
+   <Figure img={require('./add-oss-bucket.png')}/>
+   如上图所示，申请OSS资源步骤中需要将`HDFS服务`功能选项打开，可以让EMR Hive将Hive元数据写入到OSS中
+2. 阿里云EMR
+
+   申请 阿里云EMR [申请地址](https://emr-next.console.aliyun.com/#/resource/all/create/ecs)
+   <Figure img={require('./add-emr.png')}/>
+
+   在选取EMR服务节点步骤，需要将节点的公网挂载打开，这样可以公网访问。另外，服务节点ECS对应的安全组需要将 `9083` 和 `10000` 两个端口打开，以便从公网访问阿里云EMR Hive服务。
+
+   <Figure img={require('./add-emr-node-set.png')}/>
+
+### 动手部署
+
+准备好了依赖的资源后，接下来向大家介绍 如何创建从MySQL 到 Aliyun EMR Hive的数据同步通道。
+1. 定义通道基本信息
+
+   <Figure img={require('./add-datax-profile.png')}/>
+2. 选择数据通道 Source和Sink 端类型
+  
+    <Figure img={require('./add-datax-type.png')}/>
+    
+    如上图源端和目标端分别选择 `MySQL` 和 `Hive`类型
+3. 设置源端MySQL配置信息
+
+   <Figure img={require('./add-datax-mysql-reader.png')}/> 
+4. 从源端MySQL中选择同步表
+   <Figure img={require('./add-datax-mysql-reader-select-tabs.png')}/>
+5. 定义阿里云 EMR Hive 资源配置
+   <Figure img={require('./add-hiveserver.png')}/>
+
+6. 定义JindoFS服务引用：
+   <Figure img={require('./add-jindofs.png')}/>
+7. 定义 EMR Hive目标(Sink)端：
+   
+   <Figure img={require('./add-hive-sink.png')}/>
+    
+    通过上图演示，EMR Hive目标(Sink)端页面可以设置：
+   
+    1. EMR Hive 分区保留数
+       
+       TIS每次导入，会自动判断目标端的Hive表是否存在？如果不存在TIS会自动创建表。每次导入目标端表后会自动在表上创建一个分区，然后数据分区是要占用存储空间的，不能无限制的增加分区，需要设置一个分区上限，每次将历史分区最旧的分区drop掉
+    2. partitionFormat（分区格式）
+
+       每次新建的分区使用的时间格式，可以是`yyyyMMddHHmmss`或者是`yyyyMMdd`
+    3. fileType（文件格式）
+
+       Hive 对应的文件Format（也就是存放在JindoFS上的文件格式），目前可以选择两种最通用的格式，`CSV`和`TEXT`格式，将来还可以扩展其他存储格式，如：`ORC`、`Parquet`等
+8. 触发数据通道同步任务 
+
+   终于完成数据通道创建，接下来触发同步任务执行
+   <Figure img={require('./trigger-sync.png')}/>
+   最终，我们可以进入EMR管理后台通过执行SQL 查询导入到EMR Hive中的数据
+
+## 总结
+   凭借云上JinDoFS提供的诸多优势，使得越来越多的在传统私有云中构建数仓的企业开始将数仓迁移到云上数仓。
+   通过TIS提供的一站式，快捷基于DataOPS理念开发的数据集成产品，为用户高效且低成本使用云上设置提供有效手段。用户使用TIS过程中，不需要关注底层技术细节，例如：
+
+   1. 不需要关系源表的表自动类型，TIS会帮你自动创建Hive表。
+   2. 自动维护将Hive目标表的历史分区，自动淘汰老历史分区
+   3. 自动分配导入过程中，任务调度资源分配。
+   4. 支持多种Hive 表的文件格式，提供方便的文件格式扩展机制
+## 什么是Jindo
+
+JindoFS 是阿里云基于 Apache Spark / Apache Hadoop 在云上定制的分布式计算和存储引擎。Jindo 在开源基础上做了大量优化和扩展， 深度集成和连接了众多阿里云基础服务。
+JindoFS 完全兼容 Hadoop 文件系统接口，为阿里云 EMR 中所有的计算服务和引擎： Spark、 Flink、 Hive、 MapReduce、 Presto、 Impala 等提供底层存储服务。JindoFS 有两种使用模式， 块存储模式(BLOCK)和缓存模式(CACHE)。
+
+JindoFS比传统的 Hadoop 基于文件系统的HDFS有如下优势：
+1. 免维护
+
+   这个是所有云上PAAS服务的天然优势，在阿里云上只需轻点鼠标就能把一个快速启动一个数仓服务，并且阿里云为数仓提供健全的实时监控能力，为用户的业务系统保驾护航。
+2. 费用低廉
+
+   由于阿里云上Jindo底层直接使用OSS来作为存储介质，使用过OSS的同学都知道它价格非常便宜，平时生产环境中经常用它来作备份存储，冷热分离都在使用它。
+   且使用中随着容量扩大可以做到弹性扩容对上层使用无感知。
+
+3. 稳定、高效
+
+   JindoFS 底层直接使用C++调用操作系统native code，免去了JAVA的GC问题，因此响应更快。
+   JindoFS通过 内部服务组件`JindoStorageService` 实现存储节点高效本地缓存，比传统的HDFS性能有大幅提升。在扩缩容方面，由于StorageService 来管理节点上的存储，保证了数据在 OSS 上有一副本，因此对于节点迁移、 节点下线等场景， JindoFS 无需复杂副本计算， 通过快速的“ 标记” 即可完成下线。
+   避免传统 HDFS运维方式那样的，通常一个存储节点的下线需要小时级别的等待才能完成，基本可以实现秒级完成扩缩容。
+
+## 什么是TIS
+
+TIS是一款面向大数据集成的端到端的基于UI界面的数据集成产品，已经实现了多种类型数据节点之间的数据批量与增量同步功能。相较于其他同类型的产品有显著优势：
+1. 轻量化、安装简单
+2. 基于UI使用方便，开箱即用
+3. 基于DataOps，内部经过数据建模，大量执行脚本会自动生成，用户毋需关注底层细节
+
+由于Jindo使得在云上使用分布式离线分析计算比私有云中基于传统HDFS的离线分析高效且经济，使得大量用户正在将自建私有云离线数仓迁移到云上数仓。
+这个想法是不错，但就像给猫脖子上套铃铛的方案一样，能想出这个办法的小老鼠固然是聪明的，关键是怎么把铃铛挂到猫脖子上去呢？
+
+偶然间发现了TIS，让使用阿里云EMR基础设施变得简单了。用户在阿里云上申请好EMR，Hive，等基础设施，后面的工作就交给TIS了。
+
+下图是TIS 支持的 源端和目标端类型：
+<Figure img={require('./aliyun-jindo.png')}/>
+
+## 具体操作
+
+### 准备阿里云EMR环境
+使用场景中需要用到阿里云EMR的Hive环境，我们需要在阿里云上注册两个服务资源。
+1. 阿里云OSS
+
+   由于EMR Hive使用阿里云OSS作为JindoFS的存储层，因此我们需要先申请阿里云OSS资源，[申请地址](https://oss.console.aliyun.com/overview)
+   <Figure img={require('./add-oss-bucket.png')}/>
+   如上图所示，申请OSS资源步骤中需要将`HDFS服务`功能选项打开，可以让EMR Hive将Hive元数据写入到OSS中
+2. 阿里云EMR
+
+   申请 阿里云EMR [申请地址](https://emr-next.console.aliyun.com/#/resource/all/create/ecs)
+   <Figure img={require('./add-emr.png')}/>
+
+   在选取EMR服务节点步骤，需要将节点的公网挂载打开，这样可以公网访问。另外，服务节点ECS对应的安全组需要将 `9083` 和 `10000` 两个端口打开，以便从公网访问阿里云EMR Hive服务。
+
+   <Figure img={require('./add-emr-node-set.png')}/>
+
+### 动手部署
+
+准备好了依赖的资源后，接下来向大家介绍 如何创建从MySQL 到 Aliyun EMR Hive的数据同步通道。
+1. 定义通道基本信息
+
+   <Figure img={require('./add-datax-profile.png')}/>
+2. 选择数据通道 Source和Sink 端类型
+
+   <Figure img={require('./add-datax-type.png')}/>
+
+   如上图源端和目标端分别选择 `MySQL` 和 `Hive`类型
+3. 设置源端MySQL配置信息
+
+   <Figure img={require('./add-datax-mysql-reader.png')}/>
+4. 从源端MySQL中选择同步表
+   <Figure img={require('./add-datax-mysql-reader-select-tabs.png')}/>
+5. 定义阿里云 EMR Hive 资源配置
+   <Figure img={require('./add-hiveserver.png')}/>
+
+6. 定义JindoFS服务引用：
+   <Figure img={require('./add-jindofs.png')}/>
+7. 定义 EMR Hive目标(Sink)端：
+
+   <Figure img={require('./add-hive-sink.png')}/>
+
+   通过上图演示，EMR Hive目标(Sink)端页面可以设置：
+
+   1. EMR Hive 分区保留数
+
+      TIS每次导入，会自动判断目标端的Hive表是否存在？如果不存在TIS会自动创建表。每次导入目标端表后会自动在表上创建一个分区，然后数据分区是要占用存储空间的，不能无限制的增加分区，需要设置一个分区上限，每次将历史分区最旧的分区drop掉
+   2. partitionFormat（分区格式）
+
+      每次新建的分区使用的时间格式，可以是`yyyyMMddHHmmss`或者是`yyyyMMdd`
+   3. fileType（文件格式）
+
+      Hive 对应的文件Format（也就是存放在JindoFS上的文件格式），目前可以选择两种最通用的格式，`CSV`和`TEXT`格式，将来还可以扩展其他存储格式，如：`ORC`、`Parquet`等
+8. 触发数据通道同步任务
+
+   终于完成数据通道创建，接下来触发同步任务执行
+   <Figure img={require('./trigger-sync.png')}/>
+   最终，我们可以进入EMR管理后台通过执行SQL 查询导入到EMR Hive中的数据
+
+## 总结
+凭借云上JinDoFS提供的诸多优势，使得越来越多的在传统私有云中构建数仓的企业开始将数仓迁移到云上数仓。
+通过TIS提供的一站式，快捷基于DataOPS理念开发的数据集成产品，为用户高效且低成本使用云上设置提供有效手段。用户使用TIS过程中，不需要关注底层技术细节，例如：
+
+1. 不需要关系源表的表自动类型，TIS会帮你自动创建Hive表。
+2. 自动维护将Hive目标表的历史分区，自动淘汰老历史分区
+3. 自动分配导入过程中，任务调度资源分配。
+4. 支持多种Hive 表的文件格式，提供方便的文件格式扩展机制
+
+以上这些TIS的特点，都大大降低了 阿里云EMR 的使用门槛。
+
+另外，TIS为用户实现云中立使用数仓服务提供了可能。用户如扩展海外市场，海外部署如选择使用亚马逊AWS来构建数仓服务，在亚马逊AWS上提供了类似阿里云EMR的基础设置，
+TIS中同样提供亚马逊AWS 数仓服务的插件，这样就可以将TIS作为数仓服务的门面（Facade模式）提供统一的用户体养来操作各云平台。
+
+## 相关资源
+
+* 💻 项目地址：https://github.com/datavane/tis
+* 🧐 提交问题和建议：https://github.com/datavane/tis/issues
+* 🥁 贡献代码：https://github.com/datavane/tis/pulls
+* 📧 订阅社区开发邮件列表：dev@tis.datavane.org
+以上这些TIS的特点，都大大降低了 阿里云EMR 的使用门槛。
+
+另外，TIS为用户实现云中立使用数仓服务提供了可能。用户如扩展海外市场，海外部署如选择使用亚马逊AWS来构建数仓服务，在亚马逊AWS上提供了类似阿里云EMR的基础设置，
+TIS中同样提供亚马逊AWS 数仓服务的插件，这样就可以将TIS作为数仓服务的门面（Facade模式）提供统一的用户体养来操作各云平台。
+
+## 相关资源
+
+* 💻 项目地址：https://github.com/datavane/tis
+* 🧐 提交问题和建议：https://github.com/datavane/tis/issues
+* 🥁 贡献代码：https://github.com/datavane/tis/pulls
+* 📧 订阅社区开发邮件列表：dev@tis.datavane.org
+
+

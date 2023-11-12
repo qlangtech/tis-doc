@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-datax-mysql-reader-select-tabs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-datax-mysql-reader.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-datax-profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-datax-type.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-emr-node-set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-emr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-hive-sink.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-hiveserver.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-jindofs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/add-oss-bucket.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/aliyun-jindo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/index.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/example/aliyun-jindo/trigger-sync.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/hosts" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/hosts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Contact/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Contact/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/versions.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,22 +28,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/opt/misc/tis-docs2/static/img",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/opt/misc/tis-docs2/static/img&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/img" />
@@ -63,10 +53,10 @@
       <recent name="$PROJECT_DIR$/docs/plugin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/docs/example/aliyun-jindo" />
       <recent name="$PROJECT_DIR$/docs/develop/img" />
       <recent name="$PROJECT_DIR$/docs/example/mysql-sync-doris" />
-      <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/docs/example" />
     </key>
   </component>
@@ -147,7 +137,8 @@
       <workItem from="1689658745314" duration="241000" />
       <workItem from="1690354601668" duration="438000" />
       <workItem from="1698034538144" duration="1476000" />
-      <workItem from="1698204393192" duration="39681000" />
+      <workItem from="1698204393192" duration="40622000" />
+      <workItem from="1699769779873" duration="2752000" />
     </task>
     <servers />
   </component>

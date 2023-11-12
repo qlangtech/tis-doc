@@ -1,5 +1,5 @@
 [tis-pub]
-tis-pub1 ansible_ssh_host=59.110.27.59
+tis-pub1 ansible_host=59.110.27.59
 
 
 [all:vars]

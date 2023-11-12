@@ -13,11 +13,14 @@ export default function Contact() {
                     <h2>联系我们</h2>
                 </div>
                 <div className={clsx('col col--4 text--center')}>
-                    <h3>微信讨论群</h3>
-                    <div><img src={require('/img/weixin.jpg').default}     width="250"/></div>
+                    <h3>微信TIS小秘书</h3>
+                    <div style={{color:'#666666'}}>添加后会邀请您进入微信群参与讨论</div>
+                    <div>
+                        <img src={require('/img/weixin.jpeg').default}     width="250"/></div>
                 </div>
                 <div className={clsx('col col--4 text--center')}>
                     <h3>微信公众号</h3>
+                    <div style={{color:'#666666'}}>定期发布最新TIS功能特性博客</div>
                     <div><img src={require('/img/weixin_talk_group.jpg').default} width="250"/></div>
                 </div>
             </div>

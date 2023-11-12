@@ -1,0 +1,93 @@
+/** 提供者: <i class='plugin-link' style={{background-color:dodgerblue}}>[Chunjun](https://dtstack.github.io/chunjun)</i>*/
+/*                                                                                                                  <i class='plugin-link' style={{background-color:MediumSeaGreen}}>[TIS](https://tis.pub/)</i>*/
+/*                                                                                                                                                                                                            <i class='plugin-link' style={{background-color:orange}}>[FlinkCDC](https://ververica.github.io/flink-cdc-connectors/)</i>*/
+/*<*/
+/*i class*/
+
+/*=*/
+/*'plugin-link'*/
+/*style*/
+
+/*=*/
+/*{*/
+/*{*/
+/*    background-color: tomato*/
+/*}*/
+/*}*/
+/*> [DataX]*/
+
+/*(*/
+/*https:*/
+
+/*/*/
+/*/*/
+/*github.com /alibaba/ DataX*/
+
+/*)*/
+/*<*/
+/*/*/
+/*i >*/
+
+.plugin-link {
+    all: initial;
+    display:inline-block;
+    padding: 3px;
+    margin-right:5px;
+//background-color: #ffed73;
+    border: 1px black solid;
+    border-radius: 10px;
+
+}
+.tis-check {
+    display: inline-block;
+    width: 40px; height: 40px;
+    background: url(data:image/svg+xml,%3Csvg%20t%3D%221667816762015%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%223057%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M912%20190h-69.9c-9.8%200-19.1%204.5-25.1%2012.2L404.7%20724.5%20207%20474c-6.1-7.7-15.3-12.2-25.1-12.2H112c-6.7%200-10.4%207.7-6.3%2012.9l273.9%20347c12.8%2016.2%2037.4%2016.2%2050.3%200l488.4-618.9c4.1-5.1%200.4-12.8-6.3-12.8z%22%20p-id%3D%223058%22%20fill%3D%22%231afa29%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E) no-repeat center;
+    background-size: 100%;
+}
+
+.icon-arrow-down {
+
+    background: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path fill="#00A5E0" d="M145.659,68.949c-5.101-5.208-13.372-5.208-18.473,0L99.479,97.233 L71.772,68.949c-5.1-5.208-13.371-5.208-18.473,0c-5.099,5.208-5.099,13.648,0,18.857l46.18,47.14l46.181-47.14 C150.759,82.598,150.759,74.157,145.659,68.949z"/></svg>') no-repeat center;
+
+}
+
+.plugin-link a {
+    color: white;
+}
+
+.chunjun-color {
+    background-color: dodgerblue;
+}
+
+.tis-color {
+    background-color: MediumSeaGreen;
+}
+
+.flink-cdc-color {
+    background-color: orange;
+}
+
+.datax-color {
+    background-color: tomato;
+}
+
+/***
+font text color
+ */
+.chunjun-text-color {
+    color: dodgerblue;
+}
+
+.tis-text-color {
+    color: MediumSeaGreen;
+}
+
+.flink-cdc-text-color {
+    color: orange;
+}
+
+.datax-text-color {
+    color: tomato;
+}
+
+

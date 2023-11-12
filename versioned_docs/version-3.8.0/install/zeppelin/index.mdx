@@ -1,0 +1,95 @@
+---
+title: 启用Zeppelin Notebook
+linktitle: Flink单机版
+date: 2023-04-09
+sidebar_position: 3
+---
+
+import Figure from '/src/components/Figure';
+import Link from '/src/components/Link';
+
+import CodeBlock from '@theme/CodeBlock';
+
+export const VerShell = () => {
+  return (
+    <div>
+      <CodeBlock
+        language="shell">
+       wget http://mirror.qlangtech.com/{metadata.version}/tis/tis-zeppelin-0.10.1-bin-all.tar.gz
+      </CodeBlock>
+    </div>
+  );
+}
+
+## 背景
+
+[Apache Zeppelin](https://zeppelin.apache.org/) 是一款让交互式数据分析变得可行的基于网页的开源框架。Zeppelin提供了数据分析、数据可视化等功能。
+
+
+<Figure img={require('./notebook.png')}/>
+
+在Zeppelin中创建一个数据分析Notebook,需要使用者先创建对应的[Interpreter](https://zeppelin.apache.org/docs/0.10.1/usage/interpreter/overview.html)，再来创建Notebook。
+
+这一流程中，有诸多繁琐之处：
+
+1. 首先：
+
+   在配置Interpreter过程中需要需要配置大量参数、管理依赖包，例如：需要添加一个DB2的 JDBC Interpreter，需要填写DB2 JDBC需要参数外，还需要在Zeppelin管理平台中上传DB2 JDBC相关的Java依赖包，这无形中增加了用户的使用难度。
+
+2. 再者：
+
+   Zeppelin一般是配合用户自己的数仓管理平台来使用的，当用户开发数仓应用过程中需要确认开发过程每个步骤执行是否正确，需要频繁从数仓平台切换到Zeppelin上来确认产出的结果是否正确。
+
+3. 其次：
+
+   Zeppelin的生产环境包[下载包](https://zeppelin.apache.org/download.html)已经有**1.5G**体积巨大， 下载包中已经包含了大量Interpreter的配置模版，其实绝大部分是用不到的。
+
+为了解决以上问题TIS在**3.7.1**版本中尝试了将Zeppelin无缝与TIS进行整合
+
+1. 借助TIS自身强大的插件系统可以让Zeppelin的Interpreter封装成TIS插件，这样可以将Zeppelin的发布包中的Interpreter化整为零，实现按需使用。
+2. TIS 已经提供了功能丰富的数据源定义模块，无形中承担了Zeppelin的Interpreter的功能，只要将Zeppelin嫁接在TIS数据源定义模块之上就能免去Interpreter定义步骤。
+3. Zeppelin和TIS的前台组件都是基于Angular来开发的，并且都使用了[ng-zorro](https://ng-zorro.gitee.io/docs/introduce/zh)，这样TIS与Zeppelin整合更加顺畅，UI风格统一，没有违和感。
+
+## 在TIS中如何激活Zeppelin
+
+1. 下载`tis-zeppelin`包，大约`160M`
+
+    <VerShell/>
+
+2. 解压
+   ``` shell
+    tar xvf tis-zeppelin-0.10.1-bin-all.tar.gz
+   ```
+   生成的解压目录记为 `ZEPPELIN_HOME`
+
+3. 设置TIS启动参数
+
+   将上一步骤中解压目录设置到以下shell脚本中，作为参数`ZEPPELIN_HOME`的值
+   ```shell title="{TIS_UBER_HOME}/bin/tis"
+   # If intend to active Zeppelin Notebook in TIS , Download tis-zeppelin-0.10.1-bin-all.tar.gz from TIS repository,And uncomment line below
+   export ZEPPELIN_HOME=/tmp/zeppelin-0.10.1-bin-all
+   ```
+4. 重启TIS
+
+   ```shell title="cd {TIS_UBER_HOME}"
+   ./bin/tis restart
+   ```
+Ï
+## 在TIS中使用Notebook
+
+  以`MySQL`为例，在TIS中如何一站式使用MySQL Notebook
+
+1. 定义TIS MySQL DataSource
+
+   <Figure img={require('./add_mysql_datasource.png')}/>
+
+2. 打开MySQL Notebook
+
+   数据源添加完成之后就能点击**Notebook** 按钮，打开 `MySQL Notebook` 面板
+
+   <Figure img={require('./click_notebook.png')}/>
+
+3. 在MySQL Notebook中进行查询
+
+   <Figure img={require('./exec_query.png')}/>
+

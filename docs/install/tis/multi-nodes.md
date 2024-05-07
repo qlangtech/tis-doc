@@ -1,5 +1,5 @@
 ---
-title: 多节点安装
+title: 多节点
 linktitle: 多节点安装
 date: 2014-03-10
 type: book

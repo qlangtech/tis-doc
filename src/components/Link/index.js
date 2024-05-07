@@ -15,3 +15,15 @@ export default function TisLink({children, href, anchor}) {
         <Link className={clsx(" button--link tis-link")} to={to}>{children}</Link>
     );
 }
+
+// export  function TisNormalLink({children, href}) {
+//     if(!href){
+//         return <></>
+//     }
+//
+//     return (
+//         <a target='_blank'  href={href}>{children}</a>
+//     );
+// }
+
+

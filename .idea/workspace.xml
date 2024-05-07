@@ -5,34 +5,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/develop/img/add-new-plugin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/develop/img/description.md.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/develop/img/mysqlv5datasourcefactory-inherit-diagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/develop/img/plugin-mysql-datasource.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/develop/img/plugin-verify-validateAll.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/develop/img/plugins-arch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/develop/img/plugins-relation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/develop/img/plugins-ui.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/develop/img/properties-desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/develop/plugin-develop-detail.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/develop/plugin-utils-reference.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Block/css.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Block/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CreateArchShell/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/2024-04-22-nest-plugin-reuse/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/input-form-success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/install-plugin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/kubernetes-application.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/select-deploy-mode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-create-flink-session-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-create-flink-session-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-create-flink-session-input-form.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-create-flink-session.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-create-incr-pipeline-with-new-created-session.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-create-input-form-confirm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-flink-session-manage-list.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-flink-session-manage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-waitting-deploy-success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/set-docker-image-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/set-docker-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/after-create-powerjob-confirm-added-new-instance.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/after-create-powerjob-goto-powerjob-confirm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/after-create-powerjob-return-2-batch-synchronize.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/after-create-powerjob-set-crontab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/after-create-powerjob-trigger-batch-build-success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-k8s-reference-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-k8s-reference-source.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-k8s-reference.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-afore-steps-confirm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-docker-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-job-template.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-server-define.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-waitting-k8s-resource.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-worker-define.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/manage-powerjob-cluster-update-worker-num.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/k8s.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/standalone.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/tis/docker-compose.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/tis/docker.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/apply-aliyun-serverless-k8s-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/apply-aliyun-serverless-k8s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/apply-aliyun-yunpan-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/create-cluster-copy-public-certificate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/create-cluster-success-connect-aliyun-k8s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/create-cluster-waitting-complete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/create-flink-cluster-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/create-flink-cluster-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/tis/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/tis/kubernetes.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/develop/compile-running.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/develop/compile-running.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/develop/plugin-develop.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/develop/plugin-develop.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/example/chunjun-integrate.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/chunjun-integrate.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/example/mysql-hudi.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/mysql-hudi.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/install/flink-cluster/native.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/flink-cluster/native.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/install/tis/multi-nodes.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/tis/multi-nodes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/install/tis/uber.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/tis/uber.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/chunjun-integrate.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/chunjun-integrate.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-hudi.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.6.0-alpha/example/mysql-hudi.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.0/example/chunjun-integrate.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.0/example/chunjun-integrate.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.0/example/mysql-hudi.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.0/example/mysql-hudi.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.1/example/chunjun-integrate.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.1/example/chunjun-integrate.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.1/example/mysql-hudi.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.1/example/mysql-hudi.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.2/example/chunjun-integrate.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.2/example/chunjun-integrate.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-3.7.2/example/mysql-hudi.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-3.7.2/example/mysql-hudi.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BZhan.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BZhan.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Link/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Link/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/QuickInstall/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuickInstall/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +84,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/opt/misc/tis-docs2/static/img&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/opt/misc/tis-docs2/docs/install/powerjob&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -68,18 +97,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/install/powerjob" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/docs/intro" />
       <recent name="$PROJECT_DIR$/docs/install/zeppelin" />
       <recent name="$PROJECT_DIR$/docs/guide/incr-sync" />
-      <recent name="$PROJECT_DIR$/docs/plugin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/docs/develop/img" />
-      <recent name="$PROJECT_DIR$/docs/example/mysql-sync-doris" />
+      <recent name="$PROJECT_DIR$/docs/install/flink-cluster/img" />
+      <recent name="$PROJECT_DIR$/docs/install/powerjob/img" />
+      <recent name="$PROJECT_DIR$/docs/install/tis/img" />
       <recent name="$PROJECT_DIR$/static/img" />
-      <recent name="$PROJECT_DIR$/docs/example" />
-      <recent name="$PROJECT_DIR$/docs/guide/dataflow" />
+      <recent name="$PROJECT_DIR$/docs/develop/img" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -158,6 +187,13 @@
       <workItem from="1689658145961" duration="514000" />
       <workItem from="1689658745314" duration="241000" />
       <workItem from="1690354601668" duration="438000" />
+      <workItem from="1697608992752" duration="603000" />
+      <workItem from="1706529005109" duration="579000" />
+      <workItem from="1708498333798" duration="170000" />
+      <workItem from="1713777499091" duration="6304000" />
+      <workItem from="1714185632161" duration="8848000" />
+      <workItem from="1714660162263" duration="73992000" />
+      <workItem from="1715066310179" duration="2827000" />
     </task>
     <servers />
   </component>

@@ -14,6 +14,7 @@ export default function HomepageFeatures() {
                 </div>
                 <div className={clsx('col col--6')}>
                     下载
+
                     <CodeBlock language="shell">
                         $ wget http://mirror.qlangtech.com/$version/tis/tis-uber.tar.gz
                     </CodeBlock>

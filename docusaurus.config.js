@@ -75,7 +75,7 @@ const config = {
                         position: 'left',
                         label: '文档',
                     },
-                    // {to: '/blog', label: 'Blog', position: 'left'},
+                     {to: '/blog', label: '博客', position: 'left'},
                     {
                         href: 'https://github.com/datavane/tis',
                         label: 'GitHub',

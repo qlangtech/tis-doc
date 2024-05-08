@@ -5,63 +5,195 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/blog/2024-04-22-nest-plugin-reuse/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/input-form-success.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/install-plugin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/kubernetes-application.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/select-deploy-mode.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-create-flink-session-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-create-flink-session-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-create-flink-session-input-form.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-create-flink-session.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-create-incr-pipeline-with-new-created-session.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-create-input-form-confirm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-flink-session-manage-list.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-flink-session-manage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/session-waitting-deploy-success.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/set-docker-image-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/img/set-docker-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/_category_.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/after-create-powerjob-confirm-added-new-instance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/after-create-powerjob-goto-powerjob-confirm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/after-create-powerjob-return-2-batch-synchronize.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/after-create-powerjob-set-crontab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/after-create-powerjob-trigger-batch-build-success.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-k8s-reference-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-k8s-reference-source.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-k8s-reference.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-afore-steps-confirm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-docker-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-job-template.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-server-define.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-waitting-k8s-resource.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/create-powerjob-cluster-worker-define.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/img/manage-powerjob-cluster-update-worker-num.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/index.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/k8s.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/powerjob/standalone.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/tis/docker-compose.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/tis/docker.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/apply-aliyun-serverless-k8s-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/apply-aliyun-serverless-k8s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/apply-aliyun-yunpan-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/create-cluster-copy-public-certificate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/create-cluster-success-connect-aliyun-k8s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/create-cluster-waitting-complete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/create-flink-cluster-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/tis/img/create-flink-cluster-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/tis/index.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/tis/kubernetes.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/compile-running.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/img/add-new-plugin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/img/description.md.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/img/mysqlv5datasourcefactory-inherit-diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/img/plugin-mysql-datasource.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/img/plugin-verify-validateAll.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/img/plugins-arch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/img/plugins-relation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/img/plugins-ui.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/img/properties-desc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/plugin-develop-detail.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/plugin-develop.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/develop/plugin-utils-reference.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/enhance-extra/add-elastic-writer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/enhance-extra/add-mysql-reader.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/enhance-extra/datax-add-step2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/enhance-extra/datax-exec-status.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/enhance-extra/datax-exec-success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/enhance-extra/select-tab-cols.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/enhance-extra/tis-datax-arch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/chunjun-integrate.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/add-joiner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/add-table.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/define-entity-detail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/define-er-confirm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/dry-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/employees_db_er.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/entry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/exec-dataflow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/register_employee_db.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/save-dataflow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/save-er.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/set_parser_engine_props.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/set_parser_engine_type.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/set_parser_instance_name.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/t-plus1-offline-dag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/dataflow/view-dataflow-build-status.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-flink-cluster-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-flink-cluster-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-flink-cluster-4-confirm-streamcode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-flink-cluster-4-success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-flink-cluster-success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-2-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-2-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-3-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-3-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-3-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-4-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-4-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-4-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-7-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-7-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/add-step-7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/hudi/hudi-arttecth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-hudi.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-flink-cluster-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-flink-cluster-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-flink-cluster-4-confirm-streamcode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-flink-cluster-success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-flink-cluster.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-2-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-2-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-2-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-2-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-2-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-2-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-3-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-3-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-5-tab-mapper.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/add-step-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/b-store-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/data-channel-index.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/enter-tis.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/install-flink-plugin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/instance-list.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/trigger-batch-doing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/trigger-batch-success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-syn-starrocks/trigger-batch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-doris/datasource-impl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-doris/datasource-plugin-install.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-doris/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-doris/question_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-doris/question_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-doris/question_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-doris/tis-doris-architect.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-kafka/add-flink-cluster-4-confirm-streamcode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-kafka/add-flink-cluster-success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-kafka/add-plugins.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-kafka/add-step-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-kafka/close-plugins-panel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-kafka/confirm-create.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-kafka/install-sink-kafka-plugin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-kafka/mysql-sync-kafka.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-kafka/plugin-type-chose.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-kafka/set-chosen-tab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-kafka/set-kafka-writer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-kafka/set-source-sink.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/mysql-sync-starrocks.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/example/sink-2-kafka.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/collection/_index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/collection/add-collection-step-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/collection/add-collection-step-2-expert.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/collection/add-collection-step-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/collection/add-collection-step-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/collection/add-collection-step-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/collection/manage-collection-query.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/collection/manage-collection-start-build.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/collection/manage-collection.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/add-ds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/add-table.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/create_mysql_datasource.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/multi-ds-rule.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/multi-table-rule.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/op-ds-define.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/reader_table_split_table_off.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/reader_table_split_table_on.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/recognize_split_table_config.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/table-config-view.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/datasource/table-sql-confirm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/incr-sync/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/incr-sync/incr-channel-success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/incr-sync/incr-entry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/incr-sync/incr-k8s-spec.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/incr-sync/incr-panel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/incr-sync/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/guide/solrj-client/_index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/home-background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/rocket.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/show-case/df-define.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/show-case/ds-define.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/show-case/exec-visual.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/show-case/incr-monitor.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/show-case/query-define.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/show-case/schema-define.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/tis/tis-niaohan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/tis/tis-synoptic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/tis/tis-synoptic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/tis/tis-synoptic.png_bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/images/tis/tis-vision.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/flink-cluster/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/flink-cluster/native.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/flink-cluster/standalone.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/tis/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/tis/multi-nodes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/tis/uber.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/zeppelin/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/zeppelin/add_mysql_datasource.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/zeppelin/click_notebook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/zeppelin/exec_query.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/zeppelin/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/install/zeppelin/notebook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/intro/def_mysql.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/intro/def_oracle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/intro/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/intro/process_visual.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/intro/tis_architech.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/intro/tis_useable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/plugin/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/plugin/_index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/plugin/plugin-develop/_index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/plugin/plugins.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/plugin/source-sink-table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/plugin/source-sink.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/plugin/source-sink.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_docs/version-3.8.0/plugin/tpis.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versioned_sidebars/version-3.8.0-sidebars.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/install/flink-cluster/native.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/flink-cluster/native.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/install/tis/multi-nodes.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/tis/multi-nodes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/install/tis/uber.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/tis/uber.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BZhan.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BZhan.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Link/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Link/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/QuickInstall/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuickInstall/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2019-05-28-first-blog-post.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2019-05-29-long-blog-post.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2021-08-01-mdx-blog-post.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2021-08-26-welcome/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2021-08-26-welcome/index.md_bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2024-04-22-nest-plugin-reuse/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2024-04-22-nest-plugin-reuse/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/authors.yml" beforeDir="false" afterPath="$PROJECT_DIR$/blog/authors.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/develop/plugin-develop-detail.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/develop/plugin-develop-detail.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/versions.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +325,7 @@
       <workItem from="1713777499091" duration="6304000" />
       <workItem from="1714185632161" duration="8848000" />
       <workItem from="1714660162263" duration="73992000" />
-      <workItem from="1715066310179" duration="2827000" />
+      <workItem from="1715066310179" duration="7991000" />
     </task>
     <servers />
   </component>

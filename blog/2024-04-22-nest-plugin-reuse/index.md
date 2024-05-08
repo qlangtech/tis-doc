@@ -1,6 +1,7 @@
 ---
 slug: nest-plugin-reuse
 title: 内嵌插件复用
+authors: [baisui]
 tags: [ plugin]
 ---
 

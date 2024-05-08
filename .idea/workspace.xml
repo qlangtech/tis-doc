@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/example/mysql-sync-doris/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/example/mysql-sync-doris/index.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +139,7 @@
       <workItem from="1714185632161" duration="8848000" />
       <workItem from="1714660162263" duration="73992000" />
       <workItem from="1715066310179" duration="9303000" />
-      <workItem from="1715138142152" duration="108000" />
+      <workItem from="1715138142152" duration="1127000" />
     </task>
     <servers />
   </component>

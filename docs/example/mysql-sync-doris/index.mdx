@@ -134,7 +134,7 @@ TIS 充当了厨师的角色，有各种新鲜的食材，利用厨师厨艺焕�
 经常会看见用户在Flink-CDC社区用户群中咨询以下问题：
 <Figure img={require('./question_1.jpg')}/>
 
-只要利用[Side Outputs](Flink的https://nightlies.apache.org/flink/flink-docs-release-1.17/docs/dev/datastream/side_output/) 机制，统一启动一个Flink-CDC 的MySQL Source Connector，接收到
+只要利用Flink的[Side Outputs](https://nightlies.apache.org/flink/flink-docs-release-1.17/docs/dev/datastream/side_output/) 机制，统一启动一个Flink-CDC 的MySQL Source Connector，接收到
 MySQL的变更数据之后，根据表名通过**Side Outputs**来作分流，由原来每个表需要分别启动一个MySQL监听客户端，变成多个表监听，只需要启动一个客户端就行，这样就大大减轻了对MySQL的压力。
 
 这个优化已经在TIS中天然集成了，所以在执行MySQL整库同步Doris时不需要担心启动多个MySQL库连接引发的性能问题了。

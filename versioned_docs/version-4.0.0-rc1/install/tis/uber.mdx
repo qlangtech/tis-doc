@@ -8,18 +8,19 @@ sidebar_position: 1
 ---
 ## 环境准备
 
-
+import Contact from '@site/src/components/Contact';
 import CodeBlock from '@theme/CodeBlock';
 
 export const VerShell = () => {
-  return (
-    <div>
-      <CodeBlock
-        language="shell">
-        wget http://mirror.qlangtech.com/{metadata.version}/tis/tis-uber.tar.gz
-      </CodeBlock>
-    </div>
-  );
+// http://mirror.qlangtech.com/{metadata.version}/tis/tis-uber.tar.gz
+return (
+<div>
+<CodeBlock
+language="shell">
+wget "URL of tis-uber.tar.gz"
+</CodeBlock>
+</div>
+);
 }
 
 1. 准备一台2核4G以上配置的Linux机器节点(CentOs、macOS等)
@@ -42,52 +43,61 @@ export const VerShell = () => {
 > [<i class="fa fa-film" aria-hidden="true"></i>&nbsp;安装示例](https://www.bilibili.com/video/BV18q4y1p73B/)
 
 
-  1. 下载
+1. 下载
 
-     <VerShell />
+   <VerShell />
 
-  2. 解压
-     ```bash
-       tar xvf tis-uber.tar.gz -C ./
-     ```
+   <Contact justGongZhongHao="true">
+    获得`URL of tis-uber.tar.gz`的方法：
+   <ol>
+    <li>关注右侧公众号</li>
+    <li>发送<b>"TIS安装包地址"</b></li>
+    <li>公众号会向您推送对应的URL地址</li>
+   </ol>
 
-  3. 启动
-     * TIS启停
+   </Contact>
+2. 解压
+   ```bash
+     tar xvf tis-uber.tar.gz -C ./
+   ```
 
-         进入目录
-         ```shell script
-         cd tis-uber
-         ```
-         执行shell启动
-         ```shell script
-         ./bin/tis start
-         ```
-         重新启动
-         ```shell script
-         ./bin/tis restart
-         ```
-         终止TIS进程
-         ```shell script
-         ./bin/tis stop
-         ```
+3. 启动
+    * TIS启停
 
-         TIS日志查看：
-         ```shell script
-           tail -f -n 300 ./logs/tis.log
-         ```
+      进入目录
+        ```shell script
+        cd tis-uber
+        ```
+      执行shell启动
+        ```shell script
+        ./bin/tis start
+        ```
+      重新启动
+        ```shell script
+        ./bin/tis restart
+        ```
+      终止TIS进程
+        ```shell script
+        ./bin/tis stop
+        ```
 
-     * TIS启动端口修改
+      TIS日志查看：
+        ```shell script
+          tail -f -n 300 ./logs/tis.log
+        ```
 
-         ```shell script
-            vi ./bin/tis
-         ```
-         里面有一个变量，可修改默认**8080**为其他端口，重启TIS（**./bin/tis restart**）即可生效，
-         ```
-         SERVER_PORT=8080
-         ```
+    * TIS启动端口修改
+
+        ```shell script
+           vi ./bin/tis
+        ```
+      里面有一个变量，可修改默认**8080**为其他端口，重启TIS（**./bin/tis restart**）即可生效，
+        ```
+        SERVER_PORT=8080
+        ```
 
 
-  4. 进入TIS管理控制台，[http://127.0.0.1:8080](http://127.0.0.1:8080)
+4. 进入TIS管理控制台，[http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 
 ## QA
@@ -106,10 +116,10 @@ export const VerShell = () => {
      ... 27 more
     ```
 
-    产生这个异常的原因是TIS启动时会获取所在节点IP地址，默认网络接口的IP地址此时为`127.0.0.1`，导致TIS启动异常。修复的办法是：
+   产生这个异常的原因是TIS启动时会获取所在节点IP地址，默认网络接口的IP地址此时为`127.0.0.1`，导致TIS启动异常。修复的办法是：
 
-    首先执行： `ifconfig | grep -B 4 inet` 这个命令查看本地网络接口配置：
-    例如：
+   首先执行： `ifconfig | grep -B 4 inet` 这个命令查看本地网络接口配置：
+   例如：
     ```shell script
     lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 16384
         options=1203<RXCSUM,TXCSUM,TXSTATUS,SW_TIMESTAMP>
@@ -130,14 +140,14 @@ export const VerShell = () => {
         inet6 fe80::1cdd:c047:7849:13df%en0 prefixlen 64 secured scopeid 0xb
         inet 192.168.28.156 netmask 0xffffff00 broadcast 192.168.28.255
     ```
-    发现本地局域网IP 192.168.28.156对应的接口名称为 `en0`，因此需要在 `/bin/tis` 脚本中添加指定网络接口配置参数：`-Dtis.network.interface.preferred=en0`
+   发现本地局域网IP 192.168.28.156对应的接口名称为 `en0`，因此需要在 `/bin/tis` 脚本中添加指定网络接口配置参数：`-Dtis.network.interface.preferred=en0`
 
-    将java 启动的配置参数修改为：
+   将java 启动的配置参数修改为：
 
     ```shell script
     JAVA_OPTS="-Dtis.network.interface.preferred=en0 -Xms2G -Xmx3G -XX:MetaspaceSize=512m -XX:MaxMetaspaceSize=1024m -XX:ParallelGCThreads=4 -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=utf-8 -Dtis.launch.port=$SERVER_PORT -DnotFetchFromCenterRepository=true -Ddata.dir=${TIS_TIP}/data -Dlog.dir=$LOG_FILE -Dweb.root.dir=${TIS_TIP}/  -Xrunjdwp:transport=dt_socket,address=50000,suspend=n,server=y"
     ```
 
-    完成之后再启动TIS，就可以正常启动啦
+   完成之后再启动TIS，就可以正常启动啦
 
 

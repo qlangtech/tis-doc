@@ -12,7 +12,7 @@ export const VerShell = () => {
     <div>
       <CodeBlock
         language="shell">
-        wget http://mirror.qlangtech.com/{metadata.version}/tis/flink-tis-1.13.1-bin.tar.gz && rm -rf flink-tis-1.13.1 && mkdir flink-tis-1.13.1 && tar xvf flink-tis-1.13.1-bin.tar.gz -C ./flink-tis-1.13.1
+        wget http://mirror.qlangtech.com/{metadata.version}/tis/flink-tis-1.18.1-bin.tar.gz && rm -rf flink-tis-1.18.1 && mkdir flink-tis-1.18.1 && tar xvf flink-tis-1.18.1-bin.tar.gz -C ./flink-tis-1.18.1
       </CodeBlock>
     </div>
   );
@@ -47,7 +47,7 @@ export const VerShell = () => {
 2. 启动Flink Cluster
 
       ```shell script
-        cd ./flink-tis-1.13.1
+        cd ./flink-tis-1.18.1
          ./bin/start-cluster.sh
       ```
 

@@ -10,6 +10,7 @@ import Link from '/src/components/Link';
 import Figure from '/src/components/Figure';
 import BZhan from '/src/components/BZhan';
 import CodeBlock from '@theme/CodeBlock';
+import Contact from '@site/src/components/Contact';
 
 export const MetaVer = () => {
 return <span style={{'color':'blue'}}>{metadata.version}</span>
@@ -40,10 +41,11 @@ docker run --name=tis -d -p 8080:8080 \{'\n'}
 </div>
 );
 }else{
+// docker run --name=tis -d -p 8080:8080 registry.cn-hangzhou.aliyuncs.com/tis/tis-console:{metadata.version}
 return (
 <div>
 <CodeBlock language="shell">
-docker run --name=tis -d -p 8080:8080 registry.cn-hangzhou.aliyuncs.com/tis/tis-console:{metadata.version}
+docker run command
 </CodeBlock>
 </div>
 );
@@ -53,6 +55,15 @@ docker run --name=tis -d -p 8080:8080 registry.cn-hangzhou.aliyuncs.com/tis/tis-
 ## 启动
 通过一行`docker run`命令，能以最简单的方式启动TIS。
 <DockerShell />
+
+<Contact justGongZhongHao="true">
+      获得`docker run command`的方法：
+     <ol>
+      <li>关注右侧公众号</li>
+      <li>发送<b>"docker运行"</b></li>
+      <li>公众号会向您推送对应的可执行Docker运行命令</li>
+     </ol>
+</Contact>
 
 启动完成，在浏览器中输入[http://localhost:8080/](http://localhost:8080/)，便可进入TIS定义数据通道，触发批量同步任务，快速完成整库批量数据同步任务。
 

@@ -8,15 +8,16 @@ sidebar_position: 1
 ---
 ## 环境准备
 
-
+import Contact from '@site/src/components/Contact';
 import CodeBlock from '@theme/CodeBlock';
 
 export const VerShell = () => {
+// http://mirror.qlangtech.com/{metadata.version}/tis/tis-uber.tar.gz
   return (
     <div>
       <CodeBlock
         language="shell">
-        wget http://mirror.qlangtech.com/{metadata.version}/tis/tis-uber.tar.gz
+        wget "URL of tis-uber.tar.gz"
       </CodeBlock>
     </div>
   );
@@ -46,6 +47,15 @@ export const VerShell = () => {
 
      <VerShell />
 
+     <Contact justGongZhongHao="true">
+      获得`URL of tis-uber.tar.gz`的方法：
+     <ol>
+      <li>关注右侧公众号</li>
+      <li>发送<b>"TIS安装包地址"</b></li>
+      <li>公众号会向您推送对应的URL地址</li>
+     </ol>
+     
+     </Contact>
   2. 解压
      ```bash
        tar xvf tis-uber.tar.gz -C ./

@@ -1,0 +1,192 @@
+---
+title: 基于Kubernetes部署
+linktitle: kubernetes
+date: 2021-03-30
+type: book
+weight: 9
+sidebar_position: 4
+---
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+
+## 部署
+请按照以下步骤，完成基于Kubernetes的PowerJob组件部署
+<table>
+ <tr>
+  <td>
+ <ol>
+ <li>点击进入<i>批量构建</i>子页面</li>
+ <li>点击<i>K8S DataX执行器</i>，进入PowerJob组件创建流程页面</li>
+ </ol>
+  </td>
+  <td><Figure img={require('./img/create-powerjob-cluster-0.png')}/></td>
+ </tr>
+<tr>
+ <td>
+  <ol>
+ <li>点击<i>创建PowerJob执行器</i>按钮，初次安装，系统会告知没有安装相关插件，按照引导完成插件安装</li>
+ <li>继续点击<i>创建PowerJob执行器</i>按钮，</li>
+ </ol>
+</td>
+ <td><Figure img={require('./img/create-powerjob-cluster-1.png')}/></td>
+</tr>
+
+</table>
+
+创建PowerJob组件的流程页面一共分为四个步骤：
+1. PowerJob Server相关配置定义 
+2. PowerJob Worker相关配置定义 
+3. PowerJob 任务模版定义 
+4. 配置确认
+
+<table>
+<tr>
+ <td>
+PowerJob Server相关配置定义, 需要配置的信息分为两部分：<br/>
+<b>第一部分，基本配置，主要有以下几项：</b>
+<ol>
+ <li><b>k8sImage</b>：定义PowerJob在Kubernetes集群中相应组件所使用的Docker Image及TIS连接Kubernetes集群的凭证，供Kubernetes Client API使用。</li>
+ <li><b>服务暴露</b>: Powerjob 启动之后将默认7700端口对外部暴露，可选择K8S相应暴露服务端口方式，如：NodePort，Ingress，LoadBalance</li> 
+<li><b>coreDS</b>:保存Powerjob server元数据的关系型数据库连接配置，目前支持两种方式：
+<ul>
+<li><b>Embedded</b>: 由K8S集群启动MySQL类型的Powerjob Server元数据服务，由于容器MySQL持久化存储卷存在丢失风险，请谨慎使用该种方式。<font color="red">该种方式服务重启之后，原操作记录会全部清空，可作为测试之用，生产环境下谨慎使用</font></li>
+<li><b>Customized</b>: 由用户事先部署的MySQL的数据库服务，提供Powerjob Server元数据服务，因该种数据库服务可提供高可用容灾解决方案（推荐使用）</li>
+</ul>
+</li>
+
+</ol>
+<b>第二部分，占用Kubernetes资源（内存/CPU）：</b>
+<p>
+配置PowerJob Server启动需要Kubernetes的资源，多少个Pod？需要多少CPU？、多少内存等
+</p>
+</td>
+<td> <Figure img={require('./img/create-powerjob-cluster-server-define.png')}/>
+点击<i>k8sImage</i> 右侧下拉列表中的<i>添加</i>，打开PowerJob Docker Images配置页面
+<Figure img={require('./img/create-powerjob-cluster-docker-image.png')}/>
+
+点击<i>k8sCfg</i>右侧下拉列表中的<i>添加</i>，打开<b>添加k8s引用</b>配置页面
+<Figure img={require('./img/create-k8s-reference.png')}/>
+
+<Figure img={require('./img/create-k8s-reference-2.png')}/>
+以上对话框表单中Yaml配置内容，需要从之前申请阿里云ACK的<b>连接信息</b>中拷贝而来
+<Figure img={require('./img/create-k8s-reference-source.png')}/>
+
+</td>
+</tr>
+ <tr>
+  <td>
+PowerJob Server相关配置定义, 需要配置的信息分为两部分：<br/>
+<b>第一部分，基本配置，主要有以下几项：</b>
+<ol>
+ <li><b>WorkerPort</b>:Worker工作端口，PowerJob Server可通过该端口与Worker交互</li>
+<li> <b>其他</b>：略 </li>
+</ol>
+<br/><b>第二部分，占用Kubernetes资源（内存/CPU）：</b>
+<p>
+配置PowerJob Worker启动需要Kubernetes的资源，多少个Pod？（设置多个Pod会提高TIS 数据同步的并行性，增加数据同步的吞吐）需要多少CPU？、多少内存等
+</p>
+
+</td>
+  <td><Figure img={require('./img/create-powerjob-cluster-worker-define.png')}/></td>
+ </tr>
+
+<tr>
+ <td>
+PowerJob 任务模版相关：
+<ol>
+ <li><b>Instance重试数</b>:当执行任务失败，可尝试重试次数，0为立即终止</li>
+<li><b>最大实例数</b>:同一时间可同时执行的实例数目，TIS中批量数据同步任务需要避免多个连接同时从数据库中拉取同一张表，所以这里应该设置1</li>
+<li> <b>其他</b>：略 </li>
+</ol>
+</td><td><Figure img={require('./img/create-powerjob-cluster-job-template.png')}/></td>
+</tr>
+
+<tr>
+ <td>
+
+<ol>
+ <li>来到最后一步，对前三步骤中设置内容进行确认</li>
+<li>点击<b>启动</b>按钮，TIS开始调用 Kubernetes REST API 在Kubernetes容器中将PowerJob的Server和Worker拉起</li>
+</ol>
+</td><td>
+<Figure img={require('./img/create-powerjob-cluster-afore-steps-confirm.png')}/>
+
+</td>
+</tr>
+
+<tr>
+ <td>
+ 由于TIS在Kubernetes中需要将Kubernetes容器中将PowerJob的Server和Worker拉起，设计到多个资源如RelicaSet和Service的创建，且各资源之间
+是有依赖关系。<br/><br/>
+在TIS中对各资源的启动进行编排，整个拉起过程需要耗费一点时间，可以通过控制台清晰看到启动步骤和容器内部执行日志。
+</td><td>
+<Figure img={require('./img/create-powerjob-cluster-waitting-k8s-resource.png')}/>
+
+</td>
+</tr>
+
+<tr>
+ <td>成功拉起PowerJob后，点击关闭启动进度对话框，便自动跳转到PowerJob维护页面<br/><br/>
+通过该功能页面，用户可以查看及控制PowerJob生命周期相关操作。例如：如右图，用户可以在PowerJob运行期，动态添加或者减少
+Worker数量，达到调节批量数据同步吞吐率的效果。
+<br/><br/>
+另外，通过点击<b>日志</b>Tab查看PowerJob中Server及Worker相关Pod的实时日志，等。
+
+</td><td>
+<Figure img={require('./img/manage-powerjob-cluster-update-worker-num.png')}/>
+
+</td>
+</tr>
+</table>
+
+## 触发批量数据同步
+
+成功拉起PowerJob服务之后，再次回到批量数据同步页面
+<Figure img={require('./img/after-create-powerjob-return-2-batch-synchronize.png')}/>
+
+发现上方的一行警告提醒已经消失，变成一个 **分布式执行** 的Tag图标，和一个 **编辑** 按钮，此时点击右侧的**触发构建**按钮可以触发批量数据同步，
+此时任务是由PowerJob接管。
+
+接下来，可进入PowerJob查看对应执行任务实例：
+<table>
+<tr>
+<td>
+ 稍等片刻，批量数据同步任务执行完成，可点击右上方<b>分布式执行</b>按钮
+</td>
+<td>
+<Figure img={require('./img/after-create-powerjob-trigger-batch-build-success.png')}/>
+</td>
+</tr>
+<tr>
+<td>
+ 在控制面板中点击<b>控制台</b>链接进入PowerJob系统
+</td>
+<td>
+<Figure img={require('./img/after-create-powerjob-goto-powerjob-confirm.png')}/>
+</td>
+</tr>
+
+<tr>
+<td>
+ 登录PowerJob系统，点击<b>工作流实例</b>发现增加了一条新的实例记录。<br/><br/>说明TIS触发的批量数据同步任务确实是由PowerJob接管执行的。
+</td>
+<td>
+<Figure img={require('./img/after-create-powerjob-confirm-added-new-instance.png')}/>
+</td>
+</tr>
+
+</table>
+
+## 设置定时任务
+
+执行批量执行任务，往往需要设置定时自动触发，通过PowerJob定时任务可实现此功能。
+
+<Figure img={require('./img/after-create-powerjob-set-crontab.png')}/>
+
+点击页面左上方**编辑**按钮，在**表达式**输入项中输入crontab表达式，点击保存按钮，定时任务就已经生效了，等到crontab设定的时间就会自动触发执行。
+
+## 视频教程
+
+<BZhan bvid="BV16M4m1r7yj" />
+

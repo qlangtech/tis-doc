@@ -6,6 +6,7 @@ weight : 10
 ---
 import Figure from '/src/components/Figure';
 import Link from '/src/components/Link';
+import Processon from '/src/components/Processon';
 
 ## 背景
 
@@ -21,7 +22,7 @@ TIS中设置Transformer规则，只需设置一次，在两套执行引擎上同
 `V4.0.1`版本中首次引入Transformer，是构建在[DataX Transformer](https://github.com/alibaba/DataX/blob/master/transformer/doc/transformer.md)之上，由于DataX Transformer语义表达受限，不能在
 UI层完全表达语义逻辑，在TIS开发中又借鉴了[Kettle](https://github.com/pentaho/pentaho-kettle)的Transformer的设计思路。
 
-### Transformer 抽象设计
+### Transformer 设计实现
 
 其实所谓的Transformer本质来说就是一个数学函数，三部分构成，由入参，经过算子计算之后生成出参。
 <Figure img={require('./images/operator.jpg')} />
@@ -44,6 +45,19 @@ UI层完全表达语义逻辑，在TIS开发中又借鉴了[Kettle](https://gith
 |虚拟列|新创建一个列添加到目标表的最为新的列使用|
 
 在具体TIS Transformer实现中，不同的Transformer算子，对于入参和出参的数量不尽相同
+
+#### 具体实现
+
+TIS为Transformer算子实现提供了灵活，易扩展的插件实现机制，目前已经提供了5个Transformer算子，未来按照用户实际需求可以按需扩展。
+
+以下是TIS实现Transformer 相应的类图，有兴趣的同学可以查阅：
+
+<Processon id="66580c3ee57102599640d679" height="600px" />
+
+以上类图中的类主要分为三部分：
+1. **TIS Transformer相关类**：主要实现了在TIS的控制台展示层显示，前端和后端映射服务，以及各种Trnasformer逻辑抽象的相关类。
+2. **DataX Transformer相关类**：依赖第1部分的抽象类在DataX 批处理模块中的实现。
+3. **Flink 相关类**：依赖第1部分的抽象类在Flink实时计算中的实现。
 
 ### Transformer 已有算子介绍
 
@@ -73,9 +87,15 @@ Transformer设置页面：
 
 
 ### 利用TIS Transformer处理主键冲突
+添加 Contact（字符串连接） Transformer 来解决主键冲突的问题，如下图配置：
+<Figure img={require('./images/add_contact_resolve_id_conflict.png')} />
 
+在 `Contact Transformer`的入参部分，额外添加了一个 $dbName的系统绑定参数。出参部分，使用了目标列来替换原有主键列。
 
 ## 总结
+
+本文详细介绍了TIS中Transformer的实现机制，以及用一个实例来说明Transformer是如何使用的，期待TIS的用户来探索更多的使用场景。
+
 
 
 

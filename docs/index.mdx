@@ -12,7 +12,7 @@ date: 2021-03-30
 import Figure from '/src/components/Figure';
 import SourceSinkTable from './plugin/source-sink-table'
 import Contact from '@site/src/components/Contact';
-
+import Link from '/src/components/Link';
 
 
 
@@ -20,14 +20,16 @@ import Contact from '@site/src/components/Contact';
 
 TIS为您提供企业级数据集成服务，**基于批(DataX)，流(Flink-CDC、Chunjun)一体，提供简单易用的操作界面，降低用户实施端到端数据同步的实施门槛，缩短任务配置时间，避免配置过程中出错，使数据同步变得简单、有趣且容易上手** [详细介绍](https://tis.pub/docs/)
 
-如果您已经觉得利用DataX、Flink-CDC、SeaTunnel编写脚本来驱动执行端到端数据同步程序，是非常烦冗且容易出错的事儿。并因此感到些许厌倦，您可以尝试一下TIS，相信会给您带来不小的惊喜。
+如果您正在利用DataX、Flink-CDC、SeaTunnel编写脚本来驱动执行端到端数据同步程序，是非常烦冗且容易出错的事儿。
+
+并因此感到些许厌倦，您可以尝试一下TIS，一定会给您带来不小的惊喜。
 
 ![tis](/img/execute_model_batch_incr.jpg)
 
 ## 视频示例
 
 
-* [<i class="fa fa-film" aria-hidden="true"></i>&nbsp;启用分布式执行功能](https://www.bilibili.com/video/BV1Cq4y1D7z4?share_source=copy_web)
+* [启用分布式执行功能](https://www.bilibili.com/video/BV1Cq4y1D7z4?share_source=copy_web)
 * [<i class="fa fa-film" aria-hidden="true"></i>&nbsp;MySQL导入ElasticSearch](https://www.bilibili.com/video/BV1G64y1B7wm?share_source=copy_web)
 * [<i class="fa fa-film" aria-hidden="true"></i>&nbsp;MySQL导入Hive](https://www.bilibili.com/video/BV1Vb4y1z7DN?share_source=copy_web)
 * [<i class="fa fa-film" aria-hidden="true"></i>&nbsp;MySQL导入Clickhouse](https://www.bilibili.com/video/BV1x64y1B7V8/)
@@ -57,11 +59,11 @@ TIS为您提供企业级数据集成服务，**基于批(DataX)，流(Flink-CDC�
 
 * **支持各种Transformer算子功能**
 
-  通过在TIS流程中设置Transformer功能逻辑，可实现在ETL数仓功能中，在E（数据抽取）阶段即可高效实现各种字段值转换功能，如：字段脱敏，字段拼接，取子字符串等功能。
+  通过在TIS流程中设置Transformer功能逻辑，可实现在ETL数仓功能中，在E（数据抽取）阶段即可高效实现各种字段值转换功能，如：字段脱敏，字段拼接，取子字符串等功能。<Link href={require("@site/docs/guide/transformer/index.mdx")} >详细说明</Link>
 
 * **易与大数据生态整合**
 
-  支持与DolphinScheduler整合，用户只需在TIS中配置数据管道，验证无误后，一键推送同步表任务到DolphinScheduler平台，即可在其上完成数据同步任务调度。为以DolphinScheduler构建ETL数仓方案如虎添翼。
+  支持与DolphinScheduler整合，用户只需在TIS中配置数据管道，验证无误后，一键推送同步表任务到DolphinScheduler平台，即可在其上完成数据同步任务调度。为以DolphinScheduler构建ETL数仓方案如虎添翼。<Link href={require("@site/docs/guide/integer-dolphinscheduler/index.mdx")} >详细说明</Link>
 
 * **基于 DataOps 理念**
 

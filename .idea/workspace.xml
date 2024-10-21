@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/install/tis/docker-compose.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/tis/docker-compose.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/install/tis/multi-nodes.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/tis/multi-nodes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.0.0/install/tis/multi-nodes.md" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.0.0/install/tis/multi-nodes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,21 +25,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/opt/misc/tis-docs2/docs/guide/transformer",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/opt/misc/tis-docs2/docs/guide/transformer&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs/guide/transformer" />
@@ -150,7 +147,8 @@
       <workItem from="1716640915820" duration="964000" />
       <workItem from="1727256207605" duration="611000" />
       <workItem from="1727258566807" duration="1278000" />
-      <workItem from="1729317739150" duration="41764000" />
+      <workItem from="1729317739150" duration="43107000" />
+      <workItem from="1729481152455" duration="170000" />
     </task>
     <servers />
   </component>

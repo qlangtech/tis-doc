@@ -8,6 +8,9 @@ sidebar_position: 5
 
 import Link from '/src/components/Link';
 
+:::caution 注意
+该部署模式是内部部署E2E测试环境使用，社区用户不建议使用
+:::
 
 ## 介绍
 
@@ -204,7 +207,7 @@ ansible-playbook ./deploy-tis-by-release.yml --tags=initos,tjs,assemble -i ./inv
  
 #### 基于源码安装 
   
-另外一种是通过Github源代码 [https://github.com/qlangtech/tis-solr](https://github.com/qlangtech/tis-solr)到本地执行编译打包之后自动部署到目标服务器上。
+另外一种是通过Github源代码 [https://github.com/qlangtech/tis](https://github.com/qlangtech/tis)到本地执行编译打包之后自动部署到目标服务器上。
      
 对应脚本为: [./tis-ansible/deploy-tis-by-compile.yml](https://github.com/qlangtech/tis-ansible/blob/master/deploy-tis-by-compile.yml)
      

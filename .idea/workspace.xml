@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/guide/transformer/images/add_contact_resolve_id_conflict.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/transformer/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guide/transformer/index.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/install/tis/docker-compose.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/tis/docker-compose.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/install/tis/multi-nodes.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/tis/multi-nodes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.0.0/install/tis/multi-nodes.md" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.0.0/install/tis/multi-nodes.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +150,7 @@
       <workItem from="1716640915820" duration="964000" />
       <workItem from="1727256207605" duration="611000" />
       <workItem from="1727258566807" duration="1278000" />
-      <workItem from="1729317739150" duration="40696000" />
+      <workItem from="1729317739150" duration="41764000" />
     </task>
     <servers />
   </component>

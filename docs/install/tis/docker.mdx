@@ -72,6 +72,10 @@ docker run command
 
 <DockerShell v="true" />
 
+:::caution
+需要保证安装的`docker --version` 版本在 `Docker version 24.0.0` 以上，不然本地卷映射使用相对路径会有执行出错
+:::
+
 ## 自定义元数据库
 
 TIS默认使用[Apache Derby](https://db.apache.org/derby/)内嵌数据库作为TIS内部元数据持久化存储组件，用户如希望高可用不丢失数据可以切换到MySQL上，MySQL数据库依赖的版本为`5.7`

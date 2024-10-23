@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/install/tis/uber.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/tis/uber.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/install/tis/docker.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/tis/docker.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.0.1/guide/integer-dolphinscheduler/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.0.1/guide/integer-dolphinscheduler/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.0.1/install/tis/uber.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.0.1/install/tis/uber.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +151,8 @@
       <workItem from="1727256207605" duration="611000" />
       <workItem from="1727258566807" duration="1278000" />
       <workItem from="1729317739150" duration="43107000" />
-      <workItem from="1729481152455" duration="790000" />
+      <workItem from="1729481152455" duration="2834000" />
+      <workItem from="1729653046959" duration="396000" />
     </task>
     <servers />
   </component>

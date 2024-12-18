@@ -48,6 +48,11 @@ const config = {
                     editUrl:
                         'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
                 },
+                pages: {
+
+                    // Please change this to your repo.
+                    // Remove this to remove the "edit this page" links.
+                },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
@@ -76,6 +81,7 @@ const config = {
                         label: '文档',
                     },
                      {to: '/blog', label: '博客', position: 'left'},
+                    {to: '/commerical', label: '商业化', position: 'left'},
                     {
                         href: 'https://github.com/datavane/tis',
                         label: 'GitHub',

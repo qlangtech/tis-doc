@@ -5,7 +5,30 @@ import Link from '@docusaurus/Link';
 import CodeBlock from '@theme/CodeBlock';
 import Figure from '/src/components/Figure';
 
-export default function Contact({children, justGongZhongHao}) {
+export default function Contact({children, justXiaoMi ,justGongZhongHao}) {
+
+    if(justXiaoMi){
+        return (
+            <table style={{width: '100%', display: 'table'}}>
+                <tr>
+                    <td>
+                        {children}
+                    </td>
+                    <td>
+
+                        <div className="row">
+                            <div className={clsx('col col-12 text--center')}>
+                                <h3>微信TIS小秘书</h3>
+                                <div style={{color: '#666666'}}>添加后会邀请您进入微信群参与讨论</div>
+                                <div>
+                                    <img src={require('/img/weixin.jpeg').default} width="250"/></div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        );
+    }
 
     if (justGongZhongHao) {
         return (

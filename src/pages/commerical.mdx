@@ -2,7 +2,78 @@
 title: Markdown page example
 type: book
 ---
+import Contact from '@site/src/components/Contact';
+import Figure from '/src/components/Figure';
+import Link from '/src/components/Link';
 
-# Markdown page example
-\u{1F680} :rocket: :smile: :thumbsup: :closed_lock_with_key:
-You don't need React to write simple standalone pages.You don't need React to write simple standalone pages.You don't need React to write simple standalone pages.You don't need React to write simple standalone pages.You don't need React to write simple standalone pages.You don't need React to write simple standalone pages.
+# TIS社区协作
+
+## 前言
+为了推动TIS开源社区的蓬勃发展，并致力于为用户提供强大、易用且稳定的数集成解决方案，我们秉持着“各尽其能，共促发展”的理念，力求构建一个可持续发展的生态体系。
+
+TIS的开发迭代依赖于社区，通过引入众包的方式整体加快产品迭代周期，并且保证产品质量，详细请查看[TIS生态共建白皮书](docs/next/co-construction/)
+
+为此，TIS精心设计了三个版本以满足不同用户群体的需求，鼓励大家根据自身条件积极参与到社区建设中来——无论是通过资金支持还是技术贡献，共同促进TIS的成长与进步。
+
+
+## 版本类别
+
+1. :smile:**社区共享版（Community Edition）**：
+    - 这个版本中包括的所有功能是免费提供的，包含了基本的功能，适合个人开发者或小型团队使用。
+    - 用户可以访问源代码，并能够为项目贡献代码或报告问题。
+    - 社区支持：通过论坛、邮件列表、社交媒体等渠道获得帮助。
+   - [/docs/plugin/tpis](docs/plugin/tpis) 及 [/docs/plugin/plugins](docs/plugin/plugins) 文档列表中**不带有**:closed_lock_with_key:图标的插件属于该版本的功能，用户直接下载、安装TIS便可畅用（毋需获得License）。
+
+2. :closed_lock_with_key: **社区协作版（Community Collaboration Edition）**：
+    - 该版本可能提供更高级的功能，更适合企业级应用。
+    - 会提供商业许可证，允许在`社区协作版`中使用。
+    - 使用该版本中插件功能过程中有任何功能缺陷，反馈给社区，社区会在第一时间尽快修复。
+    - 该版本收取的费用大部分会支付社区功能点开发的众包费用
+    - [/docs/plugin/tpis](docs/plugin/tpis) 及 [/docs/plugin/plugins](docs/plugin/plugins) 文档列表中**带有**:closed_lock_with_key:图标的插件属于该版本的高级插件，需要取得License方可使用
+
+3. **企业版（Enterprise Edition）**：
+    - 针对大型企业和组织设计，提供全面的功能集和支持服务。
+    - 包括专业的客户服务和技术支持，如24/7全天候支持、SLA（服务水平协议）保障。
+    - 定制化服务和集成帮助。
+
+## 费用
+
+1. :smile:**社区共享版（Community Edition）**：
+
+    完全免费
+
+2. :closed_lock_with_key: **社区协作版（Community Collaboration Edition）**：
+
+   |期限|费用|
+   |-|-|
+   |单月|**45**元人民币|
+   |1年 |**370**元人民币|
+   |2年 |**650**元人民币|
+   |3年及以上 |**320** 元人民币 * 年数|
+
+3. **企业版（Enterprise Edition）**：
+   
+   **20.2**万元人民币/年（起）
+
+## `社区协作版`License 获取及使用
+
+1. License获取方法：
+   - 添加文末 <Link href={require("./commerical.mdx")} anchor='联系我们' >微信小秘书</Link>
+   - 告知小秘书如下信息：
+      * License需要使用的期限
+      * 联系人手机、邮箱
+   - 支付费用
+   - 通过邮件接收TIS颁发的License
+2. License使用方法：
+   
+   | 说明                            |示例|
+-------------------------------|---|---|
+   | 打开License对话框                  | <Figure img={require('./commerical/license1.png')}/> |
+   | 将TIS发送来的邮箱中的License激活码填入，并且保存 | <Figure img={require('./commerical/license2.png')}/>  |
+   | 接下来就能安装插件池中带有`社区协作`标签的插件了  | <Figure img={require('./commerical/license3.png')}/> |
+
+## 联系我们
+<Contact justXiaoMi="true">
+对以上说明有任何疑问、<br/>
+或者需要购买社区协作版License可添加小秘书
+</Contact>

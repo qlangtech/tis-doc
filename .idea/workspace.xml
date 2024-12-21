@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/commerical/index.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/commerical.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/commerical/license1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/commerical/license2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/commerical/license3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/co-construction/take-part-in/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/co-construction/take-part-in/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/transformer/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guide/transformer/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/plugin/plugins.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/plugin/plugins.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/plugin/tpis.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/plugin/tpis.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.0.1/plugin/plugins.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.0.1/plugin/plugins.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.0.1/plugin/tpis.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.0.1/plugin/tpis.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Contact/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Contact/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/commerical.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/commerical.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +56,11 @@
       <recent name="$PROJECT_DIR$/docs/co-construction/crowdsourcing-lifecycle" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/commerical" />
       <recent name="$PROJECT_DIR$/docs/guide/transformer/images" />
       <recent name="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/blog/2024-05-10-dip-in-tis" />
-      <recent name="$PROJECT_DIR$/blog/2024-04-22-nest-plugin-reuse" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -162,7 +163,10 @@
       <workItem from="1731249592825" duration="788000" />
       <workItem from="1731634849037" duration="941000" />
       <workItem from="1732777240881" duration="4198000" />
-      <workItem from="1734502058508" duration="3286000" />
+      <workItem from="1734502058508" duration="3964000" />
+      <workItem from="1734663072319" duration="9070000" />
+      <workItem from="1734751398400" duration="657000" />
+      <workItem from="1734752208093" duration="662000" />
     </task>
     <servers />
   </component>

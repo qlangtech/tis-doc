@@ -81,7 +81,7 @@ const config = {
                         label: '文档',
                     },
                      {to: '/blog', label: '博客', position: 'left'},
-                    {to: '/commerical', label: '社区协作', position: 'left'},
+                    {to: '/community-collaboration', label: '社区协作', position: 'left'},
                     {
                         href: 'https://github.com/datavane/tis',
                         label: 'GitHub',

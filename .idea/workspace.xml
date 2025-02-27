@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/commerical.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/community-collaboration.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/commerical/license1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cc/license1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/commerical/license2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cc/license2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/commerical/license3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cc/license3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +165,8 @@
       <workItem from="1736566474702" duration="926000" />
       <workItem from="1739153633223" duration="939000" />
       <workItem from="1740542057704" duration="1072000" />
+      <workItem from="1740550431274" duration="391000" />
+      <workItem from="1740646666730" duration="625000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,400 @@
+---
+title: 插件开发说明
+date: 2023-04-12
+type: book
+weight : 11
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import CodeBlock from '@theme/CodeBlock';
+
+为了直观地说明如何编写一个TIS扩展点实现，我们以一个最经典的例子来讲解，那就是MySQL DataSource
+
+<Figure img={require('./img/plugin-mysql-datasource.png')} />
+
+从以下[MySQLV5DataSourceFactory](https://tis.pub/docs/plugin/plugins#comqlangtechtisplugindsmysqlmysqlv5datasourcefactory)类图的继承链来看，
+它扩展于`com.qlangtech.tis.plugin.ds.DataSourceFactory`,为了最大限度地为基于JDBC的数据源提供代码复用，`MySQLV5DataSourceFactory`与扩展点`DataSourceFactory`继承链中间，加入了两个中间类，
+`MySQLDataSourceFactory` 与 `BasicDataSourceFactory`。
+
+<Figure img={require('./img/mysqlv5datasourcefactory-inherit-diagram.png')} />
+
+假若，现在TIS中还没有MySQL（5.7版本）的JDBC DataSource的插件，需要新添加一个新的扩展实现。我们可以按以下步骤来创建脚手架工程：
+
+首先需要在 `$MAVEN_HOME/conf/setting.xml` 文件中添加 TIS的私有仓库Profile，配置如下所示：
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+ <profiles>
+  <profile>
+            <id>tis</id>
+            <repositories>
+               <repository>
+                    <id>tis-releases</id>
+                    <url>http://mvn-repo.oss-cn-hangzhou.aliyuncs.com/release/</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+               <pluginRepository>
+                    <id>tis-releases</id>
+                    <url>http://mvn-repo.oss-cn-hangzhou.aliyuncs.com/release/</url>
+                </pluginRepository>
+            </pluginRepositories>
+  </profile>
+ </profiles>
+</settings>
+```
+
+
+export const CreateArchShell = () => {
+return (
+ <div>
+  <CodeBlock language="shell">
+  mvn com.qlangtech.tis:tis-archetype-generate-plugin:{metadata.version}:generate \{'\n'}
+   -Drat.skip=true  \{'\n'}
+   -Dtis.version={metadata.version} \{'\n'}
+   -Dtis.extendpoint="com.qlangtech.tis.plugin.ds.mysql.MySQLDataSourceFactory:MySQLV5DataSourceFactory" \{'\n'}
+   -Dtis.artifactId=tis-mysql-ds-v5-plugin \{'\n'}
+   -Ptis
+  </CodeBlock>
+ </div>
+);
+}
+
+然后执行以下命令创建插件骨架工程：
+
+<CreateArchShell />
+
+**为了更明晰说明，我们不复用已有的代码** 修改以上`tis.extendpoint`为以下
+
+```shell
+-Dtis.extendpoint="com.qlangtech.tis.plugin.ds.DataSourceFactory:MySQLV5DataSourceFactory"
+```
+
+生成的脚手架工程文件列表：
+```shell
+|____pom.xml
+|____src
+| |____test
+| | |____java
+| | | |____TestAll.java
+| | | |____com
+| | | | |____qlangtech
+| | | | | |____tis
+| | | | | | |____plugin
+| | | | | | | |____ds
+| | | | | | | | |____mysql
+| | | | | | | | | |____extend
+| | | | | | | | | | |____TestMySQLV5DataSourceFactory.java
+| |____main
+| | |____resources
+| | | |____com
+| | | | |____qlangtech
+| | | | | |____tis
+| | | | | | |____plugin
+| | | | | | | |____ds
+| | | | | | | | |____mysql
+| | | | | | | | | |____extend
+| | | | | | | | | | |____MySQLV5DataSourceFactory.json
+| | | | | | | | | | |____MySQLV5DataSourceFactory.md
+| | |____java
+| | | |____com
+| | | | |____qlangtech
+| | | | | |____tis
+| | | | | | |____plugin
+| | | | | | | |____ds
+| | | | | | | | |____mysql
+| | | | | | | | | |____extend
+| | | | | | | | | | |____MySQLV5DataSourceFactory.java
+```
+示例代码已经上传至：https://github.com/qlangtech/tis-mysql-ds-v5-plugin
+
+## 扩展实现功能说明
+
+基于TIS扩展点`com.qlangtech.tis.plugin.ds.DataSourceFactory`的扩展实现，主要作用就是获得JDBC DataSource中的元数据信息（数据表列集合）
+，为批量增量数据抽取或者写入可以创建`java.sql.Connection`对象实例。
+
+## 编写扩展实现类
+
+扩展实现类的编写主要是围绕`MySQLV5DataSourceFactory.java`展开,
+
+### 骨架代码`MySQLV5DataSourceFactory`结构说明
+
+使用脚手架工具生成插件工程，之后将插件工程Import到Idea中，打开`MySQLV5DataSourceFactory.java` 将会发现除类的主体部分，内部有一个经过
+`@TISExtension`装饰的 `DefaultDescriptor`的内隐类，该类的作用是对`扩展实现`提供运行时属性描述生成，和页面表单提交执行功能校验等功能。
+```java
+@Public
+public class MySQLV5DataSourceFactory extends DataSourceFactory {    
+    @TISExtension
+    public static class DefaultDescriptor extends  BaseDataSourceFactoryDescriptor {
+       
+    }
+}
+```
+接下来，我们需要在骨架代码上添加功能，使之能够真正在生产环境中发挥作用。
+
+### 添加属性
+
+按照`MySQLV5DataSourceFactory.java`的功能描述，通过它可以创建`java.sql.Connection`实例对象，那`MySQLV5DataSourceFactory.java`内部就需要具备创建`Connection`
+实例的属性成员，我们先枚举以下这些属性： 1.用户名 2.密码 3.数据库名 4.端口  5.服务IP地址。
+
+除此之外，由于可以在TIS中定义多个MySQL的数据源，需要能够有一个属性来为每个数据源标记， 所以，还需要一个作为Identity的属性
+
+我们将这些属性进行列表说明：
+
+|字段名称|作用说明| 类型 | 校验规则 |
+|-|-|-|-|
+|userName|用户名| 字符串| 不能为空 |
+|password|密码| 加密字符串| 不能为空字符串|
+|dbName|数据库名| 字符串|大小写字母加数字'-'号|
+|port| 端口 | 整型数字 | 不能为空 |
+|serverNode|服务IP地址| 字符串 | 不能为空，符合IP或者Host规范|
+|name | 插件Identity标示属性| 字符串 |大小写字母加数字'-'号|
+
+基于以上这些属性描述，便可在`MySQLV5DataSourceFactory.java`类内部添加如下Java成员属性：
+```java 
+@Public
+public class MySQLV5DataSourceFactory extends DataSourceFactory {
+
+    @FormField(ordinal = 1, type = FormFieldType.INPUTTEXT
+            , validate = {Validator.require, Validator.hostWithoutPort})
+    public String serverNode;
+
+    @FormField(ordinal = 2, type = FormFieldType.INPUTTEXT
+            , validate = {Validator.require, Validator.identity})
+    public String dbName;
+
+    @FormField(ordinal = 3, type = FormFieldType.INPUTTEXT
+            , validate = {Validator.require, Validator.user_name})
+    public String userName;
+    
+    @FormField(ordinal = 4, type = FormFieldType.PASSWORD
+            , validate = {Validator.require, Validator.none_blank})
+    public String password;
+
+    @FormField(ordinal = 3, type = FormFieldType.INPUTTEXT
+            , validate = {Validator.require, Validator.integer})
+    public Integer port;
+}
+```
+发现每个属性都伴有一个`@FormField`装饰器修饰，作用是为后续TIS UI-DSL自动在HTML页面自动渲染用，<Link href={require("@site/docs/develop/plugin-utils-reference.mdx")}  anchor="formfield">@FormField详细参数设置请查看</Link>
+
+### 表单校验
+#### 自定义属性校验
+
+通过添加`@FormField`Annotation 上设置`validate`属性可以设置字段的字面校验，例如：必须输入（Validator.require），唯一实体键（Validator.identity），整型字段（Validator.integer）等，这些是基本校验规则。
+
+如开发者还需要添加额外校验可在Descriptor中添加额外校验规则，例如，`password` 需要同时有大写、小写、和数字，代码如下：
+
+```java
+    @TISExtension
+    public static class DefaultDescriptor extends BaseDataSourceFactoryDescriptor {
+
+        public boolean validatePassword(IFieldErrorHandler msgHandler, Context context, String fieldName, String value) {
+
+            Pattern p1 = Pattern.compile("[A-Z]+");
+            Pattern p2 = Pattern.compile("[a-z]+");
+            Pattern p3 = Pattern.compile("[0-9]+");
+            if (!(p1.matcher(value).find() 
+                  && p2.matcher(value).find() 
+                  && p3.matcher(value).find())) {
+                msgHandler.addFieldError(context,fieldName,"需要同时有大写、小写、和数字");
+                return false;
+            }
+            return true;
+        }
+    }
+```
+如上，在`DefaultDescriptor`中添加校验方法，方法名需要符合规范："validate"+ capitalize(属性名称)，方法需要为`public`，返回为`boolean`类型，拥有四个参数分别为：IFieldErrorHandler,  context,  fieldName,  value
+
+#### 实现插件表单`verify/validate`功能
+
+除单字段值校验，还需要对表单整体内容进行业务逻辑校验，例如，验证表单能否正常创建 `java.sql.Connection`实例对象，`DefaultDescriptor`父类中的两个方法：
+
+```java
+public abstract class Descriptor {
+    protected final boolean verify(
+      IControlMsgHandler msgHandler, Context context, PostFormVals postFormVals){
+     
+      return true;
+    }
+    
+    protected boolean validateAll(
+      IControlMsgHandler msgHandler, Context context, PostFormVals postFormVals) {
+            return true;
+    }
+}
+```
+方法`verify`和`validateAll`区别是：
+
+* 使用`verify`对表单进行校验，服务端会校验表单是否正确，无论校验结果是否正确都不影响表单保存。这种验证场景是，当用户需要添加一个JDBC的DataSource，可能在你添加表单时候
+DBA还没有真实添加数据库实例，因此通过verify校验结果肯定会是失败的，但用户依然可以将表单进行保存。
+* 使用`validateAll`对表单进行校验，服务端校验失败，则用户无法对表单进行保存。
+
+下图，表单中是如何触发 `verify` 和 `validateAll` 方法执行的
+
+<Figure img={require('./img/plugin-verify-validateAll.png')} />
+
+### 实现抽象方法
+
+由于`MySQLV5DataSourceFactory`继承于 抽象类`DataSourceFactory`,子类中需要实现几个抽象方法: getDbConfig(),getConnection(),visitFirstConnection(),refresh()
+通过这些方法体实现，可以通过该类创建`java.sql.Connection`实例对象
+
+```java
+@Public
+public class MySQLV5DataSourceFactory extends DataSourceFactory {
+
+   private transient com.mysql.jdbc.Driver driver;
+
+    @Override
+    public DBConfig getDbConfig() {
+        final DBConfig dbConfig = new DBConfig(new JdbcUrlBuilder() {
+            @Override
+            public String buidJdbcUrl(DBConfig db, String ip, String dbName) {
+                return ("jdbc:mysql://" + ip + ":" + port + "/" + dbName);
+            }
+        });
+        dbConfig.setName(dbName);
+        dbConfig.setDbEnum(DBConfigParser.parseDBEnum(this.dbName, this.serverNode));
+        return dbConfig;
+    }
+
+
+    @Override
+    public JDBCConnection getConnection(String jdbcUrl) throws SQLException {
+        if (driver == null) {
+            driver = new com.mysql.jdbc.Driver();
+        }
+        java.util.Properties info = new java.util.Properties();
+
+        if (this.userName != null) {
+            info.put("user", this.userName);
+        }
+        if (password != null) {
+            info.put("password", password);
+        }
+        return new JDBCConnection(driver.connect(jdbcUrl, info), jdbcUrl);
+    }
+
+    @Override
+    public void visitFirstConnection(IConnProcessor connProcessor) {
+        try {
+            final DBConfig dbConfig = getDbConfig();
+            dbConfig.vistDbName((config, jdbcUrl, ip, databaseName) -> {
+                try (JDBCConnection conn = getConnection(jdbcUrl)) {
+                    connProcessor.vist(conn);
+                }
+                return true;
+            });
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void refresh() {
+
+    }
+}
+```
+
+以上代码中由于引入了 MySQL JDBC 驱动（`com.mysql.jdbc.Driver`）需要在`pom.xml`中引入MySQL5.7 版本的依赖：
+```xml
+<dependencies>
+    <dependency>
+       <groupId>mysql</groupId>
+       <artifactId>mysql-connector-java</artifactId>
+       <version>5.1.47</version>
+    </dependency>
+</dependencies>
+```
+
+* 方法`getDbConfig()` 返回的DBConfig会将 dbName 与 serverNode进行封装，并且添加JDBC URL构建规则。
+* 方法`getConnection()` 返回 `JDBCConnection`对象实例，供TIS查询遍历记录，或者调用表元数据信息用。
+* 方法`visitFirstConnection()` 提供对外使用`JDBCConnection`对象实例的util方法。
+
+## 编写插件属性描述文件
+
+对于插件实现`MySQLV5DataSourceFactory`在 对应路径`/src/main/resources` 下的相同包路径下 `com/qlangtech/tis/plugin/ds/extend/` 有以`.json`后缀的相同文件名文件`MySQLV5DataSourceFactory.json`
+内容是json格式，存放着`MySQLV5DataSourceFactory`成员属性的额外描述信息，如下：
+```json
+{
+  "name": {
+    "label": "实例ID",
+    "help": "数据源实例名称，请起一个有意义且唯一的名称"
+  },
+  "dbName": {
+    "label": "数据库名",
+    "help": "数据库名,创建JDBC实例时用"
+  },
+  "userName": {
+    "label": "用户名",
+    "dftVal": "root"
+  },
+  "password": {
+    "label": "密码"
+  },
+  "port": {
+    "label": "端口"
+  },
+  "serverNode": {
+    "label": "节点描述",
+    "helpUrl": "http://tis.pub/docs/guide/datasource/multi-ds-rule",
+    "placeholder": "127.0.0.2[32-63]"
+  }
+}
+```
+属性描述文件详细说明，<Link href={require("@site/docs/develop/plugin-utils-reference.mdx")}  anchor="属性描述文件内容说明">可查看</Link>
+
+## 编写属性富文本描述文件
+
+通过以上`编写插件属性描述文件`在属性描述信息中可以设置 `help` 属性设置字段的简要说明，但是无法为设置多行有格式的描述信息，为此TIS在`MySQLV5DataSourceFactory.json`相同目录中还有一个扩展名
+为`.md`的文件，可以在该文件中设置属性的Markdown格式的Help文本信息
+
+<Figure img={require('./img/properties-desc.png')} />
+
+如下，每个属性对应的说明信息，以 "## + 属性名称" 独占一行开始，以下内容为该属性的说明信息，使用Markdown可以为说明内容设置高亮、链接、换行、图片等说明信息
+
+```markdown
+## splitTableStrategy
+
+如数据库中采用分表存放，可以开启此选项，默认为： `off`(不启用)
+
+`on`: 分表策略支持海量数据存放，每张表的数据结构需要保证相同，且有规则的后缀作为物理表的分区规则，逻辑层面视为同一张表。
+如逻辑表`order` 对应的物理分表为：  `order_01`,`order_02`,`order_03`,`order_04`
+
+[详细说明](https://tis.pub/docs/guide/datasource/multi-table-rule/)
+```
+
+## 编写扩展实现类单元测试
+
+ 扩展实现类对应的测试类的路径为 `/src/test/java/com/qlangtech/tis/plugin/ds/extend/TestMySQLV5DataSourceFactory.java`，开发者需要补充测试代码，保证扩展实现类功能稳定。
+
+## 编写插件包功能描述文件
+
+工程文件`/src/main/resources/description.md`文件中填写插件功能说明，需要用最简短的语句描述插件实现功能点。后期合并到TIS插件仓库中，用户可通过插件商店列表右侧的功能描述判断
+是否需要安装。
+
+<Figure img={require('./img/description.md.png')} />
+
+
+## 插件集成测试
+
+可以通过以下命令测试本地编写好的插件
+``` shell
+mvn compile -Ptis
+mvn com.qlangtech.tis:tis-archetype-run-plugin:run -Dtis.port=8080
+```
+打开浏览器：`http://localhost:8080/`
+
+<Figure img={require('./img/add-new-plugin.png')} />
+
+在TIS中（`http://localhost:8080/offline/ds` ）可添加数据源下拉框中多了一个名称为`MySQL DataSource`的数据源，这就是我在插件工程中新添加的MySQL（5.7）DataSourceFactory 扩展实现。
+接下来我们就可以在浏览器中对新添加的扩展实现进行测试了。
+
+## 总结
+
+以上通过扩展点`DataSourceFactory`扩展实现一个新的`MySQLV5DataSourceFactory`的扩展点作为例子，向大家介绍了如何扩展TIS扩展点功能。TIS中类似`DataSourceFactory`的<Link href={require("@site/docs/plugin/plugins.mdx")} >扩展点</Link>还有很多，期望通过这个
+例子起到以点带面的作用。
+
+用户如需要自定义现有的插件功能或者添加新的扩展点功能，都可以使用按照以上流程来实现。

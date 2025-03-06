@@ -1,0 +1,101 @@
+---
+title: Transformer
+date: 2020-07-26
+type: book
+weight : 10
+---
+import Figure from '/src/components/Figure';
+import Link from '/src/components/Link';
+import Processon from '/src/components/Processon';
+
+## 背景
+
+传统的ETL数仓中，T（Transformer）是非常重要的一环，可以将采集到数据进行加密、脱敏、清洗、数值运算等操作，其一般是在数据抽取之后集中执行的。
+
+TIS作为一款成熟的数据集成中台产品，目标是为用户提供方便快捷的数据数据数据集成服务，为了最大限度降低数据抽取成本，在`V4.0.1`版本中实现了在数据抽取（E）流程的同时实现了数据转换（T）的技术。
+
+TIS内部实现数据集成，底层整合了两套执行引擎，一个是**Alibaba DataX**另一个是**Apache Flink**，一个负责全量批同步，一个负责实时增量同步，两套方案各有侧重，实施部署从**成本经济性**和**部署复杂度**两个纬度各不相同。
+TIS中设置Transformer规则，只需设置一次，在两套执行引擎上同时生效，可保证计算执行结果相同。
+
+## Transformer 算子介绍
+
+`V4.0.1`版本中首次引入Transformer，是构建在[DataX Transformer](https://github.com/alibaba/DataX/blob/master/transformer/doc/transformer.md)之上，由于DataX Transformer语义表达受限，不能在
+UI层完全表达语义逻辑，在TIS开发中又借鉴了[Kettle](https://github.com/pentaho/pentaho-kettle)的Transformer的设计思路。
+
+### Transformer 设计实现
+
+其实所谓的Transformer本质来说就是一个数学函数，三部分构成，由入参、算子、和计算之后生成的出参。
+<Figure img={require('./images/operator.jpg')} />
+以上的入参数和出参又可以分为不同种类：
+
+#### 入参
+
+
+|类型|说明|
+|-|-|
+|表字段|普通表的列名，例如，`user_id`、`user_name`、`age` 等|
+|系统注入|在数据通道（批量/实时）启动时候，由TIS运行时将当前运行的上下文参数，<br/>作为参数绑定到运行时上下文中，以**$**作为前缀，例如：当前运行的`数据名`($dbName)，`表名`($tabName)|
+
+#### 出参
+
+
+|类型|说明|
+|-|-|
+|目标列|普通表的列名，例如，`user_id`、`user_name`、`age` 等，在算子计算之后，需要重新替换原有列的值|
+|虚拟列|新创建一个列添加到目标表的最为新的列使用|
+
+在具体TIS Transformer实现中，不同的Transformer算子，对于入参和出参的数量不尽相同
+
+#### 具体实现
+
+TIS为Transformer算子实现提供了灵活，易扩展的插件实现机制，目前已经提供了5个Transformer算子，未来按照用户实际需求可以按需扩展。
+
+以下是TIS实现Transformer 相应的类图，有兴趣的同学可以查阅：
+
+<Processon id="66580c3ee57102599640d679" height="600px" />
+
+以上类图中的类主要分为三部分：
+1. **TIS Transformer相关类**：主要实现了在TIS的控制台展示层显示，前端和后端映射服务，以及各种Trnasformer逻辑抽象的相关类。
+2. **DataX Transformer相关类**：依赖第1部分的抽象类在DataX 批处理模块中的实现。
+3. **Flink 相关类**：依赖第1部分的抽象类在Flink实时计算中的实现。
+
+### Transformer 已有算子介绍
+
+已经实现以下transformer算子：
+
+|名称| 功能说明|
+|-|-|
+|Data Masking| 用于用户数据脱敏，例如，业务系统私密数据需要导入到数仓，如，用户名、密码之类数据需要进行脱敏处理。处理方法比较简单，字段内容进行遮照处理，例如：原用户名为‘王五’处理后为‘王*’|
+|Concat Fields| 将原记录中的多个字段值，通过字符串连接的方式合并成一个记录值|
+|JSON Splitter| 将原有记录中具有JSON Object格式的字段，拆分成多个新的字段|
+|Copy Field| 将原有记录拷贝到一个新的冗余列上|
+|SubStr| 将原有字段取子字符串到新列或者替换原有字段 |
+
+Transformer设置页面：
+<Figure img={require('./images/useable_transformer_operator.png')} />
+
+## Transformer 使用案例介绍
+
+### 碰到的问题
+这里介绍一个典型的使用场景，用户生产系统中需要将MySQL中的数据通过**全量**和**实时增量**两种方式同步到Doris数据引擎中，可以在业务系统中实现OLAP数据分析。
+
+用户为了在MySQL存下海量数据使用**分库存放**策略，每个库中存放物理结构一样的表，所有库中的分表构成一张逻辑表。但是，当要把这些分库中的表导入到Doris库中发生了问题，问题是每张分表的主键是用`自增BigInt`类型，当导入
+到Doris中对应的表上就会出现主键冲突的问题。
+<Figure img={require('./images/mysql_sync_id_conflict.jpg')} />
+为了规避以上问题，想到的办法是，通过在主键中加上表所在的数据库名称，这样就能完美规避Doris中主键冲突的问题了。
+<Figure img={require('./images/mysql_sync_id_conflict_resolve.jpg')} />
+
+
+### 利用TIS Transformer处理主键冲突
+添加 Contact（字符串连接） Transformer 来解决主键冲突的问题，如下图配置：
+<Figure img={require('./images/add_contact_resolve_id_conflict.png')} />
+
+在 `Contact Transformer`的入参部分，额外添加了一个 $dbName的系统绑定参数。出参部分，使用了目标列来替换原有主键列。
+
+## 总结
+
+本文详细介绍了TIS中Transformer的实现机制，以及用一个实例来说明Transformer是如何使用的，期待TIS的用户来探索更多的使用场景。
+
+
+
+

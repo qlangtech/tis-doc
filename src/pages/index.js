@@ -6,7 +6,6 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import QuickInstall from '@site/src/components/QuickInstall';
 import Contact from '@site/src/components/Contact';
-
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -38,6 +37,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
           <HomepageFeatures />
+
           <QuickInstall />
           <Contact />
       </main>

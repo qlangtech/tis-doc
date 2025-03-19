@@ -3,7 +3,8 @@ import clsx from "clsx";
 import Link from '@docusaurus/Link';
 
 export default function SourceSinkTable() {
-    let plugins = require('./plugins.mdx');
+
+    let plugins = require('@site/docs/plugin/plugins.mdx');
     return ( <div>
 
 

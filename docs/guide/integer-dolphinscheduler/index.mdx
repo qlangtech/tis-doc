@@ -60,6 +60,10 @@ return (
 
 1. 安装DS [下载地址](https://dolphinscheduler.apache.org/en-us/download)
 
+    :::info DolphinScheduler 版本要求
+    与TIS 整合的DolphinScheduler需要使用 **3.2.2**以上版本
+    :::
+
 2. 进入 DS Home目录
 
    ``` shell
@@ -89,7 +93,7 @@ return (
  | 首次使用，需要安装相应插件，在**管理**页面点击右侧图示下拉列表中的**添加**按钮                    | <Figure img={require('./images/click_add_syn_ds_plugin.png')} /> |
  | 插件选择页面选中`tis-datax-dolphinscheduler-plugin`插件，点击**安装**按钮开始安装插件 | <Figure img={require('./images/click_install_ds_plugin.png')} /> |
  | 安装完插件发现之前的下拉列表中多了一个选项`Export To Dolphinscheduler`  ，点击它        | <Figure img={require('./images/open_ds_plugin.png')} />        |
- | 打开 `Export To Dolphinscheduler`插件设置页面，该页面设置项比较多，下面详细说明         | <Figure img={require('./images/set_ds_plugin.png')} />         |
+ | 打开 `Export To Dolphinscheduler`插件设置页面，该页面设置项比较多，下面详细说明 <Link href={require("@site/docs/integrations/assist/Dolphinscheduler/index.mdx")} anchor='export-to-dolphinscheduler' >详细说明</Link><br/>        | <Figure img={require('./images/set_ds_plugin.png')} />         |
 
 下面就`Export To Dolphinscheduler`插件设置页面的设置项进行说明:
 
@@ -110,7 +114,7 @@ return (
 |说明|图示|
 |-|-|
 |点击`添加`按钮打开添加 DS endpoint页面|<Figure img={require('./images/click_add_endpoint_btn.png')} /> |
-|现在可以编辑`DS endpoint`的输入项了|<Figure img={require('./images/set_endpoint.png')} />|
+|现在可以编辑`DS endpoint`的输入项了 <Link href={require("@site/docs/integrations/assist/Dolphinscheduler/index.mdx")} anchor='ds-endpoint' >详细说明</Link>|<Figure img={require('./images/set_endpoint.png')} />|
 
 下面就`DS endpoint`插件页面的设置项进行说明:
 1. **name** ：   设置一个有意义的名称即可

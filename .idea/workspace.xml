@@ -5,116 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/install/flink-cluster/index.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/integrations/assist/_category_.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/integrations/data/_category_.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/integrations/transformer/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/_category_.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/install/flink-cluster/native.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/flink-cluster/native.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/install/flink-cluster/standalone.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/flink-cluster/standalone.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/install/tis/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/tis/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/AliyunODPS/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/AliyunODPS/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/AliyunODPS/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/AliyunODPS/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Clickhouse/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Clickhouse/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Clickhouse/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Clickhouse/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Clickhouse/sinkFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/DaMeng/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/DaMeng/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/DaMeng/dataxReader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/DaMeng/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/DaMeng/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/DaMeng/sinkFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Doris/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Doris/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Doris/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Doris/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Doris/sinkFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/ElasticSearch/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/ElasticSearch/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/ElasticSearch/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/ElasticSearch/params-cfg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/ElasticSearch/sinkFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/HiveMetaStore/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/HiveMetaStore/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/HiveMetaStore/dataxReader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/HiveMetaStore/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/HiveMetaStore/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/HiveMetaStore/params-cfg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Kafka/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Kafka/dataxReader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Kafka/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Kafka/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Kafka/mq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Kafka/sinkFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/KingBase/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/KingBase/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/KingBase/dataxReader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/KingBase/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/KingBase/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/KingBase/mq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/KingBase/sinkFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MariaDB/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MariaDB/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MariaDB/dataxReader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MariaDB/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MariaDB/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MariaDB/mq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MariaDB/sinkFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MongoDB/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MongoDB/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MongoDB/dataxReader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MongoDB/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MongoDB/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/MongoDB/mq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Oracle/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Oracle/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Oracle/dataxReader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Oracle/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Oracle/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Oracle/mq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Oracle/sinkFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Postgres/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Postgres/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Postgres/dataxReader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Postgres/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Postgres/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Postgres/mq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Postgres/sinkFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Spark/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Spark/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Spark/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/Spark/params-cfg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/SqlServer/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/SqlServer/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/SqlServer/dataxReader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/SqlServer/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/SqlServer/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/SqlServer/mq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/SqlServer/sinkFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/StarRocks/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/StarRocks/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/StarRocks/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/StarRocks/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/StarRocks/sinkFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/TDFS/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/TDFS/dataxReader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/TDFS/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/TDFS/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/TDFS/params-cfg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/_category_.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/integrations/_category_.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/mysql/_category_.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/mysql/datasource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/mysql/dataxReader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/mysql/dataxWriter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/mysql/index.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/mysql/mq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/integrations/mysql/sinkFactory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/_category_.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/click_add_endpoint_btn.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/click_add_endpoint_btn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/click_add_syn_ds_plugin.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/click_add_syn_ds_plugin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/click_install_ds_plugin.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/click_install_ds_plugin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/ds_datax.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/ds_datax.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/ds_tis_corporate.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/ds_tis_corporate.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/get_security_token.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/get_security_token.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/jobs_push_success.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/jobs_push_success.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/open_ds_plugin.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/open_ds_plugin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/set_ds_plugin.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/set_ds_plugin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/set_endpoint.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/set_endpoint.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/start_push_jobs_2_ds.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/start_push_jobs_2_ds.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/start_repush_jobs.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/start_repush_jobs.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images/start_repush_jobs_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/images/start_repush_jobs_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/integer-dolphinscheduler/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.0.1/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.0.1/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.1.0/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.1.0/index.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,21 +44,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/opt/misc/tis-docs2/docs/integrations/transformer",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/opt/misc/tis-docs2/docs/integrations/transformer&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs/integrations/transformer" />
@@ -157,11 +68,11 @@
       <recent name="$PROJECT_DIR$/src/components/PluginFields" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/install" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/src/pages/commerical" />
       <recent name="$PROJECT_DIR$/docs/guide/transformer/images" />
       <recent name="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images" />
-      <recent name="$PROJECT_DIR$/blog/2024-05-10-dip-in-tis" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -300,7 +211,8 @@
       <workItem from="1743046681076" duration="2320000" />
       <workItem from="1743231959098" duration="573000" />
       <workItem from="1743254500853" duration="314000" />
-      <workItem from="1744612309620" duration="153000" />
+      <workItem from="1744612309620" duration="1866000" />
+      <workItem from="1745630815776" duration="1205000" />
     </task>
     <servers />
   </component>

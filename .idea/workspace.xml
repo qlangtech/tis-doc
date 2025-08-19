@@ -7,10 +7,6 @@
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.1.0/plugin/plugins.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.1.0/plugin/plugins.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.1.0/plugin/tpis.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.1.0/plugin/tpis.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.2.0/plugin/tpis.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.2.0/plugin/tpis.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +209,8 @@
       <workItem from="1755509802767" duration="1649000" />
       <workItem from="1755532742737" duration="186000" />
       <workItem from="1755567462160" duration="608000" />
-      <workItem from="1755582820660" duration="3577000" />
+      <workItem from="1755582820660" duration="4022000" />
+      <workItem from="1755593407254" duration="567000" />
     </task>
     <servers />
   </component>

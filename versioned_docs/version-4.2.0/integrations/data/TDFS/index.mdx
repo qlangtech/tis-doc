@@ -1,0 +1,735 @@
+---
+title: TDFS
+date: 2025-03-12
+type: book
+sidebar_position: 1
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+import PluginFields from '/src/components/PluginFields';
+
+## 数据端配置
+
+<Figure img={require('./params-cfg.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. name
+	* **类型:** 单行文本
+	* **必须:** 是
+2. protocol
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** ftp
+	* **说明:** 
+
+		SFTP 和 FTP 非常相似，都支持批量传输（一次传输多个文件），文件夹 / 目录导航，文件移动，文件夹 / 目录创建，文件删除等。但还是存在着差异，SFTP 和 FTP 之间的区别：
+		
+		* 链接方式不同
+		
+		    FTP 使用 TCP 端口 21 上的控制连接建立连接。而 SFTP 是在客户端和服务器之间通过 SSH 协议 (TCP 端口 22) 建立的安全连接来传输文件。
+		
+		* 安全性不同
+		
+		    SFTP 使用加密传输认证信息和传输的数据，所以使用 SFTP 相对于 FTP 是非常安全。
+		
+		* 效率不同
+		
+		    SFTP 这种传输方式使用了加密解密技术，所以传输效率比普通的 FTP 要低得多。
+		
+		* 使用的协议不同
+		
+		    FTP 使用 TCP / IP 协议。而，SFTP 是 SSH 协议的一部分，它是一种远程登录信息。
+		
+		* 安全通道
+		
+		    FTP 不提供任何安全通道来在主机之间传输文件；而 SFTP 协议提供了一个安全通道，用于在网络上的主机之间传输文件。
+
+3. host
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		描述：ftp服务器地址。 
+
+4. port
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 21
+	* **说明:** 		描述：ftp服务器端口。 
+
+5. timeout
+
+	* **类型:** 整型数字
+	* **必须:** 否
+	* **默认值:** 60000
+	* **说明:** 		描述：连接ftp服务器连接超时时间，单位毫秒。默认值：60000（1分钟）
+
+6. 连接模式
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** PASV
+	* **说明:** 
+
+		连接模式（主动模式或者被动模式）。该参数只在传输协议是标准ftp协议时使用，值只能为：**PORT (主动)**，**PASV（被动）**。两种模式主要的不同是数据连接建立的不同。
+		
+		 1. 对于Port模式，是客户端在本地打开一个端口等服务器去连接建立数据连接，
+		
+		 2. 而Pasv模式就是服务器打开一个端口等待客户端去建立一个数据连接。
+
+7. username
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		描述：ftp服务器访问用户名。 
+
+8. password
+
+	* **类型:** 密码
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		描述：ftp服务器访问密码。 
+
+
+</PluginFields>
+
+## 批量读
+
+<Figure img={require('./dataxReader.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. 资源
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		DFS服务端连接配置
+
+	* **可选项说明:** 可选`AlyiunOSS`,`FTP`,`Hdfs`,`Local Files`以下是详细说明：
+		* AlyiunOSS
+
+			<Figure img={require('./dataxReader_dfsLinker_AlyiunOSS.png')}/>
+
+			* **配置项说明:** 
+
+			1. 远端连接
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		无
+
+			2. bucket
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		描述：OSS的bucket  
+
+			3. rootPath
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		描述：TIS 查找可用资源文件会从该路径下遍历查找 
+
+		* FTP
+
+			<Figure img={require('./dataxReader_dfsLinker_FTP.png')}/>
+
+			* **配置项说明:** 
+
+			1. 远端连接
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		FTP服务端连接配置
+
+			2. path
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		描述：FTP文件系统的路径信息，FtpWriter会写入Path目录下属多个文件。 
+
+		* Hdfs
+
+			<Figure img={require('./dataxReader_dfsLinker_Hdfs.png')}/>
+
+			* **配置项说明:** 
+
+			1. 远端连接
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		描述：Hadoop hdfs文件系统namenode节点地址。格式：hdfs://ip:端口；例如：hdfs://127.0.0.1:9000
+
+			2. path
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		数据文件保存的路径位置
+
+		* Local Files
+
+			<Figure img={require('./dataxReader_dfsLinker_Local Files.png')}/>
+
+			* **配置项说明:** 
+
+			1. path
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 
+
+					描述：本地文件系统的路径（绝对路径），必须为目录路径，该目录下存放有目标资源文件
+
+2. 目标文件匹配
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** Wildcard
+	* **说明:** 
+
+		到指定目录中获取目标资源文件，TIS已经为您准备了两种类型的匹配器：
+		
+		* Wildcard：
+		
+		   通过 `wildcard` 表达式（如：`user*.json`,`"a/b/*"`），到指定目录扫描所有资源文件，如果与`wildcard`匹配，则作为TDFS Reader的目标资源文件，在后续全量导入流程中读取
+		* ByMeta：
+		
+		  `Writer TDFS`作为目标Writer，流程中开启了`添加元数据`选项，将源数据的Schema写入到目标文件系统中，后续，以该`TDFS`作为源数据类型则可以依赖该预写入的Schema文件作为数据源的Schema信息，可大大简化流程
+
+	* **可选项说明:** 可选`ByMeta`,`Wildcard`以下是详细说明：
+		* ByMeta
+
+		* Wildcard
+
+			<Figure img={require('./dataxReader_resMatcher_Wildcard.png')}/>
+
+			* **配置项说明:** 
+
+			1. wildcard
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 
+
+					路径中可以使用统配符匹配资源目录下的所有匹配的文件资源
+
+					Checks a fileName to see if it matches the specified wildcard matcher,
+					always testing case-sensitive.
+					      <p>
+					      The wildcard matcher uses the characters '?' and '*' to represent a
+					      single or multiple (zero or more) wildcard characters.
+					      This is the same as often found on Dos/Unix command lines.
+					      The check is case-sensitive always.
+					      </p>
+					<pre>
+					      wildcardMatch("c.txt", "*.txt")      --&gt; true
+					      wildcardMatch("c.txt", "*.jpg")      --&gt; false
+					      wildcardMatch("a/b/c.txt", "a/b/*")  --&gt; true
+					      wildcardMatch("c.txt", "*.???")      --&gt; true
+					      wildcardMatch("c.txt", "*.????")     --&gt; false
+					</pre>
+
+					* N.B. the sequence "*?" does not work properly at present in match strings.
+
+			2. 遍历层数
+
+				* **类型:** 整型数字
+				* **必须:** 是
+				* **默认值:** 1
+				* **说明:** 		描述：允许遍历文件夹的最大层数。
+
+3. 文件格式
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		可以根据目标文件不同的格式，对文件进行解析
+
+	* **可选项说明:** 可选`CSV`,`TEXT`以下是详细说明：
+		* CSV
+
+			<Figure img={require('./dataxReader_fileFormat_CSV.png')}/>
+
+			* **配置项说明:** 
+
+			1. 字段分隔符
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** comma
+				* **说明:** 		描述：读取的字段分隔符，可以用'\t','\001'等字符 
+
+			2. 压缩格式
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** none
+				* **说明:** 		描述：文本压缩类型，默认不填写意味着没有压缩。支持压缩类型为zip、gzip、bzip2。 
+
+			3. encoding
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** utf-8
+				* **说明:** 		描述：读取文件的编码配置。
+
+			4. 空值替代符
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** null
+				* **说明:** 		描述：文本文件中无法使用标准字符串定义null(空指针)，DataX提供nullFormat定义哪些字符串可以表示为null。例如如果用户配置: nullFormat="\N"，那么如果源头数据是"\N"，DataX视作null字段。
+
+			5. 日期格式
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.plugin.datax.format.BasicPainFormat.defaultNullFormat()
+				* **说明:** 		描述：日期类型的数据序列化到文件中时的格式，例如 "dateFormat": "yyyy-MM-dd"。
+
+			6. csvConfig
+
+				* **类型:** 富文本
+				* **必须:** 否
+				* **默认值:** 无
+				* **说明:** 
+
+					描述：（读取/写入）CSV类型文件参数配置，Map类型。
+					 * 写入CSV类型文件使用的CsvWriter进行写入，会有很多配置，不配置则使用默认值。
+					      ```json
+					    { "forceQualifier": true,  
+					      "textQualifier": "\"",
+					       "useTextQualifier": true,
+					       "delimiter": ",",
+					       "recordDelimiter": 0,
+					       "comment": "#",
+					       "escapeMode": 1
+					      } 
+					      ```
+
+					 * 读取CSV类型文件使用的CsvReader进行读取，会有很多配置，不配置则使用默认值。
+
+					 ```json
+					{ "safetySwitch": false,  
+					  "skipEmptyRecords": false,       
+					  "useTextQualifier": false} 
+					 ```
+					 所有配置项及默认值,配置时 csvReaderConfig 的map中请严格按照以下字段名字进行配置：
+					 ```java
+					 boolean caseSensitive = true;
+					 char textQualifier = 34;
+					 boolean trimWhitespace = true;
+					 boolean useTextQualifier = true;//是否使用csv转义字符
+					 char delimiter = 44;//分隔符
+					 char recordDelimiter = 0;
+					 char comment = 35;
+					 boolean useComments = false;
+					 int escapeMode = 1;
+					 boolean safetySwitch = true;//单列长度是否限制100000字符
+					 boolean skipEmptyRecords = true;//是否跳过空行
+					 boolean captureRawRecord = true;
+					 ```
+
+			7. header
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** true
+				* **说明:** 		描述：写出时的表头，列名(s)是否在文件头写入
+
+			8. 猜测字段类型
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** on
+				* **说明:** 		通过TIS提供的的内部算法，尝试读取部分DFS文件内容，猜测对应列的类型，以帮助最大化提高录入表单效率。最后通过分析得到的类型不够准确，需要用户手动微调。
+
+		* TEXT
+
+			<Figure img={require('./dataxReader_fileFormat_TEXT.png')}/>
+
+			* **配置项说明:** 
+
+			1. 字段分隔符
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** comma
+				* **说明:** 		描述：读取的字段分隔符，可以用'\t','\001'等字符 
+
+			2. 压缩格式
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** none
+				* **说明:** 		描述：文本压缩类型，默认不填写意味着没有压缩。支持压缩类型为zip、gzip、bzip2。 
+
+			3. encoding
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** utf-8
+				* **说明:** 		描述：读取文件的编码配置。
+
+			4. 空值替代符
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** null
+				* **说明:** 		描述：文本文件中无法使用标准字符串定义null(空指针)，DataX提供nullFormat定义哪些字符串可以表示为null。例如如果用户配置: nullFormat="\N"，那么如果源头数据是"\N"，DataX视作null字段。
+
+			5. 日期格式
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.plugin.datax.format.BasicPainFormat.defaultNullFormat()
+				* **说明:** 		描述：日期类型的数据序列化到文件中时的格式，例如 "dateFormat": "yyyy-MM-dd"。
+
+			6. header
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** true
+				* **说明:** 		描述：写出时的表头，列名(s)是否在文件头写入
+
+			7. 猜测字段类型
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** on
+				* **说明:** 		通过TIS提供的的内部算法，尝试读取部分DFS文件内容，猜测对应列的类型，以帮助最大化提高录入表单效率。最后通过分析得到的类型不够准确，需要用户手动微调。
+
+4. 配置模版
+
+	* **类型:** 富文本
+	* **必须:** 是
+	* **默认值:** com.qlangtech.tis.plugin.datax.DataXDFSReader.getDftTemplate()
+	* **说明:** 		无特殊情况请不要修改模版内容，避免不必要的错误
+
+
+</PluginFields>
+
+## 批量写
+
+<Figure img={require('./dataxWriter.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. 资源
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		DFS服务端连接配置
+
+	* **可选项说明:** 可选`AlyiunOSS`,`FTP`,`Hdfs`,`Local Files`以下是详细说明：
+		* AlyiunOSS
+
+			<Figure img={require('./dataxWriter_dfsLinker_AlyiunOSS.png')}/>
+
+			* **配置项说明:** 
+
+			1. 远端连接
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		无
+
+			2. bucket
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		描述：OSS的bucket  
+
+			3. rootPath
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		描述：TIS 查找可用资源文件会从该路径下遍历查找 
+
+		* FTP
+
+			<Figure img={require('./dataxWriter_dfsLinker_FTP.png')}/>
+
+			* **配置项说明:** 
+
+			1. 远端连接
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		FTP服务端连接配置
+
+			2. path
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		描述：FTP文件系统的路径信息，FtpWriter会写入Path目录下属多个文件。 
+
+		* Hdfs
+
+			<Figure img={require('./dataxWriter_dfsLinker_Hdfs.png')}/>
+
+			* **配置项说明:** 
+
+			1. 远端连接
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		描述：Hadoop hdfs文件系统namenode节点地址。格式：hdfs://ip:端口；例如：hdfs://127.0.0.1:9000
+
+			2. path
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		数据文件保存的路径位置
+
+		* Local Files
+
+			<Figure img={require('./dataxWriter_dfsLinker_Local Files.png')}/>
+
+			* **配置项说明:** 
+
+			1. path
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 
+
+					描述：本地文件系统的路径（绝对路径），必须为目录路径，该目录下存放有目标资源文件
+
+2. 添加元数据
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** on
+	* **说明:** 
+
+		写数据过程中会在`DFS`目录中写一份source的元数据。
+		
+		 当其他环境中需要使用TIS来导入DFS中的数据时，可以利用这份元数据快速生成目标端的数据表结构，省去手动配置元数据的流程。
+
+	* **可选项说明:** 可选`off`,`on`以下是详细说明：
+		* off
+
+		* on
+
+3. 替换规则
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** truncate
+	* **说明:** 
+
+		FtpWriter写入前数据清理处理模式： 
+		
+		 1. **truncate**:  写入前清理目录下一fileName前缀的所有文件。
+		
+		 2. **append**: 写入前不做任何处理，DFS Writer直接使用filename写入，并保证文件名不冲突。
+		
+		 3. **nonConflict**: 如果目录下有fileName前缀的文件，直接报错。
+
+4. fileFormat
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** TEXT
+	* **说明:** 
+
+		文件写出的格式，包括[csv](http://zh.wikipedia.org/wiki/%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E5%80%BC) 和**text**两种，**csv**是严格的**csv**格式，如果待写数据包括列分隔符，则会按照**csv**的转义语法转义，转义符号为双引号。**text**格式是用列分隔符简单分割待写数据，对于待写数据包括列分隔符情况下不做转义。
+
+	* **可选项说明:** 可选`CSV`,`TEXT`以下是详细说明：
+		* CSV
+
+			<Figure img={require('./dataxWriter_fileFormat_CSV.png')}/>
+
+			* **配置项说明:** 
+
+			1. 字段分隔符
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** comma
+				* **说明:** 		描述：读取的字段分隔符，可以用'\t','\001'等字符 
+
+			2. 压缩格式
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** none
+				* **说明:** 		描述：文本压缩类型，默认不填写意味着没有压缩。支持压缩类型为zip、gzip、bzip2。 
+
+			3. encoding
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** utf-8
+				* **说明:** 		描述：读取文件的编码配置。
+
+			4. 空值替代符
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** null
+				* **说明:** 		描述：文本文件中无法使用标准字符串定义null(空指针)，DataX提供nullFormat定义哪些字符串可以表示为null。例如如果用户配置: nullFormat="\N"，那么如果源头数据是"\N"，DataX视作null字段。
+
+			5. 日期格式
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.plugin.datax.format.BasicPainFormat.defaultNullFormat()
+				* **说明:** 		描述：日期类型的数据序列化到文件中时的格式，例如 "dateFormat": "yyyy-MM-dd"。
+
+			6. csvConfig
+
+				* **类型:** 富文本
+				* **必须:** 否
+				* **默认值:** 无
+				* **说明:** 
+
+					描述：（读取/写入）CSV类型文件参数配置，Map类型。
+					 * 写入CSV类型文件使用的CsvWriter进行写入，会有很多配置，不配置则使用默认值。
+					      ```json
+					    { "forceQualifier": true,  
+					      "textQualifier": "\"",
+					       "useTextQualifier": true,
+					       "delimiter": ",",
+					       "recordDelimiter": 0,
+					       "comment": "#",
+					       "escapeMode": 1
+					      } 
+					      ```
+
+					 * 读取CSV类型文件使用的CsvReader进行读取，会有很多配置，不配置则使用默认值。
+
+					 ```json
+					{ "safetySwitch": false,  
+					  "skipEmptyRecords": false,       
+					  "useTextQualifier": false} 
+					 ```
+					 所有配置项及默认值,配置时 csvReaderConfig 的map中请严格按照以下字段名字进行配置：
+					 ```java
+					 boolean caseSensitive = true;
+					 char textQualifier = 34;
+					 boolean trimWhitespace = true;
+					 boolean useTextQualifier = true;//是否使用csv转义字符
+					 char delimiter = 44;//分隔符
+					 char recordDelimiter = 0;
+					 char comment = 35;
+					 boolean useComments = false;
+					 int escapeMode = 1;
+					 boolean safetySwitch = true;//单列长度是否限制100000字符
+					 boolean skipEmptyRecords = true;//是否跳过空行
+					 boolean captureRawRecord = true;
+					 ```
+
+			7. header
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** true
+				* **说明:** 		描述：写出时的表头，列名(s)是否在文件头写入
+
+			8. 猜测字段类型
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** on
+				* **说明:** 		通过TIS提供的的内部算法，尝试读取部分DFS文件内容，猜测对应列的类型，以帮助最大化提高录入表单效率。最后通过分析得到的类型不够准确，需要用户手动微调。
+
+		* TEXT
+
+			<Figure img={require('./dataxWriter_fileFormat_TEXT.png')}/>
+
+			* **配置项说明:** 
+
+			1. 字段分隔符
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** comma
+				* **说明:** 		描述：读取的字段分隔符，可以用'\t','\001'等字符 
+
+			2. 压缩格式
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** none
+				* **说明:** 		描述：文本压缩类型，默认不填写意味着没有压缩。支持压缩类型为zip、gzip、bzip2。 
+
+			3. encoding
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** utf-8
+				* **说明:** 		描述：读取文件的编码配置。
+
+			4. 空值替代符
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** null
+				* **说明:** 		描述：文本文件中无法使用标准字符串定义null(空指针)，DataX提供nullFormat定义哪些字符串可以表示为null。例如如果用户配置: nullFormat="\N"，那么如果源头数据是"\N"，DataX视作null字段。
+
+			5. 日期格式
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.plugin.datax.format.BasicPainFormat.defaultNullFormat()
+				* **说明:** 		描述：日期类型的数据序列化到文件中时的格式，例如 "dateFormat": "yyyy-MM-dd"。
+
+			6. header
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** true
+				* **说明:** 		描述：写出时的表头，列名(s)是否在文件头写入
+
+			7. 猜测字段类型
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** on
+				* **说明:** 		通过TIS提供的的内部算法，尝试读取部分DFS文件内容，猜测对应列的类型，以帮助最大化提高录入表单效率。最后通过分析得到的类型不够准确，需要用户手动微调。
+
+5. 配置模版
+
+	* **类型:** 富文本
+	* **必须:** 是
+	* **默认值:** com.qlangtech.tis.plugin.datax.DataXDFSWriter.getDftTemplate()
+	* **说明:** 		无特殊情况请不要修改模版内容，避免不必要的错误
+
+
+</PluginFields>
+
+
+

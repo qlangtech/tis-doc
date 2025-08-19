@@ -984,7 +984,16 @@ import PluginFields from '/src/components/PluginFields';
 		    如果此参数为空，默认不开启二阶段提交，即 sink 端不支持 exactly_once 语义；
 		    当前只支持 exactly-once 和 at-least-once
 
-3. 脚本类型
+3. writeMode
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** insert
+	* **说明:** 
+
+		控制写入数据到目标表采用 `insert into` 或者 `replace into` 或者 `ON DUPLICATE KEY UPDATE` 语句
+
+4. 脚本类型
 
 	* **类型:** 单行文本
 	* **必须:** 是
@@ -1001,7 +1010,7 @@ import PluginFields from '/src/components/PluginFields';
 
 		* StreamAPI
 
-4. parallelism
+5. parallelism
 
 	* **类型:** 整型数字
 	* **必须:** 是

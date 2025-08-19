@@ -132,7 +132,41 @@ import PluginFields from '/src/components/PluginFields';
 	* **默认值:** 无
 	* **说明:** 		无
 
-7. 传输压缩
+7. 所在时区
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** default
+	* **说明:** 		设置服务端所在时区，有两种输入方式：1. default 从下拉框中选择，2. customize：用户手动输入时区编码
+
+	* **可选项说明:** 可选`customize`,`default`以下是详细说明：
+		* customize
+
+			<Figure img={require('./datasource_timeZone_customize.png')}/>
+
+			* **配置项说明:** 
+
+			1. 时区编码
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		设置服务端所在时区编码
+
+		* default
+
+			<Figure img={require('./datasource_timeZone_default.png')}/>
+
+			* **配置项说明:** 
+
+			1. 时区编码
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.plugin.timezone.TISTimeZone.dftZoneId()
+				* **说明:** 		选择服务端所在时区
+
+8. 传输压缩
 
 	* **类型:** 单选
 	* **必须:** 是
@@ -141,7 +175,7 @@ import PluginFields from '/src/components/PluginFields';
 
 		与服务端通信时采用zlib进行压缩，效果请参考[https://blog.csdn.net/Shadow_Light/article/details/100749537](https://blog.csdn.net/Shadow_Light/article/details/100749537)
 
-8. 附加参数
+9. 附加参数
 
 	* **类型:** 单行文本
 	* **必须:** 否
@@ -201,7 +235,7 @@ import PluginFields from '/src/components/PluginFields';
 
 <PluginFields>
 
-1. 数据库名
+1. 目标数据库
 
 	* **类型:** 单选
 	* **必须:** 是
@@ -246,7 +280,7 @@ import PluginFields from '/src/components/PluginFields';
 
 6. 自动建表
 
-	* **类型:** 单选
+	* **类型:** 单行文本
 	* **必须:** 是
 	* **默认值:** on
 	* **说明:** 
@@ -329,11 +363,11 @@ import PluginFields from '/src/components/PluginFields';
 		参数详细请参考：[https://ververica.github.io/flink-cdc-connectors/master/content/connectors/mysql-cdc.html#connector-options](https://ververica.github.io/flink-cdc-connectors/master/content/connectors/mysql-cdc.html#connector-options)
 		，[https://debezium.io/documentation/reference/1.5/connectors/mysql.html#mysql-property-snapshot-mode](https://debezium.io/documentation/reference/1.5/connectors/mysql.html#mysql-property-snapshot-mode)
 		
-		* `Initial`:
-		  Performs an initial snapshot on the monitored database tables upon first startup, and continue to read the latest binlog.
+		* ~~`Initial`~~:
+		  ~~Performs an initial snapshot on the monitored database tables upon first startup, and continue to read the latest binlog.~~
 		
-		* `Earliest`:
-		  Never to perform snapshot on the monitored database tables upon first startup, just read from the beginning of the binlog. This should be used with care, as it is only valid when the binlog is guaranteed to contain the entire history of the database.
+		* ~~`Earliest`~~:
+		  ~~Never to perform snapshot on the monitored database tables upon first startup, just read from the beginning of the binlog. This should be used with care, as it is only valid when the binlog is guaranteed to contain the entire history of the database.~~
 		
 		* `Latest`:
 		  Never to perform snapshot on the monitored database tables upon first startup, just read from the end of the binlog which means only have the changes since the connector was started.
@@ -343,11 +377,7 @@ import PluginFields from '/src/components/PluginFields';
 		
 		   The consumer will traverse the binlog from the beginning and ignore change events whose timestamp is smaller than the specified timestamp.
 
-	* **可选项说明:** 可选`EARLIEST_OFFSET`,`INITIAL`,`LATEST_OFFSET`,`TIMESTAMP`以下是详细说明：
-		* EARLIEST_OFFSET
-
-		* INITIAL
-
+	* **可选项说明:** 可选`LATEST_OFFSET`,`TIMESTAMP`以下是详细说明：
 		* LATEST_OFFSET
 
 		* TIMESTAMP
@@ -374,14 +404,7 @@ import PluginFields from '/src/components/PluginFields';
 		
 		如开启，带来的好处是运算时资源各自独立不会相互相互影响，弊端是，上游算子与下游算子独立在两个Solt中需要额外的网络传输开销
 
-3. 所在时区
-
-	* **类型:** 单选
-	* **必须:** 是
-	* **默认值:** com.qlangtech.tis.plugins.incr.flink.cdc.mysql.FlinkCDCMySQLSourceFactory.dftZoneId()
-	* **说明:** 		设置MySQL服务端所在时区
-
-4. 过滤
+3. 过滤
 
 	* **类型:** 单选
 	* **必须:** 否
@@ -412,7 +435,16 @@ import PluginFields from '/src/components/PluginFields';
 		    如果此参数为空，默认不开启二阶段提交，即 sink 端不支持 exactly_once 语义；
 		    当前只支持 exactly-once 和 at-least-once
 
-2. 脚本类型
+2. writeMode
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** insert
+	* **说明:** 
+
+		控制写入数据到目标表采用 `insert into` 或者 `replace into` 或者 `ON DUPLICATE KEY UPDATE` 语句
+
+3. 脚本类型
 
 	* **类型:** 单行文本
 	* **必须:** 是
@@ -429,7 +461,7 @@ import PluginFields from '/src/components/PluginFields';
 
 		* StreamAPI
 
-3. batchSize
+4. batchSize
 
 	* **类型:** 整型数字
 	* **必须:** 是
@@ -438,14 +470,14 @@ import PluginFields from '/src/components/PluginFields';
 
 		描述：一次性批量提交的记录数大小，该值可以极大减少 ChunJun 与数据库的网络交互次数，并提升整体吞吐量。但是该值设置过大可能会造成 ChunJun 运行进程 OOM 情况
 
-4. flushIntervalMills
+5. flushIntervalMills
 
 	* **类型:** 整型数字
 	* **必须:** 是
 	* **默认值:** 10000
 	* **说明:** 		"the flush interval mills, over this time, asynchronous threads will flush data. The default value is 10s.
 
-5. parallelism
+6. parallelism
 
 	* **类型:** 整型数字
 	* **必须:** 是

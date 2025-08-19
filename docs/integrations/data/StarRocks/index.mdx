@@ -85,7 +85,7 @@ import PluginFields from '/src/components/PluginFields';
 
 <PluginFields>
 
-1. 数据库名
+1. 目标数据库
 
 	* **类型:** 单选
 	* **必须:** 是
@@ -112,7 +112,7 @@ import PluginFields from '/src/components/PluginFields';
 
 4. 自动建表
 
-	* **类型:** 单选
+	* **类型:** 单行文本
 	* **必须:** 是
 	* **默认值:** on
 	* **说明:** 
@@ -237,6 +237,13 @@ import PluginFields from '/src/components/PluginFields';
 		- 描述：单次StreamLoad导入的最大字节数。
 		- 必选：否
 		- 默认值：104857600 (100M)
+		
+		
+		
+		
+		
+		
+		 * 描述：一次性批量提交的记录数大小，该值可以极大减少DataX与Mysql的网络交互次数，并提升整体吞吐量。但是该值设置过大可能会造成DataX运行进程OOM情况。
 
 8. 配置模版
 
@@ -269,7 +276,16 @@ import PluginFields from '/src/components/PluginFields';
 		    如果此参数为空，默认不开启二阶段提交，即 sink 端不支持 exactly_once 语义；
 		    当前只支持 exactly-once 和 at-least-once
 
-2. 脚本类型
+2. writeMode
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** insert
+	* **说明:** 
+
+		控制写入数据到目标表采用 `insert into` 或者 `replace into` 或者 `ON DUPLICATE KEY UPDATE` 语句
+
+3. 脚本类型
 
 	* **类型:** 单行文本
 	* **必须:** 是
@@ -286,7 +302,7 @@ import PluginFields from '/src/components/PluginFields';
 
 		* StreamAPI
 
-3. batchSize
+4. batchSize
 
 	* **类型:** 整型数字
 	* **必须:** 是
@@ -295,14 +311,14 @@ import PluginFields from '/src/components/PluginFields';
 
 		描述：一次性批量提交的记录数大小，该值可以极大减少 ChunJun 与数据库的网络交互次数，并提升整体吞吐量。但是该值设置过大可能会造成 ChunJun 运行进程 OOM 情况
 
-4. flushIntervalMills
+5. flushIntervalMills
 
 	* **类型:** 整型数字
 	* **必须:** 是
 	* **默认值:** 10000
 	* **说明:** 		"the flush interval mills, over this time, asynchronous threads will flush data. The default value is 10s.
 
-5. parallelism
+6. parallelism
 
 	* **类型:** 整型数字
 	* **必须:** 是

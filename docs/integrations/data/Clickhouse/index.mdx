@@ -71,7 +71,7 @@ import PluginFields from '/src/components/PluginFields';
 
 <PluginFields>
 
-1. 数据库名
+1. 目标数据库
 
 	* **类型:** 单选
 	* **必须:** 是
@@ -105,12 +105,20 @@ import PluginFields from '/src/components/PluginFields';
 
 5. 自动建表
 
-	* **类型:** 单选
+	* **类型:** 单行文本
 	* **必须:** 是
 	* **默认值:** on
 	* **说明:** 
 
 		在开始执行DataX任务前，自动在目标数据库中创建表，目标表Engine类型为'CollapsingMergeTree' 构建原理请参考[MySQL到ClickHouse实时同步](https://www.askcug.com/topic/76/mysql%E5%88%B0clickhouse%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5-cloudcanal%E5%AE%9E%E6%88%98)
+		
+		
+		
+		
+		解析Reader的元数据，自动生成Writer create table DDL语句，有三种选择：
+		* `off`：关闭自动生成及同步目标端建表DDL语句，当目标端表实例已经存在可选择此选项。
+		* `default`：打开动生成及自动执行目标端建表DDL语句，执行任务状态由程序自动控制毋需人为干涉。
+		* `customized`：用户可自定义设置`自动执行目标端建表DDL语句逻辑`，如：是否需要生成列注释等。
 
 	* **可选项说明:** 可选`off`,`on`以下是详细说明：
 		* off
@@ -186,7 +194,16 @@ import PluginFields from '/src/components/PluginFields';
 		    如果此参数为空，默认不开启二阶段提交，即 sink 端不支持 exactly_once 语义；
 		    当前只支持 exactly-once 和 at-least-once
 
-2. 脚本类型
+2. writeMode
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** insert
+	* **说明:** 
+
+		控制写入数据到目标表采用 `insert into` 或者 `replace into` 或者 `ON DUPLICATE KEY UPDATE` 语句
+
+3. 脚本类型
 
 	* **类型:** 单行文本
 	* **必须:** 是
@@ -203,7 +220,7 @@ import PluginFields from '/src/components/PluginFields';
 
 		* StreamAPI
 
-3. batchSize
+4. batchSize
 
 	* **类型:** 整型数字
 	* **必须:** 是
@@ -212,14 +229,14 @@ import PluginFields from '/src/components/PluginFields';
 
 		描述：一次性批量提交的记录数大小，该值可以极大减少 ChunJun 与数据库的网络交互次数，并提升整体吞吐量。但是该值设置过大可能会造成 ChunJun 运行进程 OOM 情况
 
-4. flushIntervalMills
+5. flushIntervalMills
 
 	* **类型:** 整型数字
 	* **必须:** 是
 	* **默认值:** 10000
 	* **说明:** 		"the flush interval mills, over this time, asynchronous threads will flush data. The default value is 10s.
 
-5. parallelism
+6. parallelism
 
 	* **类型:** 整型数字
 	* **必须:** 是

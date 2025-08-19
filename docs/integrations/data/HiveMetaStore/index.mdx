@@ -204,7 +204,7 @@ import PluginFields from '/src/components/PluginFields';
 
 				* **类型:** 单选
 				* **必须:** 是
-				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@7b332b23
+				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@4a0c3aa8
 				* **说明:** 		目前支持三种存储格式：Text：普通文本，一行一条用分隔符分隔，HFile：HBase使用的存储格式，Parquet：最常用的列存格式文件，ORC文件格式
 
 2. 目标分区
@@ -272,23 +272,14 @@ import PluginFields from '/src/components/PluginFields';
 	* **默认值:** 无
 	* **说明:** 		无
 
-2. 分区时间戳格式
-
-	* **类型:** 单选
-	* **必须:** 是
-	* **默认值:** yyyyMMddHHmmss
-	* **说明:** 
-
-		每进行一次DataX导入在Hive表中会生成一个新的分区，现在系统分区名称为'pt'格式为开始导入数据的当前时间戳，格式为`yyyyMMddHHmmss`或者`yyyyMMdd`
-
-3. fsName
+2. fsName
 
 	* **类型:** 单选
 	* **必须:** 是
 	* **默认值:** 无
 	* **说明:** 		描述：Hadoop hdfs文件系统namenode节点地址。格式：hdfs://ip:端口；例如：hdfs://127.0.0.1:9000
 
-4. 分区保留数
+3. 分区保留数
 
 	* **类型:** 整型数字
 	* **必须:** 是
@@ -296,6 +287,15 @@ import PluginFields from '/src/components/PluginFields';
 	* **说明:** 
 
 		每进行一次DataX导入在Hive表中会生成一个新的分区，现在系统分区名称为`pt`格式为开始导入数据的时间戳
+
+4. 分区时间戳格式
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** yyyyMMddHHmmss
+	* **说明:** 
+
+		每进行一次DataX导入在Hive表中会生成一个新的分区，现在系统分区名称为'pt'格式为开始导入数据的当前时间戳，格式为`yyyyMMddHHmmss`或者`yyyyMMdd`
 
 5. 自动建表
 

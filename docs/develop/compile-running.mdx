@@ -126,7 +126,9 @@ done ;
 
 ### 启动TIS Console
 
-1. cd tis/tis-console/src/test/java/
+启动入口为JUnit单元测试类StartTISWeb，位置在`tis/tis-console/src/test/java/`，需要运行按如下步骤：
+
+1. `cd tis/tis-console`
 2. 创建初始化token文件：
    ```shell
       touch /opt/data/tis/system_initialized_token
@@ -152,8 +154,13 @@ done ;
      npm run ng:serve-aot
     ```
 3.  运行
+   macBook Intel 芯片
    ```shell
-     npm run ng:serve-jit --scripts-prepend-node-path=auto
+     npm run ng:serve-jit-amd64 --scripts-prepend-node-path=auto
+   ```
+   macBook ARM 芯片
+   ```shell
+     npm run ng:serve-jit-arm64 --scripts-prepend-node-path=auto
    ```
 4. 打开 web 入口：`http://localhost:4200/`
 

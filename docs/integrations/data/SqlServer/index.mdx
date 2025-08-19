@@ -134,10 +134,37 @@ import PluginFields from '/src/components/PluginFields';
 
 8. 所在时区
 
-	* **类型:** 单选
+	* **类型:** 单行文本
 	* **必须:** 是
-	* **默认值:** com.qlangtech.tis.async.message.client.consumer.impl.MQListenerFactory.dftZoneId()
-	* **说明:** 		设置数据库服务端所在时区
+	* **默认值:** default
+	* **说明:** 		设置服务端所在时区，有两种输入方式：1. default 从下拉框中选择，2. customize：用户手动输入时区编码
+
+	* **可选项说明:** 可选`customize`,`default`以下是详细说明：
+		* customize
+
+			<Figure img={require('./datasource_timeZone_customize.png')}/>
+
+			* **配置项说明:** 
+
+			1. 时区编码
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		设置服务端所在时区编码
+
+		* default
+
+			<Figure img={require('./datasource_timeZone_default.png')}/>
+
+			* **配置项说明:** 
+
+			1. 时区编码
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.plugin.timezone.TISTimeZone.dftZoneId()
+				* **说明:** 		选择服务端所在时区
 
 9. 附加参数
 
@@ -199,7 +226,7 @@ import PluginFields from '/src/components/PluginFields';
 
 <PluginFields>
 
-1. 数据库名
+1. 目标数据库
 
 	* **类型:** 单选
 	* **必须:** 是
@@ -226,7 +253,7 @@ import PluginFields from '/src/components/PluginFields';
 
 4. 自动建表
 
-	* **类型:** 单选
+	* **类型:** 单行文本
 	* **必须:** 是
 	* **默认值:** on
 	* **说明:** 
@@ -357,7 +384,16 @@ import PluginFields from '/src/components/PluginFields';
 		    如果此参数为空，默认不开启二阶段提交，即 sink 端不支持 exactly_once 语义；
 		    当前只支持 exactly-once 和 at-least-once
 
-2. 脚本类型
+2. writeMode
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** insert
+	* **说明:** 
+
+		控制写入数据到目标表采用 `insert into` 或者 `replace into` 或者 `ON DUPLICATE KEY UPDATE` 语句
+
+3. 脚本类型
 
 	* **类型:** 单行文本
 	* **必须:** 是
@@ -374,7 +410,7 @@ import PluginFields from '/src/components/PluginFields';
 
 		* StreamAPI
 
-3. batchSize
+4. batchSize
 
 	* **类型:** 整型数字
 	* **必须:** 是
@@ -383,14 +419,14 @@ import PluginFields from '/src/components/PluginFields';
 
 		描述：一次性批量提交的记录数大小，该值可以极大减少 ChunJun 与数据库的网络交互次数，并提升整体吞吐量。但是该值设置过大可能会造成 ChunJun 运行进程 OOM 情况
 
-4. flushIntervalMills
+5. flushIntervalMills
 
 	* **类型:** 整型数字
 	* **必须:** 是
 	* **默认值:** 10000
 	* **说明:** 		"the flush interval mills, over this time, asynchronous threads will flush data. The default value is 10s.
 
-5. parallelism
+6. parallelism
 
 	* **类型:** 整型数字
 	* **必须:** 是

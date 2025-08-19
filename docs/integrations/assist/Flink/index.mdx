@@ -26,6 +26,9 @@ import PluginFields from '/src/components/PluginFields';
 	* **说明:** 
 
 		The cluster-id, which should be no more than 45 characters, is used for identifying a unique Flink cluster. The id must only contain lowercase alphanumeric characters and "-". The required format is <code class="highlighter-rouge">[a-z](.)</code>. If not set, the client will automatically generate it with a random ID.
+		
+		
+		The `cluster-id`, which should be no more than 45 characters, is used for identifying a unique Flink cluster.
 
 2. k8sImage
 
@@ -52,7 +55,7 @@ import PluginFields from '/src/components/PluginFields';
 
 				* **类型:** 整型数字
 				* **必须:** 是
-				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@6fbc7853
+				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@77d959f1
 				* **说明:** 		SpringBoot配置，HTTP端口号，默认7700，不建议更改
 
 			2. host
@@ -71,7 +74,7 @@ import PluginFields from '/src/components/PluginFields';
 
 				* **类型:** 整型数字
 				* **必须:** 是
-				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@688d619c
+				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@4ab86b2a
 				* **说明:** 		SpringBoot配置，HTTP端口号，默认7700，不建议更改
 
 		* NodePort
@@ -84,7 +87,7 @@ import PluginFields from '/src/components/PluginFields';
 
 				* **类型:** 整型数字
 				* **必须:** 是
-				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@1b632442
+				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@3a63d248
 				* **说明:** 		SpringBoot配置，HTTP端口号，默认7700，不建议更改
 
 			2. INTERNAL-IP
@@ -123,25 +126,39 @@ import PluginFields from '/src/components/PluginFields';
 
 4. jmMemory
 
-	* **类型:** 整型数字
+	* **类型:** 字节规格容量
 	* **必须:** 是
-	* **默认值:** 1638400
+	* **默认值:** 1600
 	* **说明:** 
 
 		Total Process Memory size for the JobManager. This includes all the memory that a JobManager JVM process consumes, consisting of Total Flink Memory, JVM Metaspace, and JVM Overhead. In containerized setups, this should be set to the container memory. See also 'jobmanager.memory.flink.size' for Total Flink Memory size configuration.
 		
-		 单位：`kb`
+		 单位：`mb`
+		
+		
+		`Total Process Memory size for the JobManager`. 
+		
+		This includes all the memory that a JobManager JVM process consumes, consisting of Total Flink Memory, JVM Metaspace, and JVM Overhead. 
+		In containerized setups, this should be set to the container memory. 
+		See also 'jobmanager.memory.flink.size' for Total Flink Memory size configuration.
 
 5. tmMemory
 
-	* **类型:** 整型数字
+	* **类型:** 字节规格容量
 	* **必须:** 是
-	* **默认值:** 1769472
+	* **默认值:** 1728
 	* **说明:** 
 
 		Total Process Memory size for the TaskExecutors. This includes all the memory that a TaskExecutor consumes, consisting of Total Flink Memory, JVM Metaspace, and JVM Overhead. On containerized setups, this should be set to the container memory. See also 'taskmanager.memory.flink.size' for total Flink memory size configuration.
 		
-		 单位：`kb`
+		 单位：`mb`
+		
+		
+		`Total Flink Memory size for the TaskExecutors`. 
+		
+		This includes all the memory that a TaskExecutor consumes, except for JVM Metaspace and JVM Overhead. 
+		It consists of Framework Heap Memory, Task Heap Memory, Task Off-Heap Memory, Managed Memory, and Network Memory. 
+		See also '%s' for total process memory size configuration.
 
 6. tmCPUCores
 
@@ -189,6 +206,37 @@ import PluginFields from '/src/components/PluginFields';
 		```shell script
 		kubectl  create clusterrolebinding tis-flink-manager --clusterrole=cluster-admin --serviceaccount=default:default
 		```
+
+10. retryMax
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 20
+	* **说明:** 
+
+		The number of retries the client will attempt if a retryable operations fails.
+
+11. retryDelay
+
+	* **类型:** 时间跨度
+	* **必须:** 是
+	* **默认值:** 3
+	* **说明:** 
+
+		The time that the client waits between retries (See also `rest.retry.max-attempts`).
+		
+		 单位：`秒`
+
+12. metricReportInterval
+
+	* **类型:** 时间跨度
+	* **必须:** 是
+	* **默认值:** 10
+	* **说明:** 
+
+		The reporter interval to use for the reporter named &lt;name&gt;. Only applicable to push-based reporters.
+		
+		 单位：`秒`
 
 
 </PluginFields>
@@ -233,7 +281,7 @@ import PluginFields from '/src/components/PluginFields';
 
 				* **类型:** 整型数字
 				* **必须:** 是
-				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@6fbc7853
+				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@77d959f1
 				* **说明:** 		SpringBoot配置，HTTP端口号，默认7700，不建议更改
 
 			2. host
@@ -252,7 +300,7 @@ import PluginFields from '/src/components/PluginFields';
 
 				* **类型:** 整型数字
 				* **必须:** 是
-				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@688d619c
+				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@4ab86b2a
 				* **说明:** 		SpringBoot配置，HTTP端口号，默认7700，不建议更改
 
 		* NodePort
@@ -265,7 +313,7 @@ import PluginFields from '/src/components/PluginFields';
 
 				* **类型:** 整型数字
 				* **必须:** 是
-				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@1b632442
+				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@3a63d248
 				* **说明:** 		SpringBoot配置，HTTP端口号，默认7700，不建议更改
 
 			2. INTERNAL-IP
@@ -304,25 +352,25 @@ import PluginFields from '/src/components/PluginFields';
 
 4. jmMemory
 
-	* **类型:** 整型数字
+	* **类型:** 字节规格容量
 	* **必须:** 是
-	* **默认值:** 1638400
+	* **默认值:** 1600
 	* **说明:** 
 
 		Total Process Memory size for the JobManager. This includes all the memory that a JobManager JVM process consumes, consisting of Total Flink Memory, JVM Metaspace, and JVM Overhead. In containerized setups, this should be set to the container memory. See also 'jobmanager.memory.flink.size' for Total Flink Memory size configuration.
 		
-		 单位：`kb`
+		 单位：`mb`
 
 5. tmMemory
 
-	* **类型:** 整型数字
+	* **类型:** 字节规格容量
 	* **必须:** 是
-	* **默认值:** 1769472
+	* **默认值:** 1728
 	* **说明:** 
 
 		Total Process Memory size for the TaskExecutors. This includes all the memory that a TaskExecutor consumes, consisting of Total Flink Memory, JVM Metaspace, and JVM Overhead. On containerized setups, this should be set to the container memory. See also 'taskmanager.memory.flink.size' for total Flink memory size configuration.
 		
-		 单位：`kb`
+		 单位：`mb`
 
 6. tmCPUCores
 
@@ -370,6 +418,37 @@ import PluginFields from '/src/components/PluginFields';
 		```shell script
 		kubectl  create clusterrolebinding tis-flink-manager --clusterrole=cluster-admin --serviceaccount=default:default
 		```
+
+10. retryMax
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 20
+	* **说明:** 
+
+		The number of retries the client will attempt if a retryable operations fails.
+
+11. retryDelay
+
+	* **类型:** 时间跨度
+	* **必须:** 是
+	* **默认值:** 3
+	* **说明:** 
+
+		The time that the client waits between retries (See also `rest.retry.max-attempts`).
+		
+		 单位：`秒`
+
+12. metricReportInterval
+
+	* **类型:** 时间跨度
+	* **必须:** 是
+	* **默认值:** 10
+	* **说明:** 
+
+		The reporter interval to use for the reporter named &lt;name&gt;. Only applicable to push-based reporters.
+		
+		 单位：`秒`
 
 
 </PluginFields>
@@ -428,7 +507,7 @@ import PluginFields from '/src/components/PluginFields';
 					1. 下载、解压
 
 					   ```shell script
-					     wget http://tis-release.oss-cn-beijing.aliyuncs.com/4.2.0-SNAPSHOT/tis/flink-tis-1.18.1-bin.tar.gz && rm -rf flink-tis-1.18.1 && mkdir flink-tis-1.18.1 && tar xvf flink-tis-1.18.1-bin.tar.gz -C ./flink-tis-1.18.1
+					     wget http://tis-release.oss-cn-beijing.aliyuncs.com/4.3.0/tis/flink-tis-1.18.1-bin.tar.gz && rm -rf flink-tis-1.18.1 && mkdir flink-tis-1.18.1 && tar xvf flink-tis-1.18.1-bin.tar.gz -C ./flink-tis-1.18.1
 					   ```
 					2. 修改 `$FLINK_HOME/conf/flink-conf.yaml`
 
@@ -490,7 +569,26 @@ import PluginFields from '/src/components/PluginFields';
 				* **默认值:** 无
 				* **说明:** 		无
 
-2. 并行度
+2. 流控
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** on
+	* **说明:** 
+
+		用于运行期 **限流读取数据** 的控制实现，其主要目的是控制数据源的读取速率 ，防止反压（Backpressure），避免下游系统过载或资源耗尽，可避免因数据消费过快导致内存溢出（OOM）或 CPU/网络带宽被占满。
+		
+		打开流控开关，选择`on`就可在任务运行期，对流选择以下三种控制类型：
+		1. 任务`暂停/恢复`功能
+		2. 设置每秒消息限流数目
+		3. 取消每秒消息限流阀
+
+	* **可选项说明:** 可选`off`,`on`以下是详细说明：
+		* off
+
+		* on
+
+3. 并行度
 
 	* **类型:** 整型数字
 	* **必须:** 是
@@ -501,7 +599,7 @@ import PluginFields from '/src/components/PluginFields';
 		
 		在 Flink 里面代表每个任务的并行度，适当的提高并行度可以大大提高 job 的执行效率，比如你的 job 消费 kafka 数据过慢，适当调大可能就消费正常了。
 
-3. 重启策略
+4. 重启策略
 
 	* **类型:** 单行文本
 	* **必须:** 是
@@ -541,7 +639,7 @@ import PluginFields from '/src/components/PluginFields';
 
 				* **类型:** 整型数字
 				* **必须:** 是
-				* **默认值:** 300
+				* **默认值:** 60
 				* **说明:** 
 
 					The highest possible duration between restarts if <code class="highlighter-rouge">restart-strategy.type</code> has been set to <code class="highlighter-rouge">exponential-delay</code>. It can be specified using notation: "1 min", "20 s"
@@ -552,7 +650,7 @@ import PluginFields from '/src/components/PluginFields';
 
 				* **类型:** 单行文本
 				* **必须:** 是
-				* **默认值:** 2.0
+				* **默认值:** 1.5
 				* **说明:** 
 
 					Backoff value is multiplied by this value after every failure,until max backoff is reached if <code class="highlighter-rouge">restart-strategy.type</code> has been set to <code class="highlighter-rouge">exponential-delay</code>.
@@ -642,7 +740,7 @@ import PluginFields from '/src/components/PluginFields';
 
 		* off
 
-4. 支持意外恢复
+5. 支持意外恢复
 
 	* **类型:** 单选
 	* **必须:** 是
@@ -656,7 +754,7 @@ import PluginFields from '/src/components/PluginFields';
 		1. 持久化stateBackend
 		2. 开启checkpoint
 
-5. checkpoint
+6. checkpoint
 
 	* **类型:** 单行文本
 	* **必须:** 是
@@ -685,7 +783,7 @@ import PluginFields from '/src/components/PluginFields';
 				* **默认值:** 200
 				* **说明:** 
 
-					Gets the interval in which checkpoints are periodically scheduled.<br /><br />This setting defines the base interval. Checkpoint triggering may be delayed by the settings <code class="highlighter-rouge">execution.checkpointing.max-concurrent-checkpoints</code> and <code class="highlighter-rouge">execution.checkpointing.min-pause</code>
+					Gets the interval in which checkpoints are periodically scheduled.<br /><br />This setting defines the base interval. Checkpoint triggering may be delayed by the settings <code class="highlighter-rouge">execution.checkpointing.max-concurrent-checkpoints</code>, <code class="highlighter-rouge">execution.checkpointing.min-pause</code> and <code class="highlighter-rouge">execution.checkpointing.interval-during-backlog</code>
 
 					 单位：`秒`
 
@@ -745,7 +843,7 @@ import PluginFields from '/src/components/PluginFields';
 				* **默认值:** RETAIN_ON_CANCELLATION
 				* **说明:** 
 
-					Externalized checkpoints write their meta data out to persistent storage and are not automatically cleaned up when the owning job fails or is suspended (terminating with job status <code class="highlighter-rouge">JobStatus#FAILED</code> or <code class="highlighter-rouge">JobStatus#SUSPENDED</code>). In this case, you have to manually clean up the checkpoint state, both the meta data and actual program state.<br /><br />The mode defines how an externalized checkpoint should be cleaned up on job cancellation. If you choose to retain externalized checkpoints on cancellation you have to handle checkpoint clean up manually when you cancel the job as well (terminating with job status <code class="highlighter-rouge">JobStatus#CANCELED</code>).<br /><br />The target directory for externalized checkpoints is configured via <code class="highlighter-rouge">state.checkpoints.dir</code>.
+					Externalized checkpoints write their meta data out to persistent storage and are not automatically cleaned up when the owning job fails or is suspended (terminating with job status <code class="highlighter-rouge">JobStatus#FAILED</code> or <code class="highlighter-rouge">JobStatus#SUSPENDED</code>). In this case, you have to manually clean up the checkpoint state, both the meta data and actual program state.<br /><br />The mode defines how an externalized checkpoint should be cleaned up on job cancellation. If you choose to retain externalized checkpoints on cancellation you have to handle checkpoint clean up manually when you cancel the job as well (terminating with job status <code class="highlighter-rouge">JobStatus#CANCELED</code>).<br /><br />The target directory for externalized checkpoints is configured via <code class="highlighter-rouge">execution.checkpointing.dir</code>.
 
 			8. enableUnaligned
 
@@ -765,7 +863,7 @@ import PluginFields from '/src/components/PluginFields';
 
 					Forces unaligned checkpoints, particularly allowing them for iterative jobs.
 
-6. stateBackend
+7. stateBackend
 
 	* **类型:** 单行文本
 	* **必须:** 是
@@ -794,7 +892,7 @@ import PluginFields from '/src/components/PluginFields';
 				* **默认值:** file:///opt/data/savepoint
 				* **说明:** 
 
-					The default directory used for storing the data files and meta data of checkpoints in a Flink supported filesystem. The storage path must be accessible from all participating processes/nodes(i.e. all TaskManagers and JobManagers).
+					The default directory used for storing the data files and meta data of checkpoints in a Flink supported filesystem. The storage path must be accessible from all participating processes/nodes(i.e. all TaskManagers and JobManagers). If the 'execution.checkpointing.storage' is set to 'jobmanager', only the meta data of checkpoints will be stored in this directory.
 
 					The scheme (hdfs://, file://, etc) is null. Please specify the file system scheme explicitly in the URI.
 
@@ -811,12 +909,12 @@ import PluginFields from '/src/components/PluginFields';
 
 				* **类型:** 整型数字
 				* **必须:** 是
-				* **默认值:** 20
+				* **默认值:** 0
 				* **说明:** 
 
 					The minimum size of state data files. All state chunks smaller than that are stored inline in the root checkpoint metadata file. The max memory threshold for this configuration is 1MB.
 
-					 单位：`kb`
+					 单位：`mb`
 
 			4. writeBufferSize
 
@@ -825,7 +923,7 @@ import PluginFields from '/src/components/PluginFields';
 				* **默认值:** 4096
 				* **说明:** 
 
-					The default size of the write buffer for the checkpoint streams that write to file systems. The actual write buffer size is determined to be the maximum of the value of this option and option 'state.storage.fs.memory-threshold'.
+					The default size of the write buffer for the checkpoint streams that write to file systems. The actual write buffer size is determined to be the maximum of the value of this option and option 'execution.checkpointing.data-inline-threshold'.
 
 		* HashMapState
 
@@ -898,10 +996,12 @@ import PluginFields from '/src/components/PluginFields';
 
 	* **类型:** 整型数字
 	* **必须:** 是
-	* **默认值:** 3000
+	* **默认值:** 3
 	* **说明:** 
 
-		The time in ms that the client waits between retries (See also `rest.retry.max-attempts`).
+		The time that the client waits between retries (See also `rest.retry.max-attempts`).
+		
+		 单位：`秒`
 
 
 </PluginFields>

@@ -94,10 +94,37 @@ import PluginFields from '/src/components/PluginFields';
 
 2. 所在时区
 
-	* **类型:** 单选
+	* **类型:** 单行文本
 	* **必须:** 是
-	* **默认值:** com.qlangtech.tis.async.message.client.consumer.impl.MQListenerFactory.dftZoneId()
-	* **说明:** 		设置所在时区
+	* **默认值:** default
+	* **说明:** 		设置服务端所在时区，有两种输入方式：1. default 从下拉框中选择，2. customize：用户手动输入时区编码
+
+	* **可选项说明:** 可选`customize`,`default`以下是详细说明：
+		* customize
+
+			<Figure img={require('./dataxReader_timeZone_customize.png')}/>
+
+			* **配置项说明:** 
+
+			1. 时区编码
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		设置服务端所在时区编码
+
+		* default
+
+			<Figure img={require('./dataxReader_timeZone_default.png')}/>
+
+			* **配置项说明:** 
+
+			1. 时区编码
+
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.plugin.timezone.TISTimeZone.dftZoneId()
+				* **说明:** 		选择服务端所在时区
 
 3. 配置模版
 
@@ -117,7 +144,7 @@ import PluginFields from '/src/components/PluginFields';
 
 <PluginFields>
 
-1. 数据库名
+1. 目标数据库
 
 	* **类型:** 单选
 	* **必须:** 是
@@ -169,27 +196,7 @@ import PluginFields from '/src/components/PluginFields';
 
 			* **配置项说明:** 
 
-			1. copyExistingMaxThreads
-
-				* **类型:** 整型数字
-				* **必须:** 否
-				* **默认值:** 无
-				* **说明:** 
-
-					The number of threads to use when performing the data copy. Defaults to the number of
-					 * processors. Default: defaults to the number of processors
-
-			2. copyExistingQueueSize
-
-				* **类型:** 整型数字
-				* **必须:** 否
-				* **默认值:** 无
-				* **说明:** 
-
-					The max size of the queue to use when copying data. 
-					* Default: `10240`
-
-			3. pollMaxBatchSize
+			1. pollMaxBatchSize
 
 				* **类型:** 整型数字
 				* **必须:** 否
@@ -199,7 +206,7 @@ import PluginFields from '/src/components/PluginFields';
 					Maximum number of change stream documents to include in a single batch when polling for new data. This setting can be used to limit the amount of data buffered internally in the connector.
 					* Default: `1024`
 
-			4. pollAwaitTimeMillis
+			2. pollAwaitTimeMillis
 
 				* **类型:** 整型数字
 				* **必须:** 否
@@ -209,7 +216,7 @@ import PluginFields from '/src/components/PluginFields';
 					The amount of time to wait before checking for new results on the change stream.
 					* Default: `1000`
 
-			5. heartbeatIntervalMillis
+			3. heartbeatIntervalMillis
 
 				* **类型:** 整型数字
 				* **必须:** 否
@@ -271,22 +278,6 @@ import PluginFields from '/src/components/PluginFields';
 		Default: none
 		
 		https://docs.mongodb.com/manual/reference/connection-string/#std-label-connections-connection-options
-
-5. copyExistingPipeline
-
-	* **类型:** 富文本
-	* **必须:** 否
-	* **默认值:** 无
-	* **说明:** 
-
-		An array of JSON objects describing the pipeline operations to run when copying existing data.
-		
-		This can improve the use of indexes by the copying manager and make copying more efficient. 
-		eg. 
-		```json
-		[{"$match": {"closed": "false"}}] 
-		```
-		ensures that only documents in which the closed field is set to false are copied.
 
 
 </PluginFields>

@@ -26,14 +26,18 @@ import PluginFields from '/src/components/PluginFields';
 	* **类型:** 单行文本
 	* **必须:** 是
 	* **默认值:** 无
-	* **说明:** 		无
+	* **说明:** 
+
+		本地安装的Apache Dolphinscheduler服务端地址，例如：http://192.168.28.201:12345/dolphinscheduler
 
 3. serverToken
 
 	* **类型:** 单行文本
 	* **必须:** 是
 	* **默认值:** 无
-	* **说明:** 		无
+	* **说明:** 
+
+		在 Apache Dolphinscheduler服务端->安全中心->令牌管理（ http://192.168.28.201:12345/dolphinscheduler/ui/security/token-manage ），中配置的用户访问令牌。
 
 
 </PluginFields>
@@ -68,7 +72,7 @@ import PluginFields from '/src/components/PluginFields';
 
 	* **类型:** 单行文本
 	* **必须:** 是
-	* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@5be69f7e
+	* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@433b1597
 	* **说明:** 		对应的dolphinscheduler中工作流名称，确保同一项目下工作流名称唯一，不能重复
 
 2. endpoint

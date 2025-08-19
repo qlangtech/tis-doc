@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: '人人都会用的数据集成产品',
-    tagline: '过去，数据集成是开发者用代码搭建的"高墙"。如今TIS用一键式操作打破壁垒——DBA、分析师等技术/业务人员无需编程，通过可视化配置即可完成数据抽取、清洗、同步等全流程。现在整个团队都能像组装乐高一样零代码搭建数据管道！',
+    title: '零代码乐高式搭建数据管道',
+    tagline: '过去，数据集成是开发者用代码搭建的"高墙"。如今TIS用一键式操作打破壁垒——DBA、分析师等技术/业务人员无需编程，通过可视化配置即可完成数据抽取、清洗、同步等全流程操作。',
     url: 'https://tis.pub',
     baseUrl: '/',
     onBrokenLinks: 'throw',

@@ -18,68 +18,42 @@ import TOCInline from '@theme/TOCInline';
 ## tis-asyncmsg-rocketmq-plugin.tpi
 
 * **下载地址：** http://mirror.qlangtech.com/4.1.0/tis-plugin/tis-asyncmsg-rocketmq-plugin.tpi
-
-* **介绍：** 
-
+* **介绍：**
 	对RocketMQ进行进行封装，对接各种实时流消息（例如，MySQL binlog）执行流计算，可在TIS中构建实时同步的物化视图
-* **扩展列表：** 
+
 
 ## tis-chunjun-base-plugin.tpi
 
 * **下载地址：** http://mirror.qlangtech.com/4.1.0/tis-plugin/tis-chunjun-base-plugin.tpi
-
-* **扩展列表：** 
-
+* **扩展列表：**
 	* [com.qlangtech.tis.plugin.datax.SelectedTabExtend](./plugins#comqlangtechtisplugindataxselectedtabextend)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.chunjun.sink.SinkTabPropsExtends](./plugins#comqlangtechtispluginsincrflinkchunjunsinksinktabpropsextends)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.chunjun.sink.UniqueKeySetter](./plugins#comqlangtechtispluginsincrflinkchunjunsinkuniquekeysetter)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.chunjun.source.SelectedTabPropsExtends](./plugins#comqlangtechtispluginsincrflinkchunjunsourceselectedtabpropsextends)
 
 	* [com.qlangtech.tis.plugins.incr.flink.chunjun.offset.StartLocation](./plugins#comqlangtechtispluginsincrflinkchunjunoffsetstartlocation)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.chunjun.offset.DesignatedLocation](./plugins#comqlangtechtispluginsincrflinkchunjunoffsetdesignatedlocation)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.chunjun.offset.LatestLocation](./plugins#comqlangtechtispluginsincrflinkchunjunoffsetlatestlocation)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.chunjun.offset.ScanAll](./plugins#comqlangtechtispluginsincrflinkchunjunoffsetscanall)
-
 	* [com.qlangtech.tis.plugins.incr.flink.connector.UpdateMode](./plugins#comqlangtechtispluginsincrflinkconnectorupdatemode)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.connector.impl.InsertType](./plugins#comqlangtechtispluginsincrflinkconnectorimplinserttype)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.connector.impl.ReplaceType](./plugins#comqlangtechtispluginsincrflinkconnectorimplreplacetype)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.connector.impl.UpdateType](./plugins#comqlangtechtispluginsincrflinkconnectorimplupdatetype)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.connector.impl.UpsertType](./plugins#comqlangtechtispluginsincrflinkconnectorimplupserttype)
-
 	* [com.qlangtech.tis.plugins.incr.flink.chunjun.poll.Polling](./plugins#comqlangtechtispluginsincrflinkchunjunpollpolling)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.chunjun.poll.RunInterval](./plugins#comqlangtechtispluginsincrflinkchunjunpollruninterval)
-
 	* [com.qlangtech.tis.plugins.incr.flink.chunjun.script.ChunjunStreamScriptType](./plugins#comqlangtechtispluginsincrflinkchunjunscriptchunjunstreamscripttype)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.chunjun.script.ChunjunSqlType](./plugins#comqlangtechtispluginsincrflinkchunjunscriptchunjunsqltype)
-
 		 * [com.qlangtech.tis.plugins.incr.flink.chunjun.script.StreamApiScript](./plugins#comqlangtechtispluginsincrflinkchunjunscriptstreamapiscript)
 
 ## tis-datax-clickhouse-plugin.tpi
 
 * **下载地址：** http://mirror.qlangtech.com/4.1.0/tis-plugin/tis-datax-clickhouse-plugin.tpi
-
-* **介绍：** 
-
+* **介绍：**
 	* 实现Clickhouse数据源
-	    
 	  支持定义Clickhouse的数据源，为定义`ClickhouseWriter`插件提供支持
-	  
 	* 支持Clickhouse类型的 DataX Writer插件
-	  
 	  1. ClickhouseWriter 插件实现了写入数据到 Clickhouse库的目的表的功能。
-	  
 	  2. ClickhouseWriter 面向ETL开发工程师，他们使用 ClickhouseWriter 从数仓导入数据到 Clickhouse。同时 ClickhouseWriter 亦可以作为数据迁移工具为DBA等用户提供服务
 * **扩展列表：** 
 
@@ -118,17 +92,11 @@ import TOCInline from '@theme/TOCInline';
 ## tis-datax-common-plugin.tpi
 
 * **下载地址：** http://mirror.qlangtech.com/4.1.0/tis-plugin/tis-datax-common-plugin.tpi
-
-* **介绍：** 
-
+* **介绍：**
 	* 定义DataxProcessor实现录入DataX实例基本信息的功能
-	
 	* 为其他DataX Reader、Writer插件提供了公共类
-	
 	* 定义DataXGlobalConfig，提供DataX配置的基础配置参数，如：channel,errorLimitCount 等
-	
 	* 提供了DataX 任务提交方式的实现
-	  
 	  1. `LocalDataXJobSubmit`本地任务提交
 	  2. `DistributedOverseerDataXJobSubmit`基于K8S的分布式任务提交方式（生产环境中建议使用该种提交方式）
 * **扩展列表：** 

@@ -1,0 +1,237 @@
+---
+title: Dolphinscheduler
+date: 2025-03-12
+type: book
+sidebar_position: 1
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+import PluginFields from '/src/components/PluginFields';
+
+## ds-endpoint
+
+<Figure img={require('./DolphinSchedulerEndpoint.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. name
+	* **类型:** 单行文本
+	* **必须:** 是
+2. serverPath
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 
+
+		本地安装的Apache Dolphinscheduler服务端地址，例如：http://192.168.28.201:12345/dolphinscheduler
+
+3. serverToken
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 
+
+		在 Apache Dolphinscheduler服务端->安全中心->令牌管理（ http://192.168.28.201:12345/dolphinscheduler/ui/security/token-manage ），中配置的用户访问令牌。
+
+
+</PluginFields>
+
+## Unlimited
+
+<Figure img={require('./UnlimitDSTargetTables.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. 目标表
+
+	* **类型:** 多选
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		请选择需要同步到DolphinScheduler的表
+
+
+</PluginFields>
+
+## Export To Dolphinscheduler
+
+<Figure img={require('./ExportTISPipelineToDolphinscheduler.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. 工作流名称
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@433b1597
+	* **说明:** 		对应的dolphinscheduler中工作流名称，确保同一项目下工作流名称唯一，不能重复
+
+2. endpoint
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		dolphinscheduler中对应的连接端配置
+
+3. projectCode
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		dolphinscheduler中对应的项目编码
+
+4. createHistory
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** false
+	* **说明:** 		dolphinscheduler执过程中，是否在TIS端生成执行历史记录？
+
+5. TIS端回调
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** Default
+	* **说明:** 		对应的dolphinscheduler中工作流执行过程中需要回调TIS，设置相应参数
+
+	* **可选项说明:** 可选`Default`以下是详细说明：
+		* Default
+
+			<Figure img={require('./ExportTISPipelineToDolphinscheduler_callback_Default.png')}/>
+
+			* **配置项说明:** 
+
+			1. tisHTTPHost
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.plugin.datax.doplinscheduler.export.DSTISCallback.dftTISHTTPHost()
+				* **说明:** 		dolphinscheduler中会通过此地址作为REST API请求的根路径，向TIS发送数据数据管道的配置及插件资源请求，请务必确保dolphinscheduler端对此地址可用
+
+			2. tisAddress
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.plugin.datax.doplinscheduler.export.DSTISCallback.dftTISAddress()
+				* **说明:** 		dolphinscheduler中会通过此地址访问TIS提供的日志收集服务，TIS可收集dolphinscheduler端数据管道的执行日志。请务必确保dolphinscheduler端对此地址可用
+
+6. 目标
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** Unlimited
+	* **说明:** 		请选择需要同步到DolphinScheduler的表
+
+	* **可选项说明:** 可选`Limited`,`Unlimited`以下是详细说明：
+		* Limited
+
+			<Figure img={require('./ExportTISPipelineToDolphinscheduler_target_Limited.png')}/>
+
+			* **配置项说明:** 
+
+			1. 目标表
+
+				* **类型:** 多选
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		无
+
+		* Unlimited
+
+			<Figure img={require('./ExportTISPipelineToDolphinscheduler_target_Unlimited.png')}/>
+
+			* **配置项说明:** 
+
+			1. 目标表
+
+				* **类型:** 多选
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		请选择需要同步到DolphinScheduler的表
+
+7. 部署目录
+
+	* **类型:** 单行文本
+	* **必须:** 否
+	* **默认值:** 无
+	* **说明:** 		TIS数据管道任务执行会在dolphinscheduler所在节点机器部署TIS运行所依赖的工程包，默认自动部署在dolphinscheduler $HOME目录
+
+8. 描述
+
+	* **类型:** 富文本
+	* **必须:** 否
+	* **默认值:** 无
+	* **说明:** 		同步到dolphinscheduler的工作流名称描述
+
+9. 资源组
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** Default
+	* **说明:** 		对应dolphinScheduler中任务组概念，用以来控制工作流中的job并发数目，可以有效防止由于大量同步任务并发执行导致业务数据库过载
+
+	* **可选项说明:** 可选`Default`以下是详细说明：
+		* Default
+
+			<Figure img={require('./ExportTISPipelineToDolphinscheduler_taskGroup_Default.png')}/>
+
+			* **配置项说明:** 
+
+			1. groupName
+
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.plugin.datax.doplinscheduler.export.DSTaskGroup.dftGroupName()
+				* **说明:** 		对应dolphinscheduler中资源组名称
+
+			2. parallelism
+
+				* **类型:** 整型数字
+				* **必须:** 是
+				* **默认值:** 5
+				* **说明:** 		资源组中最大可调用资源数量，可用来控制最大并发执行数
+
+10. 内存规格
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** default
+	* **说明:** 		执行DataX任务申请内存规格,默认为1024兆，如执行大表同步任务请按照实际需求量设置自定义规格
+
+	* **可选项说明:** 可选`customize`,`default`以下是详细说明：
+		* customize
+
+			<Figure img={require('./ExportTISPipelineToDolphinscheduler_memorySpec_customize.png')}/>
+
+			* **配置项说明:** 
+
+			1. request
+
+				* **类型:** 整型数字
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.plugin.memory.CustomizeMemorySpecification.dftMemory()
+				* **说明:** 		单个任务内存初始申请，单位：兆。当任务并发数目设置为：n，内存总体初始开销为'n*memoryRequest'，注意防止执行节点OOM
+
+			2. limit
+
+				* **类型:** 整型数字
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.plugin.memory.CustomizeMemorySpecification.dftMemory()
+				* **说明:** 		单个任务内存最大极限申请，单位：兆。当任务并发数目设置为：n，内存总体最大极限开销为'n*memoryLimit'，注意防止执行节点OOM
+
+		* default
+
+
+</PluginFields>
+
+
+

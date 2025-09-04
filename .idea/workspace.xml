@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="" />
+    <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/enhance-extra/incr_step_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/enhance-extra/incr_step_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/enhance-extra/incr_step_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/enhance-extra/realtime_metric_show.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/paimon/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/example/paimon/pipeline-connectors.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/enhance-extra/datax-add-step2.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/enhance-extra/datax-add-step2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/guide/rate-controller/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guide/rate-controller/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/install/flink-cluster/native.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/flink-cluster/native.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/install/flink-cluster/standalone.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/flink-cluster/standalone.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.3.0/install/flink-cluster/native.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.3.0/install/flink-cluster/native.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versioned_docs/version-4.3.0/install/flink-cluster/standalone.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/versioned_docs/version-4.3.0/install/flink-cluster/standalone.mdx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +42,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/opt/misc/tis-docs2/docs/guide/rate-controller&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/opt/misc/tis-docs2/docs/enhance-extra&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -39,18 +55,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/enhance-extra" />
       <recent name="$PROJECT_DIR$/docs/guide/rate-controller" />
       <recent name="$PROJECT_DIR$/versioned_docs/version-4.3.0/integrations/assist" />
       <recent name="$PROJECT_DIR$/docs/integrations/assist" />
       <recent name="$PROJECT_DIR$/docs/integrations/transformer" />
-      <recent name="$PROJECT_DIR$/docs/integrations/data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/example/paimon" />
       <recent name="$PROJECT_DIR$/docs/install" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/src/pages/commerical" />
       <recent name="$PROJECT_DIR$/docs/guide/transformer/images" />
-      <recent name="$PROJECT_DIR$/docs/guide/integer-dolphinscheduler/images" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -210,6 +226,9 @@
       <workItem from="1755593407254" duration="2527000" />
       <workItem from="1755783729383" duration="3174000" />
       <workItem from="1755839472670" duration="23637000" />
+      <workItem from="1756254191359" duration="44486000" />
+      <workItem from="1756648278167" duration="617000" />
+      <workItem from="1756883329286" duration="2742000" />
     </task>
     <servers />
   </component>

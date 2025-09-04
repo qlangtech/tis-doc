@@ -71,13 +71,13 @@ TIS为您提供企业级数据集成服务，**基于批(DataX)，流(Flink-CDC�
 
   借鉴了 DataOps、DataPipeline 理念，对各各执行流程建模。不需要了解底层模块的实现原理，基本实现傻瓜化方式操作。
 
-## 功能一瞥
+## 功能一览
 
 选择Reader/Writer插件类型
 
 <Figure img={require('./enhance-extra/datax-add-step2.png')} />
 
-
+### 开通批量数据通道
 
 添加MySqlReader
 
@@ -98,6 +98,24 @@ TIS为您提供企业级数据集成服务，**基于批(DataX)，流(Flink-CDC�
 执行MySql->ElasticSearch 执行成功
 
 <Figure img={require('./enhance-extra/datax-exec-success.png')} />
+
+### 开通实时数据通道
+
+添加Flink-Cluster、设置重启策略、CheckPoint机制等
+
+<Figure img={require('./enhance-extra/incr_step_1.png')} />
+
+设置Source/Sink组件属性
+<Figure img={require('./enhance-extra/incr_step_2.png')} />
+
+TIS基于数据库元数据信息自动生成Flink-SQL脚本,您没看错全部脚本自动生！
+<Figure img={require('./enhance-extra/incr_step_3.png')} />
+
+实时数据通道创建完成！控制台实时显示流量，可以执行限流，启停（Pause/Resume）等操作 <Link href={require("./guide/rate-controller/index.mdx")}  >>>详细</Link>
+
+**构建一个实时整库同步管道就这么简单！！！**
+
+<Figure img={require('./enhance-extra/realtime_metric_show.gif')} />
 
 
 <Contact/>

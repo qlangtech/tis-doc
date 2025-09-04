@@ -12,7 +12,7 @@ export const VerShell = () => {
     <div>
       <CodeBlock
         language="shell">
-        wget http://mirror.qlangtech.com/{metadata.version}/tis/flink-tis-1.18.1-bin.tar.gz && rm -rf flink-tis-1.18.1 && mkdir flink-tis-1.18.1 && tar xvf flink-tis-1.18.1-bin.tar.gz -C ./flink-tis-1.18.1
+        wget http://mirror.qlangtech.com/{metadata.version}/tis/flink-tis-1.20.1-bin.tar.gz && rm -rf flink-tis-1.20.1 && mkdir flink-tis-1.20.1 && tar xvf flink-tis-1.20.1-bin.tar.gz -C ./flink-tis-1.20.1
       </CodeBlock>
     </div>
   );
@@ -25,7 +25,7 @@ export const VerShell = () => {
 ## 环境准备
 
 1. 准备一台2核4G以上配置的Linux机器节点(CentOs、macOS等)
-2. `Java SE Development Kit 8`及以上版本[安装](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+2. `Java SE Development Kit 11`[安装](https://www.oracle.com/java/technologies/downloads/#java11)
 3. 确保本机节点hostname对应的ip正确
 
    因为进程启动时候会去拿本机的ip地址,所以要保证`/etc/hosts`文件中hostname 对应ip地址正确
@@ -47,7 +47,7 @@ export const VerShell = () => {
 2. 启动Flink Cluster
 
       ```shell script
-        cd ./flink-tis-1.18.1
+        cd ./flink-tis-1.20.1
          ./bin/start-cluster.sh
       ```
 

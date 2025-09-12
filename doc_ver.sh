@@ -1,1 +1,1 @@
-npm run docusaurus docs:version 3.6.0-alpha
+npm run docusaurus docs:version 4.3.0

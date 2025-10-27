@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import QuickInstall from '@site/src/components/QuickInstall';
 import Contact from '@site/src/components/Contact';
+import StructuredData from '@site/src/components/SEO/StructuredData';
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -33,8 +34,9 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`}
-      description="Support agile DataOps Based on DataX and Flink-CDC, Chunjun with Web-UI">
+      title="TIS - 零代码数据集成平台 | DataX和Flink-CDC可视化管理工具"
+      description="TIS是基于DataX、Flink-CDC和Chunjun的零代码数据集成平台，提供可视化的ETL数据管道搭建工具，支持MySQL、PostgreSQL、Oracle、ElasticSearch、Hive等数据库的实时同步和批量迁移。企业级数据中台解决方案，让数据集成变得简单高效。">
+      <StructuredData />
       <HomepageHeader />
       <main>
           <HomepageFeatures />

@@ -1,0 +1,57 @@
+# Robots.txt for TIS Documentation
+# https://tis.pub
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Optimize crawling
+Crawl-delay: 1
+
+# Disallow certain paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /__tests__/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /build/
+Disallow: /.docusaurus/
+
+# Allow important paths explicitly
+Allow: /docs/
+Allow: /blog/
+Allow: /community-collaboration/
+Allow: /img/
+
+# Sitemap location
+Sitemap: https://tis.pub/sitemap.xml
+
+# Chinese search engines
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+User-agent: Sogou web spider
+Allow: /
+Crawl-delay: 1
+
+User-agent: 360Spider
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

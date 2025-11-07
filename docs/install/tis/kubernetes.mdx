@@ -6,7 +6,7 @@ type: book
 weight: 9
 sidebar_position: 4
 ---
-import Link from '/src/components/Link';
+import Link from '@docusaurus/Link';
 import Figure from '/src/components/Figure';
 import BZhan from '/src/components/BZhan';
 
@@ -186,6 +186,6 @@ tis-console-loadbalancer   LoadBalancer   192.168.200.225   47.96.149.229   8080
 ## 继续部署
 
 当管道配置完成之后，需要执行批量数据同步、增量实时数据同步，可以继续利用TIS的功能模块在K8S集群中创建对应的执行组件：
-* 分布式批量数据同步，  <Link href={require("../powerjob/index.mdx")} >部署PowerJob组件</Link>
-* 分布式实时数据同步， <Link href={require("@site/docs/install/flink-cluster/native.mdx")} >部署基于Kubernetes的Flink</Link>
+* 分布式批量数据同步，  <Link to="../powerjob">部署PowerJob组件</Link>
+* 分布式实时数据同步， <Link to="../flink-cluster/native">部署基于Kubernetes的Flink</Link>
 

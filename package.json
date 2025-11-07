@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
+    "start": "INCLUDE_CURRENT_VERSION=true docusaurus start",
+    "build": "INCLUDE_CURRENT_VERSION=false NODE_ENV=production docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
+    "deploy": "INCLUDE_CURRENT_VERSION=false docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
+    "serve:prod": "INCLUDE_CURRENT_VERSION=false docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },

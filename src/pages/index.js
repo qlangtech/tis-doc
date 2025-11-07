@@ -7,7 +7,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import QuickInstall from '@site/src/components/QuickInstall';
 import Contact from '@site/src/components/Contact';
 import StructuredData from '@site/src/components/SEO/StructuredData';
-import SourceSinkTable from '@site/docs/plugin/source-sink-table';
+import SourceSinkTable from '@site/src/components/SourceSinkTable';
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -43,14 +43,15 @@ export default function Home() {
           <HomepageFeatures />
 
           <section className={styles.sourceSinkSection}>
-            <div className="container">
-              <h2 className="text--center margin-bottom--xs">支持的数据源</h2>
-              <p className="text--center margin-bottom--lg">
-                TIS 支持多种数据源的批量和实时数据处理能力
-              </p>
-              <SourceSinkTable />
-            </div>
+              <div className="container">
+                  <h2 className="text--center margin-bottom--xs">支持的数据源</h2>
+                  <p className="text--center margin-bottom--lg">
+                      TIS 支持多种数据源的批量和实时数据处理能力
+                  </p>
+                  <SourceSinkTable />
+              </div>
           </section>
+
 
           <QuickInstall />
           <Contact />

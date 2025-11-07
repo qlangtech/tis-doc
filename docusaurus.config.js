@@ -4,6 +4,15 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+// 根据环境变量或 NODE_ENV 来决定是否包含当前版本
+// 开发环境默认为 true，生产环境默认为 false
+const isDevelopment = process.env.NODE_ENV === 'development';
+const includeCurrentVersion = process.env.INCLUDE_CURRENT_VERSION
+    ? process.env.INCLUDE_CURRENT_VERSION === 'true'
+    : isDevelopment;
+
+console.log(`[Docusaurus Config] Environment: ${process.env.NODE_ENV}, Include Current Version: ${includeCurrentVersion}`);
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: '零代码乐高式搭建数据管道',
@@ -86,7 +95,7 @@ const config = {
             /** @type {import('@docusaurus/preset-classic').Options} */
             ({
                 docs: {
-                    includeCurrentVersion: false,
+                    includeCurrentVersion: includeCurrentVersion,
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.

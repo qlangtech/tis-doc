@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f3f99959-8a1f-4eac-813b-7a5014046a71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/install/flink-cluster/standalone.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/install/flink-cluster/standalone.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +219,8 @@
       <workItem from="1758846921818" duration="1518000" />
       <workItem from="1761558849157" duration="6870000" />
       <workItem from="1761959530353" duration="527000" />
-      <workItem from="1762337116420" duration="2568000" />
+      <workItem from="1762337116420" duration="4050000" />
+      <workItem from="1762495020744" duration="64000" />
     </task>
     <servers />
   </component>

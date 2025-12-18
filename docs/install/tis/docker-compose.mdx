@@ -16,13 +16,19 @@ return <span style={{'color':'blue'}}>{metadata.version}</span>
 
 export const GithubDockerComposeUrl = () => {
  let fileUrl = 'https://github.com/datavane/tis/blob/v' + metadata.version + '/docker-compose/docker-compose.yaml' ;
- let projectUrl = 'https://github.com/datavane/tis/blob/v' + metadata.version ;
-return <ul> <li> <a href={projectUrl}>所在Github项目：{projectUrl}</a> </li> <li> <a href={fileUrl}>Github项目文件路径：{fileUrl} </a></li></ul>
+let configPropUrl = 'https://github.com/datavane/tis/blob/v' + metadata.version + '/docker-compose/config/config.properties' ;
+ let projectUrl = 'https://github.com/datavane/tis/blob/v' + metadata.version;
+return <ul> <li> 所在Github项目： <a href={projectUrl}>{projectUrl}</a> </li> <li> docker-compose.yaml文件路径：<a href={fileUrl}>{fileUrl} </a></li> <li> config.properties文件路径：<a href={configPropUrl}>{configPropUrl} </a></li></ul>
 }
 
-在单机上通过`docker-compose`方式启动TIS集群。集群包含两个服务组件，分别是负责增量实时同步的`Standalone Flink`服务和负责TIS控制台与批量同步的`tis-console`服务。
+在单机上通过`docker-compose`方式启动TIS集群。集群包含两个服务组件：
+1. 增量实时同步组件`Standalone Flink`
+2. TIS控制台与执行批量同步的`tis-console`
 
-## 配置文件介绍
+## 配置
+使用docker-compose启动TIS集群需要在本地环境中先做一些配置，需要准备以下这些资源
+
+### 配置 docker-compose.yaml
 以下是docker-compose配置文件:
 
 ```yaml title='docker-compose.yaml' showLineNumbers
@@ -62,6 +68,35 @@ services:
 
 docker-compose 文件信息，用户可自行Checkout到本地执行：
 <GithubDockerComposeUrl/>
+
+### 配置 config/config.properties
+在 `docker-compose.yaml` 配置文件所在的相同目录中 创建 `config/config.properties` 配置文件,内容如下：
+``` properties title='config.properties' showLineNumbers
+project.name=TIS
+runtime=daily
+tis.datasource.type=derby
+tis.datasource.dbname=tis_console_db
+
+assemble.host=tis-console
+tis.host=tis-console
+```
+
+### 初始化data目录
+在 `docker-compose.yaml` 配置文件所在相同目录中创建 `data`目录
+``` shell
+mkdir -p data
+```
+
+### 最终文件及目录结构：
+
+```shell
+.
+|_docker-compose.yaml
+|_config
+| |_config.properties
+|_data
+
+```
 
 ## 启动服务
 

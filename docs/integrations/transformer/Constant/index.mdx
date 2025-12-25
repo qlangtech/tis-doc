@@ -1,0 +1,43 @@
+---
+title: Constant
+date: 2025-03-12
+type: book
+sidebar_position: 1
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+import PluginFields from '/src/components/PluginFields';
+
+## Copy Constant
+
+<Figure img={require('./CopyConstantValUDF.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. 常量值
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		用户设置常量内容，数据同步阶段会直接将该常量值同步到目标列中
+
+2. to
+
+	* **类型:** 多选
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 
+
+		设置拷贝到的列，有两种执行模式：
+		1. 可以新添加一列: 可以选择 `Virtual Column`，设置新列的名称，并且为新列设置`类型`
+		2. 替换原有记录的值: 可以选择 `Target Column`，从下拉列表中选择原有记录中的某一列作为替换目标
+
+
+</PluginFields>
+
+
+

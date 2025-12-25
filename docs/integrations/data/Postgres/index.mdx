@@ -71,7 +71,7 @@ import PluginFields from '/src/components/PluginFields';
 
 	* **类型:** 单选
 	* **必须:** 是
-	* **默认值:** 无
+	* **默认值:** utf8
 	* **说明:** 		数据数据
 
 9. 附加参数
@@ -176,34 +176,34 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxWriter_autoCreateTable_off.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 别名前缀
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 		统一为目标表添加前缀，例如在构建分层数仓用于为ods层目标表统一添加前缀,例如：`ods_erp_`
-
+			
 		* on
 
 			<Figure img={require('./dataxWriter_autoCreateTable_on.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 添加列注释
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** on
 				* **说明:** 		在建表DDL上添加列注释，需要依赖源端表列是否定义注释，如源端列上没有列注释，则目标端建表列DDL上也没有列注释
-
+			
 			2. 别名前缀
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 		统一为目标表添加前缀，例如在构建分层数仓用于为ods层目标表统一添加前缀,例如：`ods_erp_`
-
+			
 5. batchSize
 
 	* **类型:** 整型数字
@@ -238,7 +238,25 @@ import PluginFields from '/src/components/PluginFields';
 	* **默认值:** decoderbufs
 	* **说明:** 		The name of the Postgres logical decoding plug-in installed on the server. Supported values are decoderbufs, wal2json, wal2json_rds, wal2json_streaming, wal2json_rds_streaming and pgoutput.
 
-2. 起始位点
+2. Slot
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@225ac5e7
+	* **说明:** 
+
+		The name of the Postgres logical decoding slot created for streaming changes from a plugin.Defaults to 'debezium
+
+3. Drop slot on stop
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** false
+	* **说明:** 
+
+		Whether or not to drop the logical replication slot when the connector finishes orderlyBy default the replication is kept so that on restart progress can resume from the last recorded location
+
+4. 起始位点
 
 	* **类型:** 单选
 	* **必须:** 是
@@ -255,11 +273,11 @@ import PluginFields from '/src/components/PluginFields';
 		* `Latest`:
 		  Never to perform snapshot on the monitored database tables upon first startup, just read from the end of the binlog which means only have the changes since the connector was started.
 
-3. REPLICA IDENTITY
+5. Replica Rule
 
-	* **类型:** 单选
+	* **类型:** 单行文本
 	* **必须:** 是
-	* **默认值:** DEFAULT
+	* **默认值:** FULL
 	* **说明:** 
 
 		在 PostgreSQL 中，ALTER TABLE ... REPLICA IDENTITY 命令用于指定在逻辑复制或行级触发器中如何标识已更新或删除的行。https://developer.aliyun.com/ask/575334
@@ -267,8 +285,15 @@ import PluginFields from '/src/components/PluginFields';
 		可选项有以下两个
 		* `FULL`: 使用此值需要确保对应的表执行`ALTER TABLE your_table_name REPLICA IDENTITY FULL;`，表记录更新时会带上更新Before值，使用此方式比较耗费性能。
 		* `DEFAULT`: 默认值，更新删除操作时不会带上Before值。
+		
+		如目标端需要实现`物理删除`，必须选择`FULL`
 
-4. 过滤
+	* **可选项说明:** 可选`DEFAULT`,`FULL`以下是详细说明：
+		* DEFAULT
+
+		* FULL
+
+6. 过滤
 
 	* **类型:** 单选
 	* **必须:** 否

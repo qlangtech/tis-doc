@@ -128,34 +128,34 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxWriter_autoCreateTable_off.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 别名前缀
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 		统一为目标表添加前缀，例如在构建分层数仓用于为ods层目标表统一添加前缀,例如：`ods_erp_`
-
+			
 		* on
 
 			<Figure img={require('./dataxWriter_autoCreateTable_on.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 添加列注释
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** on
 				* **说明:** 		在建表DDL上添加列注释，需要依赖源端表列是否定义注释，如源端列上没有列注释，则目标端建表列DDL上也没有列注释
-
+			
 			2. 副本数
-
+			
 				* **类型:** 整型数字
 				* **必须:** 是
 				* **默认值:** 1
 				* **说明:** 
-
+			
 					设置Doris create table脚本中的副本数目：
 					```sql
 					CREATE TABLE `test`
@@ -166,21 +166,21 @@ import PluginFields from '/src/components/PluginFields';
 					UNIQUE KEY(`id`)
 					PROPERTIES("replication_num" = "1"  )
 					```
-
+			
 			3. 分桶数
-
+			
 				* **类型:** 整型数字
 				* **必须:** 是
 				* **默认值:** 10
 				* **说明:** 
-
+			
 					表Bucket的作用主要有以下几点：
-
+					
 					1. 数据分布：Bucket可以帮助数据在集群中更均匀地分布，提高数据的可靠性和容错性。
 					2. 加快数据查询速度：通过对数据进行分桶，查询时可以只扫描涉及的Bucket，减少扫描的数据量，从而加快查询速度。
 					3. 数据归档：Bucket可以用于数据的归档管理，将不再更新的数据移动到较为冷的Bucket中。
 					4. 数据安全：Bucket也可以用于数据备份，一般会有多个Bucket副本以防止数据丢失。
-
+					
 					创建带Bucket的表的示例SQL语句如下：
 					```sql
 					CREATE TABLE `test`
@@ -192,14 +192,14 @@ import PluginFields from '/src/components/PluginFields';
 					BUCKETS 16
 					PROPERTIES("replication_num" = "1"  )
 					```
-
+			
 			4. 别名前缀
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 		统一为目标表添加前缀，例如在构建分层数仓用于为ods层目标表统一添加前缀,例如：`ods_erp_`
-
+			
 5. loadProps
 
 	* **类型:** 富文本
@@ -237,11 +237,6 @@ import PluginFields from '/src/components/PluginFields';
 		- 描述：单次StreamLoad导入的最大字节数。
 		- 必选：否
 		- 默认值：104857600 (100M)
-		
-		
-		
-		
-		
 		
 		 * 描述：一次性批量提交的记录数大小，该值可以极大减少DataX与Mysql的网络交互次数，并提升整体吞吐量。但是该值设置过大可能会造成DataX运行进程OOM情况。
 

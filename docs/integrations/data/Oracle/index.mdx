@@ -54,33 +54,33 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./datasource_connEntity_SID.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. SID
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** xe
 				* **说明:** 		无
-
+			
 		* ServiceName
 
 			<Figure img={require('./datasource_connEntity_ServiceName.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. serviceName
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					从 Oracle 8i 开始，Oracle 已经引入了 Service Name 的概念以支持数据库的集群 (RAC) 部署，一个 Service Name 可作为一个数据库的逻辑概念，统一对该数据库不同的 SID 实例的连接。
-
+					
 					以服务名方式连接方式 (即 port 和 dbname 中间使用 “ / ” 分隔开)，即：
-
+					
 					"jdbc:oracle:thin:@" + hostname + ":" + port + **"/"** + dbname
-
+			
 5. 用户名
 
 	* **类型:** 单行文本
@@ -114,25 +114,25 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./datasource_allAuthorized_on.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. Schema
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					可以只包含某一个模式（Schema）下的表，[Oracle模式对象schema的介绍](https://www.modb.pro/db/508147)
-
+					
 					可以不填，但当选中的表在多个授权Schema中出现时，TIS会报异常
-
+			
 			2. 去除保留Schema
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** true
 				* **说明:** 		过滤掉系统保留Schema，如："ANONYMOUS", "APEX_030200", "APEX_PUBLIC_USER", "APPQOSSYS", "BI", "CTXSYS", "DBSNMP", "DIP", "EXFSYS", "FLOWS_FILES", "HR", "IX"等
-
+			
 8. 所在时区
 
 	* **类型:** 单行文本
@@ -146,27 +146,27 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./datasource_timeZone_customize.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 时区编码
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		设置服务端所在时区编码
-
+			
 		* default
 
 			<Figure img={require('./datasource_timeZone_default.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 时区编码
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** com.qlangtech.tis.plugin.timezone.TISTimeZone.dftZoneId()
 				* **说明:** 		选择服务端所在时区
-
+			
 
 </PluginFields>
 
@@ -281,34 +281,34 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxWriter_autoCreateTable_off.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 别名前缀
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 		统一为目标表添加前缀，例如在构建分层数仓用于为ods层目标表统一添加前缀,例如：`ods_erp_`
-
+			
 		* on
 
 			<Figure img={require('./dataxWriter_autoCreateTable_on.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 添加列注释
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** on
 				* **说明:** 		在建表DDL上添加列注释，需要依赖源端表列是否定义注释，如源端列上没有列注释，则目标端建表列DDL上也没有列注释
-
+			
 			2. 别名前缀
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 		统一为目标表添加前缀，例如在构建分层数仓用于为ods层目标表统一添加前缀,例如：`ods_erp_`
-
+			
 6. batchSize
 
 	* **类型:** 整型数字
@@ -350,10 +350,10 @@ import PluginFields from '/src/components/PluginFields';
 		
 		* `Initial`:
 		  Performs an initial snapshot on the monitored database tables upon first startup, and continue to read the latest binlog.
-		
+		     
 		* `Latest`:
 		 Never to perform a snapshot on the monitored database tables upon first startup, just read from the change since the connector was started.
-		
+		 
 		 **Note**: the mechanism of `scan.startup.mode` option relying on Debezium’s `snapshot.mode` configuration. So please do not use them together. 
 		 If you specific both `scan.startup.mode` and `debezium.snapshot.mode` options in the table DDL, it may make `scan.startup.mode` doesn’t work.
 

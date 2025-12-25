@@ -36,7 +36,7 @@ import PluginFields from '/src/components/PluginFields';
 
 	* **类型:** 整型数字
 	* **必须:** 是
-	* **默认值:** 无
+	* **默认值:** 4321
 	* **说明:** 		无
 
 4. 数据库名
@@ -80,40 +80,40 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./datasource_dbMode_MySQL.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 自动建表
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** on
 				* **说明:** 		当该数据源作为目标端，是否支持自动在目标端中创建表？
-
+			
 		* Oracle
 
 			<Figure img={require('./datasource_dbMode_Oracle.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 自动建表
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** on
 				* **说明:** 		当该数据源作为目标端，是否支持自动在目标端中创建表？
-
+			
 		* Postgres
 
 			<Figure img={require('./datasource_dbMode_Postgres.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 自动建表
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** on
 				* **说明:** 		当该数据源作为目标端，是否支持自动在目标端中创建表？
-
+			
 9. 读写分离
 
 	* **类型:** 单行文本
@@ -131,32 +131,32 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./datasource_dispatch_on.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 备机地址
-
+			
 				* **类型:** 富文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					备机地址，可配置多条，按行分隔，每行一条地址，样例如下：
 					``` shell
 					192.168.8.223:54321
 					192.168.8.130:54321
 					```
-
+			
 			2. loadRate
-
+			
 				* **类型:** 整型数字
 				* **必须:** 是
 				* **默认值:** 0
 				* **说明:** 		主机读负载率，备机之间轮询平分，取值范围0-100,例如0表示读语句全部分发备机，100表示读语句全部发送主机
-
+			
 10. 编码
 
 	* **类型:** 单选
 	* **必须:** 是
-	* **默认值:** 无
+	* **默认值:** utf8
 	* **说明:** 		数据数据
 
 11. 附加参数
@@ -277,7 +277,25 @@ import PluginFields from '/src/components/PluginFields';
 	* **默认值:** decoderbufs
 	* **说明:** 		The name of the KingBase logical decoding plug-in installed on the server. Supported values are decoderbufs
 
-2. 起始位点
+2. Slot
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@3e89f5bc
+	* **说明:** 
+
+		The name of the Postgres logical decoding slot created for streaming changes from a plugin.Defaults to 'debezium
+
+3. Drop slot on stop
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** false
+	* **说明:** 
+
+		Whether or not to drop the logical replication slot when the connector finishes orderlyBy default the replication is kept so that on restart progress can resume from the last recorded location
+
+4. 起始位点
 
 	* **类型:** 单选
 	* **必须:** 是
@@ -294,11 +312,11 @@ import PluginFields from '/src/components/PluginFields';
 		* `Latest`:
 		  Never to perform snapshot on the monitored database tables upon first startup, just read from the end of the binlog which means only have the changes since the connector was started.
 
-3. REPLICA IDENTITY
+5. Replica Rule
 
-	* **类型:** 单选
+	* **类型:** 单行文本
 	* **必须:** 是
-	* **默认值:** DEFAULT
+	* **默认值:** FULL
 	* **说明:** 
 
 		在 PostgreSQL 中，ALTER TABLE ... REPLICA IDENTITY 命令用于指定在逻辑复制或行级触发器中如何标识已更新或删除的行。https://developer.aliyun.com/ask/575334
@@ -306,8 +324,15 @@ import PluginFields from '/src/components/PluginFields';
 		可选项有以下两个
 		* `FULL`: 使用此值需要确保对应的表执行`ALTER TABLE your_table_name REPLICA IDENTITY FULL;`，表记录更新时会带上更新Before值，使用此方式比较耗费性能。
 		* `DEFAULT`: 默认值，更新删除操作时不会带上Before值。
+		
+		如目标端需要实现`物理删除`，必须选择`FULL`
 
-4. 过滤
+	* **可选项说明:** 可选`DEFAULT`,`FULL`以下是详细说明：
+		* DEFAULT
+
+		* FULL
+
+6. 过滤
 
 	* **类型:** 单选
 	* **必须:** 否

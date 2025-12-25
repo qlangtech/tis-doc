@@ -38,40 +38,40 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxReader_subscription_List Of Partitions.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. topic:partition
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		无
-
+			
 		* List Of Topics
 
 			<Figure img={require('./dataxReader_subscription_List Of Topics.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. Topics
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		multiple topics，use common"," as separator
-
+			
 		* Topics Match Specified Pattern
 
 			<Figure img={require('./dataxReader_subscription_Topics Match Specified Pattern.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. Topic Pattern
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		无
-
+			
 3. Test Topic
 
 	* **类型:** 单行文本
@@ -92,214 +92,223 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxReader_format_canal-json.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. Table Name(s)
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
-				* **说明:** 		导入流实体名称，目标端以此作为表名，多个表以逗号分隔
-
+				* **说明:** 
+			
+					导入流实体名称，目标端以此作为表名，多个表以逗号分隔。支持wildcard样式
+					，当消息体中表名为 `order_detail_001`,`order_detail_002`,`order_detail_003` 则可以用 wildcard表达式`order_detail*`匹配，最终将多个匹配的物理表名归并成`order_detail`逻辑表名
+			
 			2. ignoreParseErrors
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to skip fields and rows with parse errors instead of failing;
 					fields are set to null in case of errors, false by default.
-
+			
 			3. timestampFormat
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** SQL
 				* **说明:** 
-
+			
 					Optional flag to specify timestamp format, SQL by default. Option ISO-8601 will parse input timestamp in "yyyy-MM-ddTHH:mm:ss.s{precision}" format and output timestamp in the same format. Option SQL will parse input timestamp in "yyyy-MM-dd HH:mm:ss.s{precision}" format and output timestamp in the same format.
-
+			
 			4. dbInclude
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					An optional regular expression to only read the specific databases changelog rows by regular matching the "database" meta field in the Canal record.The pattern string is compatible with Java's Pattern.
-
+			
 			5. tableInclude
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					An optional regular expression to only read the specific tables changelog rows by regular matching the "table" meta field in the Canal record.The pattern string is compatible with Java's Pattern.
-
+			
 			6. nullKeyMode
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** FAIL
 				* **说明:** 
-
+			
 					Optional flag to control the handling mode when serializing null key for map data, FAIL by default. Option DROP will drop null key entries for map data. Option LITERAL will use 'map-null-key.literal' as key literal.
-
+			
 			7. nullKeyLiteral
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** null
 				* **说明:** 
-
+			
 					Optional flag to specify string literal for null keys when 'map-null-key.mode' is LITERAL, "null" by default.
-
+			
 			8. encodeDecimal
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to specify whether to encode all decimals as plain numbers instead of possible scientific notations, false by default.
-
+			
 		* debezium-json
 
 			<Figure img={require('./dataxReader_format_debezium-json.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. Table Name(s)
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
-				* **说明:** 		导入流实体名称，目标端以此作为表名，多个表以逗号分隔
-
+				* **说明:** 
+			
+					导入流实体名称，目标端以此作为表名，多个表以逗号分隔。支持wildcard样式
+					，当消息体中表名为 `order_detail_001`,`order_detail_002`,`order_detail_003` 则可以用 wildcard表达式`order_detail*`匹配，最终将多个匹配的物理表名归并成`order_detail`逻辑表名
+			
 			2. ignoreParseErrors
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to skip fields and rows with parse errors instead of failing;
 					fields are set to null in case of errors, false by default.
-
+			
 			3. timestampFormat
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** SQL
 				* **说明:** 
-
+			
 					Optional flag to specify timestamp format, SQL by default. Option ISO-8601 will parse input timestamp in "yyyy-MM-ddTHH:mm:ss.s{precision}" format and output timestamp in the same format. Option SQL will parse input timestamp in "yyyy-MM-dd HH:mm:ss.s{precision}" format and output timestamp in the same format.
-
+			
 			4. nullKeyMode
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** FAIL
 				* **说明:** 
-
+			
 					Optional flag to control the handling mode when serializing null key for map data, FAIL by default. Option DROP will drop null key entries for map data. Option LITERAL will use 'map-null-key.literal' as key literal.
-
+			
 			5. nullKeyLiteral
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** null
 				* **说明:** 
-
+			
 					Optional flag to specify string literal for null keys when 'map-null-key.mode' is LITERAL, "null" by default.
-
+			
 			6. encodeDecimal
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to specify whether to encode all decimals as plain numbers instead of possible scientific notations, false by default.
-
+			
 		* json
 
 			<Figure img={require('./dataxReader_format_json.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. Table Name
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
-				* **说明:** 		导入流实体名称，目标端以此作为表名
-
+				* **说明:** 
+			
+					导入流实体名称，目标端以此作为表名，多个表以逗号分隔。支持wildcard样式
+					，当消息体中表名为 `order_detail_001`,`order_detail_002`,`order_detail_003` 则可以用 wildcard表达式`order_detail*`匹配，最终将多个匹配的物理表名归并成`order_detail`逻辑表名
+			
 			2. ignoreParseErrors
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to skip fields and rows with parse errors instead of failing;
 					fields are set to null in case of errors, false by default.
-
+			
 			3. failOnMissingField
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to specify whether to fail if a field is missing or not, false by default.
-
+			
 			4. timestampFormat
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** SQL
 				* **说明:** 
-
+			
 					Optional flag to specify timestamp format, SQL by default. Option ISO-8601 will parse input timestamp in "yyyy-MM-ddTHH:mm:ss.s{precision}" format and output timestamp in the same format. Option SQL will parse input timestamp in "yyyy-MM-dd HH:mm:ss.s{precision}" format and output timestamp in the same format.
-
+			
 			5. nullKeyMode
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** FAIL
 				* **说明:** 
-
+			
 					Optional flag to control the handling mode when serializing null key for map data, FAIL by default. Option DROP will drop null key entries for map data. Option LITERAL will use 'map-null-key.literal' as key literal.
-
+			
 			6. nullKeyLiteral
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** null
 				* **说明:** 
-
+			
 					Optional flag to specify string literal for null keys when 'map-null-key.mode' is LITERAL, "null" by default.
-
+			
 			7. encodeJsonParserEnabled
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** true
 				* **说明:** 
-
+			
 					Optional flag to specify whether to use the Jackson JsonParser to decode json with better performance, true by default.
-
+			
 			8. encodeDecimal
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to specify whether to encode all decimals as plain numbers instead of possible scientific notations, false by default.
-
+			
 5. Request Timeout, ms
 
 	* **类型:** 整型数字
@@ -322,14 +331,14 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxReader_guessFieldType_on.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 扫描行数
-
+			
 				* **类型:** 整型数字
 				* **必须:** 是
 				* **默认值:** 20000
 				* **说明:** 		会遍历该项设定设定值，指定的行数，以判断列类型
-
+			
 7. Group ID
 
 	* **类型:** 单行文本
@@ -359,41 +368,41 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxReader_protocol_SASL_PLAINTEXT.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. SASL Mechanism
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** PLAIN
 				* **说明:** 		SASL mechanism used for client connections. This may be any mechanism for which a security provider is available.
-
+			
 			2. SASL JAAS Config
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 
 				* **说明:** 		JAAS login context parameters for SASL connections in the format used by JAAS configuration files.
-
+			
 		* SASL_SSL
 
 			<Figure img={require('./dataxReader_protocol_SASL_SSL.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. SASL Mechanism
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** GSSAPI
 				* **说明:** 		SASL mechanism used for client connections. This may be any mechanism for which a security provider is available.
-
+			
 			2. SASL JAAS Config
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 
 				* **说明:** 		JAAS login context parameters for SASL connections in the format used by JAAS configuration files.
-
+			
 10. Enable Auto Commit
 
 	* **类型:** 单选
@@ -525,41 +534,41 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxWriter_protocol_SASL_PLAINTEXT.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. SASL Mechanism
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** PLAIN
 				* **说明:** 		SASL mechanism used for client connections. This may be any mechanism for which a security provider is available.
-
+			
 			2. SASL JAAS Config
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 
 				* **说明:** 		JAAS login context parameters for SASL connections in the format used by JAAS configuration files.
-
+			
 		* SASL_SSL
 
 			<Figure img={require('./dataxWriter_protocol_SASL_SSL.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. SASL Mechanism
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** GSSAPI
 				* **说明:** 		SASL mechanism used for client connections. This may be any mechanism for which a security provider is available.
-
+			
 			2. SASL JAAS Config
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 
 				* **说明:** 		JAAS login context parameters for SASL connections in the format used by JAAS configuration files.
-
+			
 6. ACKs
 
 	* **类型:** 单选
@@ -747,7 +756,7 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./mq_startOffset_Timestamp Offset.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. timestamp
 				* **类型:** 日期
 				* **必须:** 是
@@ -784,193 +793,193 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./sinkFactory_format_canal-json.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. ignoreParseErrors
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to skip fields and rows with parse errors instead of failing;
 					fields are set to null in case of errors, false by default.
-
+			
 			2. timestampFormat
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** SQL
 				* **说明:** 
-
+			
 					Optional flag to specify timestamp format, SQL by default. Option ISO-8601 will parse input timestamp in "yyyy-MM-ddTHH:mm:ss.s{precision}" format and output timestamp in the same format. Option SQL will parse input timestamp in "yyyy-MM-dd HH:mm:ss.s{precision}" format and output timestamp in the same format.
-
+			
 			3. dbInclude
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					An optional regular expression to only read the specific databases changelog rows by regular matching the "database" meta field in the Canal record.The pattern string is compatible with Java's Pattern.
-
+			
 			4. tableInclude
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					An optional regular expression to only read the specific tables changelog rows by regular matching the "table" meta field in the Canal record.The pattern string is compatible with Java's Pattern.
-
+			
 			5. nullKeyMode
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** FAIL
 				* **说明:** 
-
+			
 					Optional flag to control the handling mode when serializing null key for map data, FAIL by default. Option DROP will drop null key entries for map data. Option LITERAL will use 'map-null-key.literal' as key literal.
-
+			
 			6. nullKeyLiteral
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** null
 				* **说明:** 
-
+			
 					Optional flag to specify string literal for null keys when 'map-null-key.mode' is LITERAL, "null" by default.
-
+			
 			7. encodeDecimal
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to specify whether to encode all decimals as plain numbers instead of possible scientific notations, false by default.
-
+			
 		* debezium-json
 
 			<Figure img={require('./sinkFactory_format_debezium-json.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. ignoreParseErrors
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to skip fields and rows with parse errors instead of failing;
 					fields are set to null in case of errors, false by default.
-
+			
 			2. timestampFormat
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** SQL
 				* **说明:** 
-
+			
 					Optional flag to specify timestamp format, SQL by default. Option ISO-8601 will parse input timestamp in "yyyy-MM-ddTHH:mm:ss.s{precision}" format and output timestamp in the same format. Option SQL will parse input timestamp in "yyyy-MM-dd HH:mm:ss.s{precision}" format and output timestamp in the same format.
-
+			
 			3. nullKeyMode
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** FAIL
 				* **说明:** 
-
+			
 					Optional flag to control the handling mode when serializing null key for map data, FAIL by default. Option DROP will drop null key entries for map data. Option LITERAL will use 'map-null-key.literal' as key literal.
-
+			
 			4. nullKeyLiteral
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** null
 				* **说明:** 
-
+			
 					Optional flag to specify string literal for null keys when 'map-null-key.mode' is LITERAL, "null" by default.
-
+			
 			5. encodeDecimal
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to specify whether to encode all decimals as plain numbers instead of possible scientific notations, false by default.
-
+			
 		* json
 
 			<Figure img={require('./sinkFactory_format_json.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. ignoreParseErrors
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to skip fields and rows with parse errors instead of failing;
 					fields are set to null in case of errors, false by default.
-
+			
 			2. failOnMissingField
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to specify whether to fail if a field is missing or not, false by default.
-
+			
 			3. timestampFormat
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** SQL
 				* **说明:** 
-
+			
 					Optional flag to specify timestamp format, SQL by default. Option ISO-8601 will parse input timestamp in "yyyy-MM-ddTHH:mm:ss.s{precision}" format and output timestamp in the same format. Option SQL will parse input timestamp in "yyyy-MM-dd HH:mm:ss.s{precision}" format and output timestamp in the same format.
-
+			
 			4. nullKeyMode
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** FAIL
 				* **说明:** 
-
+			
 					Optional flag to control the handling mode when serializing null key for map data, FAIL by default. Option DROP will drop null key entries for map data. Option LITERAL will use 'map-null-key.literal' as key literal.
-
+			
 			5. nullKeyLiteral
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** null
 				* **说明:** 
-
+			
 					Optional flag to specify string literal for null keys when 'map-null-key.mode' is LITERAL, "null" by default.
-
+			
 			6. encodeJsonParserEnabled
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** true
 				* **说明:** 
-
+			
 					Optional flag to specify whether to use the Jackson JsonParser to decode json with better performance, true by default.
-
+			
 			7. encodeDecimal
-
+			
 				* **类型:** 单选
 				* **必须:** 否
 				* **默认值:** false
 				* **说明:** 
-
+			
 					Optional flag to specify whether to encode all decimals as plain numbers instead of possible scientific notations, false by default.
-
+			
 2. semantic
 
 	* **类型:** 单选

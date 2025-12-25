@@ -122,83 +122,83 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxReader_dfsLinker_AlyiunOSS.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 远端连接
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		无
-
+			
 			2. bucket
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		描述：OSS的bucket  
-
+			
 			3. rootPath
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		描述：TIS 查找可用资源文件会从该路径下遍历查找 
-
+			
 		* FTP
 
 			<Figure img={require('./dataxReader_dfsLinker_FTP.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 远端连接
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		FTP服务端连接配置
-
+			
 			2. path
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		描述：FTP文件系统的路径信息，FtpWriter会写入Path目录下属多个文件。 
-
+			
 		* Hdfs
 
 			<Figure img={require('./dataxReader_dfsLinker_Hdfs.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 远端连接
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		描述：Hadoop hdfs文件系统namenode节点地址。格式：hdfs://ip:端口；例如：hdfs://127.0.0.1:9000
-
+			
 			2. path
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		数据文件保存的路径位置
-
+			
 		* Local Files
 
 			<Figure img={require('./dataxReader_dfsLinker_Local Files.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. path
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					描述：本地文件系统的路径（绝对路径），必须为目录路径，该目录下存放有目标资源文件
-
+			
 2. 目标文件匹配
 
 	* **类型:** 单行文本
@@ -223,16 +223,16 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxReader_resMatcher_Wildcard.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. wildcard
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					路径中可以使用统配符匹配资源目录下的所有匹配的文件资源
-
+					
 					Checks a fileName to see if it matches the specified wildcard matcher,
 					always testing case-sensitive.
 					      <p>
@@ -248,16 +248,16 @@ import PluginFields from '/src/components/PluginFields';
 					      wildcardMatch("c.txt", "*.???")      --&gt; true
 					      wildcardMatch("c.txt", "*.????")     --&gt; false
 					</pre>
-
+					
 					* N.B. the sequence "*?" does not work properly at present in match strings.
-
+			
 			2. 遍历层数
-
+			
 				* **类型:** 整型数字
 				* **必须:** 是
 				* **默认值:** 1
 				* **说明:** 		描述：允许遍历文件夹的最大层数。
-
+			
 3. 文件格式
 
 	* **类型:** 单行文本
@@ -271,49 +271,49 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxReader_fileFormat_CSV.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 字段分隔符
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** comma
 				* **说明:** 		描述：读取的字段分隔符，可以用'\t','\001'等字符 
-
+			
 			2. 压缩格式
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** none
 				* **说明:** 		描述：文本压缩类型，默认不填写意味着没有压缩。支持压缩类型为zip、gzip、bzip2。 
-
+			
 			3. encoding
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** utf-8
 				* **说明:** 		描述：读取文件的编码配置。
-
+			
 			4. 空值替代符
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** null
 				* **说明:** 		描述：文本文件中无法使用标准字符串定义null(空指针)，DataX提供nullFormat定义哪些字符串可以表示为null。例如如果用户配置: nullFormat="\N"，那么如果源头数据是"\N"，DataX视作null字段。
-
+			
 			5. 日期格式
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** com.qlangtech.tis.plugin.datax.format.BasicPainFormat.defaultNullFormat()
 				* **说明:** 		描述：日期类型的数据序列化到文件中时的格式，例如 "dateFormat": "yyyy-MM-dd"。
-
+			
 			6. csvConfig
-
+			
 				* **类型:** 富文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					描述：（读取/写入）CSV类型文件参数配置，Map类型。
 					 * 写入CSV类型文件使用的CsvWriter进行写入，会有很多配置，不配置则使用默认值。
 					      ```json
@@ -326,9 +326,9 @@ import PluginFields from '/src/components/PluginFields';
 					       "escapeMode": 1
 					      } 
 					      ```
-
+					 
 					 * 读取CSV类型文件使用的CsvReader进行读取，会有很多配置，不配置则使用默认值。
-
+					 
 					 ```json
 					{ "safetySwitch": false,  
 					  "skipEmptyRecords": false,       
@@ -349,76 +349,76 @@ import PluginFields from '/src/components/PluginFields';
 					 boolean skipEmptyRecords = true;//是否跳过空行
 					 boolean captureRawRecord = true;
 					 ```
-
+			
 			7. header
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** true
 				* **说明:** 		描述：写出时的表头，列名(s)是否在文件头写入
-
+			
 			8. 猜测字段类型
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** on
 				* **说明:** 		通过TIS提供的的内部算法，尝试读取部分DFS文件内容，猜测对应列的类型，以帮助最大化提高录入表单效率。最后通过分析得到的类型不够准确，需要用户手动微调。
-
+			
 		* TEXT
 
 			<Figure img={require('./dataxReader_fileFormat_TEXT.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 字段分隔符
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** comma
 				* **说明:** 		描述：读取的字段分隔符，可以用'\t','\001'等字符 
-
+			
 			2. 压缩格式
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** none
 				* **说明:** 		描述：文本压缩类型，默认不填写意味着没有压缩。支持压缩类型为zip、gzip、bzip2。 
-
+			
 			3. encoding
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** utf-8
 				* **说明:** 		描述：读取文件的编码配置。
-
+			
 			4. 空值替代符
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** null
 				* **说明:** 		描述：文本文件中无法使用标准字符串定义null(空指针)，DataX提供nullFormat定义哪些字符串可以表示为null。例如如果用户配置: nullFormat="\N"，那么如果源头数据是"\N"，DataX视作null字段。
-
+			
 			5. 日期格式
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** com.qlangtech.tis.plugin.datax.format.BasicPainFormat.defaultNullFormat()
 				* **说明:** 		描述：日期类型的数据序列化到文件中时的格式，例如 "dateFormat": "yyyy-MM-dd"。
-
+			
 			6. header
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** true
 				* **说明:** 		描述：写出时的表头，列名(s)是否在文件头写入
-
+			
 			7. 猜测字段类型
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** on
 				* **说明:** 		通过TIS提供的的内部算法，尝试读取部分DFS文件内容，猜测对应列的类型，以帮助最大化提高录入表单效率。最后通过分析得到的类型不够准确，需要用户手动微调。
-
+			
 4. 配置模版
 
 	* **类型:** 富文本
@@ -450,83 +450,83 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxWriter_dfsLinker_AlyiunOSS.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 远端连接
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		无
-
+			
 			2. bucket
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		描述：OSS的bucket  
-
+			
 			3. rootPath
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		描述：TIS 查找可用资源文件会从该路径下遍历查找 
-
+			
 		* FTP
 
 			<Figure img={require('./dataxWriter_dfsLinker_FTP.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 远端连接
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		FTP服务端连接配置
-
+			
 			2. path
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		描述：FTP文件系统的路径信息，FtpWriter会写入Path目录下属多个文件。 
-
+			
 		* Hdfs
 
 			<Figure img={require('./dataxWriter_dfsLinker_Hdfs.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 远端连接
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		描述：Hadoop hdfs文件系统namenode节点地址。格式：hdfs://ip:端口；例如：hdfs://127.0.0.1:9000
-
+			
 			2. path
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		数据文件保存的路径位置
-
+			
 		* Local Files
 
 			<Figure img={require('./dataxWriter_dfsLinker_Local Files.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. path
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					描述：本地文件系统的路径（绝对路径），必须为目录路径，该目录下存放有目标资源文件
-
+			
 2. 添加元数据
 
 	* **类型:** 单行文本
@@ -535,7 +535,7 @@ import PluginFields from '/src/components/PluginFields';
 	* **说明:** 
 
 		写数据过程中会在`DFS`目录中写一份source的元数据。
-		
+		 
 		 当其他环境中需要使用TIS来导入DFS中的数据时，可以利用这份元数据快速生成目标端的数据表结构，省去手动配置元数据的流程。
 
 	* **可选项说明:** 可选`off`,`on`以下是详细说明：
@@ -551,11 +551,11 @@ import PluginFields from '/src/components/PluginFields';
 	* **说明:** 
 
 		FtpWriter写入前数据清理处理模式： 
-		
+		 
 		 1. **truncate**:  写入前清理目录下一fileName前缀的所有文件。
-		
+		 
 		 2. **append**: 写入前不做任何处理，DFS Writer直接使用filename写入，并保证文件名不冲突。
-		
+		  
 		 3. **nonConflict**: 如果目录下有fileName前缀的文件，直接报错。
 
 4. fileFormat
@@ -573,49 +573,49 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxWriter_fileFormat_CSV.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 字段分隔符
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** comma
 				* **说明:** 		描述：读取的字段分隔符，可以用'\t','\001'等字符 
-
+			
 			2. 压缩格式
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** none
 				* **说明:** 		描述：文本压缩类型，默认不填写意味着没有压缩。支持压缩类型为zip、gzip、bzip2。 
-
+			
 			3. encoding
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** utf-8
 				* **说明:** 		描述：读取文件的编码配置。
-
+			
 			4. 空值替代符
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** null
 				* **说明:** 		描述：文本文件中无法使用标准字符串定义null(空指针)，DataX提供nullFormat定义哪些字符串可以表示为null。例如如果用户配置: nullFormat="\N"，那么如果源头数据是"\N"，DataX视作null字段。
-
+			
 			5. 日期格式
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** com.qlangtech.tis.plugin.datax.format.BasicPainFormat.defaultNullFormat()
 				* **说明:** 		描述：日期类型的数据序列化到文件中时的格式，例如 "dateFormat": "yyyy-MM-dd"。
-
+			
 			6. csvConfig
-
+			
 				* **类型:** 富文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					描述：（读取/写入）CSV类型文件参数配置，Map类型。
 					 * 写入CSV类型文件使用的CsvWriter进行写入，会有很多配置，不配置则使用默认值。
 					      ```json
@@ -628,9 +628,9 @@ import PluginFields from '/src/components/PluginFields';
 					       "escapeMode": 1
 					      } 
 					      ```
-
+					 
 					 * 读取CSV类型文件使用的CsvReader进行读取，会有很多配置，不配置则使用默认值。
-
+					 
 					 ```json
 					{ "safetySwitch": false,  
 					  "skipEmptyRecords": false,       
@@ -651,62 +651,62 @@ import PluginFields from '/src/components/PluginFields';
 					 boolean skipEmptyRecords = true;//是否跳过空行
 					 boolean captureRawRecord = true;
 					 ```
-
+			
 			7. header
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** true
 				* **说明:** 		描述：写出时的表头，列名(s)是否在文件头写入
-
+			
 		* TEXT
 
 			<Figure img={require('./dataxWriter_fileFormat_TEXT.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 字段分隔符
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** comma
 				* **说明:** 		描述：读取的字段分隔符，可以用'\t','\001'等字符 
-
+			
 			2. 压缩格式
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** none
 				* **说明:** 		描述：文本压缩类型，默认不填写意味着没有压缩。支持压缩类型为zip、gzip、bzip2。 
-
+			
 			3. encoding
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** utf-8
 				* **说明:** 		描述：读取文件的编码配置。
-
+			
 			4. 空值替代符
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** null
 				* **说明:** 		描述：文本文件中无法使用标准字符串定义null(空指针)，DataX提供nullFormat定义哪些字符串可以表示为null。例如如果用户配置: nullFormat="\N"，那么如果源头数据是"\N"，DataX视作null字段。
-
+			
 			5. 日期格式
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** com.qlangtech.tis.plugin.datax.format.BasicPainFormat.defaultNullFormat()
 				* **说明:** 		描述：日期类型的数据序列化到文件中时的格式，例如 "dateFormat": "yyyy-MM-dd"。
-
+			
 			6. header
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** true
 				* **说明:** 		描述：写出时的表头，列名(s)是否在文件头写入
-
+			
 5. 配置模版
 
 	* **类型:** 富文本

@@ -1,0 +1,180 @@
+---
+title: QWen
+date: 2025-03-12
+type: book
+sidebar_position: 1
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+import PluginFields from '/src/components/PluginFields';
+
+## QWen
+
+<Figure img={require('./QWenLLMProvider.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. name
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		实例的唯一性名称，取一个方便记忆的名称
+
+2. Base URL
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** https://dashscope.aliyuncs.com
+	* **说明:** 
+
+		API基础地址，默认为通义千问官方地址，API-KEY 申请地址：[https://bailian.console.aliyun.com/?tab=globalset#/efm/api_key](https://bailian.console.aliyun.com/?tab=globalset#/efm/api_key)
+
+3. API Key
+
+	* **类型:** 密码
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		通义千问API密钥，请在阿里云控制台获取并妥善保管
+
+4. 最大Token数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 4000
+	* **说明:** 		最大生成 token 数量，不同模型有不同的限制
+
+5. 模型
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** qwen3-coder-plus
+	* **说明:** 		模型的 ID，支持 qwen-turbo、qwen-plus、qwen-max、qwen-max-longcontext ，qwen3-coder-plus等，推荐使用：qwen3-coder-plus
+
+6. 温度
+
+	* **类型:** 浮点数字
+	* **必须:** 是
+	* **默认值:** 0.1
+	* **说明:** 		采样温度，介于 0 和 2 之间。更高的值会使输出更随机，更低的值会使其更加集中和确定。建议调整范围为 0.1 到 1.0
+
+7. Top P
+
+	* **类型:** 浮点数字
+	* **必须:** 否
+	* **默认值:** 0.1
+	* **说明:** 		核采样参数，介于 0 和 1 之间。仅考虑概率累积达到 top_p 的词元。建议与 temperature 二选一进行调整
+
+8. 读取超时
+
+	* **类型:** 时间跨度
+	* **必须:** 是
+	* **默认值:** com.qlangtech.tis.manage.common.ConfigFileContext.StreamProcess.dftSocketReadTimeout.getSeconds()
+	* **说明:** 		Socket 读取数据超时时间（秒）
+
+9. 最大尝试次数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 1
+	* **说明:** 		当向服务端提交请求错误，最大尝试次数
+
+10. 打印日志
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** false
+	* **说明:** 		是否打印与模型交互的执行日志
+
+
+</PluginFields>
+
+## QWen
+
+<Figure img={require('./QWenLLMProvider.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. name
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		实例的唯一性名称，取一个方便记忆的名称
+
+2. Base URL
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** https://dashscope.aliyuncs.com
+	* **说明:** 
+
+		API基础地址，默认为通义千问官方地址，API-KEY 申请地址：[https://bailian.console.aliyun.com/?tab=globalset#/efm/api_key](https://bailian.console.aliyun.com/?tab=globalset#/efm/api_key)
+
+3. API Key
+
+	* **类型:** 密码
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		通义千问API密钥，请在阿里云控制台获取并妥善保管
+
+4. 最大Token数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 4000
+	* **说明:** 		最大生成 token 数量，不同模型有不同的限制
+
+5. 模型
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** qwen3-coder-plus
+	* **说明:** 		模型的 ID，支持 qwen-turbo、qwen-plus、qwen-max、qwen-max-longcontext ，qwen3-coder-plus等，推荐使用：qwen3-coder-plus
+
+6. 温度
+
+	* **类型:** 浮点数字
+	* **必须:** 是
+	* **默认值:** 0.1
+	* **说明:** 		采样温度，介于 0 和 2 之间。更高的值会使输出更随机，更低的值会使其更加集中和确定。建议调整范围为 0.1 到 1.0
+
+7. Top P
+
+	* **类型:** 浮点数字
+	* **必须:** 否
+	* **默认值:** 0.1
+	* **说明:** 		核采样参数，介于 0 和 1 之间。仅考虑概率累积达到 top_p 的词元。建议与 temperature 二选一进行调整
+
+8. 读取超时
+
+	* **类型:** 时间跨度
+	* **必须:** 是
+	* **默认值:** com.qlangtech.tis.manage.common.ConfigFileContext.StreamProcess.dftSocketReadTimeout.getSeconds()
+	* **说明:** 		Socket 读取数据超时时间（秒）
+
+9. 最大尝试次数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 1
+	* **说明:** 		当向服务端提交请求错误，最大尝试次数
+
+10. 打印日志
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** false
+	* **说明:** 		是否打印与模型交互的执行日志
+
+
+</PluginFields>
+
+
+

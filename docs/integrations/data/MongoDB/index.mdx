@@ -105,27 +105,27 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxReader_timeZone_customize.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 时区编码
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		设置服务端所在时区编码
-
+			
 		* default
 
 			<Figure img={require('./dataxReader_timeZone_default.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 时区编码
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** com.qlangtech.tis.plugin.timezone.TISTimeZone.dftZoneId()
 				* **说明:** 		选择服务端所在时区
-
+			
 3. 配置模版
 
 	* **类型:** 富文本
@@ -195,39 +195,39 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./mq_startupOption_INITIAL.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. pollMaxBatchSize
-
+			
 				* **类型:** 整型数字
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					Maximum number of change stream documents to include in a single batch when polling for new data. This setting can be used to limit the amount of data buffered internally in the connector.
 					* Default: `1024`
-
+			
 			2. pollAwaitTimeMillis
-
+			
 				* **类型:** 整型数字
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					The amount of time to wait before checking for new results on the change stream.
 					* Default: `1000`
-
+			
 			3. heartbeatIntervalMillis
-
+			
 				* **类型:** 整型数字
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 
-
+			
 					The length of time in milliseconds between sending heartbeat messages. Heartbeat messages contain the post batch resume token and are sent when no source records have been published in the specified interval. 
 					This improves the resumability of the connector for low volume namespaces. 
-
+					
 					Use `0` to disable.
-
+			
 		* LATEST_OFFSET
 
 		* TIMESTAMP
@@ -235,14 +235,14 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./mq_startupOption_TIMESTAMP.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 开始时间
-
+			
 				* **类型:** 日期
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		timestamp for the startup offsets, as milliseconds from epoch.
-
+			
 2. 补全策略
 
 	* **类型:** 单行文本

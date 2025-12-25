@@ -111,9 +111,7 @@ import PluginFields from '/src/components/PluginFields';
 	* **说明:** 
 
 		在开始执行DataX任务前，自动在目标数据库中创建表，目标表Engine类型为'CollapsingMergeTree' 构建原理请参考[MySQL到ClickHouse实时同步](https://www.askcug.com/topic/76/mysql%E5%88%B0clickhouse%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5-cloudcanal%E5%AE%9E%E6%88%98)
-		
-		
-		
+		 
 		
 		解析Reader的元数据，自动生成Writer create table DDL语句，有三种选择：
 		* `off`：关闭自动生成及同步目标端建表DDL语句，当目标端表实例已经存在可选择此选项。
@@ -126,34 +124,34 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxWriter_autoCreateTable_off.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 别名前缀
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 		统一为目标表添加前缀，例如在构建分层数仓用于为ods层目标表统一添加前缀,例如：`ods_erp_`
-
+			
 		* on
 
 			<Figure img={require('./dataxWriter_autoCreateTable_on.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 添加列注释
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** on
 				* **说明:** 		在建表DDL上添加列注释，需要依赖源端表列是否定义注释，如源端列上没有列注释，则目标端建表列DDL上也没有列注释
-
+			
 			2. 别名前缀
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 		统一为目标表添加前缀，例如在构建分层数仓用于为ods层目标表统一添加前缀,例如：`ods_erp_`
-
+			
 6. batchSize
 
 	* **类型:** 整型数字

@@ -44,27 +44,27 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./params-cfg_connStrategy_Standalone.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. master
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		无
-
+			
 		* Yarn
 
 			<Figure img={require('./params-cfg_connStrategy_Yarn.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. yarnSite
-
+			
 				* **类型:** 富文本
 				* **必须:** 是
 				* **默认值:** com.qlangtech.tis.config.spark.impl.YarnConnStrategy.dftYarnSiteContent()
 				* **说明:** 
-
+			
 					```xml
 					<?xml version="1.0"?>
 					<configuration>
@@ -74,31 +74,31 @@ import PluginFields from '/src/components/PluginFields';
 					    <name>yarn.resourcemanager.hostname</name>
 					    <value>192.168.28.200</value>
 					  </property>
-
+					
 					  <!--RM对客户端暴露的地址,客户端通过该地址向RM提交应用程序、杀死应用程序等-->
 					  <property>
 					    <name>yarn.resourcemanager.address</name>
 					    <value>${yarn.resourcemanager.hostname}:8032</value>
 					  </property>
-
+					
 					  <!--RM对AM暴露的访问地址,AM通过该地址向RM申请资源、释放资源等-->
 					  <property>
 					    <name>yarn.resourcemanager.scheduler.address</name>
 					    <value>${yarn.resourcemanager.hostname}:8030</value>
 					  </property>
-
+					
 					  <!--RM对外暴露的web http地址,用户可通过该地址在浏览器中查看集群信息-->
 					  <property>
 					    <name>yarn.resourcemanager.webapp.address</name>
 					    <value>${yarn.resourcemanager.hostname}:8088</value>
 					  </property>
-
+					
 					  <!--RM对NM暴露地址,NM通过该地址向RM汇报心跳、领取任务等-->
 					  <property>
 					    <name>yarn.resourcemanager.resource-tracker.address</name>
 					    <value>${yarn.resourcemanager.hostname}:8031</value>
 					  </property>
-
+					
 					  <!--RM对管理员暴露的访问地址,管理员通过该地址向RM发送管理命令等-->
 					  <property>
 					    <name>yarn.resourcemanager.admin.address</name>
@@ -106,7 +106,7 @@ import PluginFields from '/src/components/PluginFields';
 					  </property>
 					</configuration>
 					```
-
+			
 
 </PluginFields>
 
@@ -163,34 +163,34 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxWriter_autoCreateTable_off.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 别名前缀
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 		统一为目标表添加前缀，例如在构建分层数仓用于为ods层目标表统一添加前缀,例如：`ods_erp_`
-
+			
 		* on
 
 			<Figure img={require('./dataxWriter_autoCreateTable_on.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 添加列注释
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** on
 				* **说明:** 		在建表DDL上添加列注释，需要依赖源端表列是否定义注释，如源端列上没有列注释，则目标端建表列DDL上也没有列注释
-
+			
 			2. 别名前缀
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 		统一为目标表添加前缀，例如在构建分层数仓用于为ods层目标表统一添加前缀,例如：`ods_erp_`
-
+			
 6. fileType
 
 	* **类型:** 单行文本
@@ -208,14 +208,14 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxWriter_fileType_TEXT.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 列分割符
-
+			
 				* **类型:** 单选
 				* **必须:** 是
 				* **默认值:** char001
 				* **说明:** 		描述：读取的字段分隔符，可以用'\t','\001'等字符 
-
+			
 7. 配置模版
 
 	* **类型:** 富文本

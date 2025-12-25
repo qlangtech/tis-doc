@@ -1,0 +1,53 @@
+---
+title: Pipeline
+date: 2025-03-12
+type: book
+sidebar_position: 1
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+import PluginFields from '/src/components/PluginFields';
+
+## DataxProcessor
+
+<Figure img={require('./DefaultDataxProcessor.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. 实例名称
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		无
+
+2. 全局配置
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** datax-global-config
+	* **说明:** 		无
+
+3. 所属部门
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** com.qlangtech.tis.manage.biz.dal.pojo.Department.dftDepartmentId()
+	* **说明:** 		无
+
+4. 接口人
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@1a8b22b5
+	* **说明:** 		数据通道的业务联系人，如运行生命周期内有任何问题可以向他咨询
+
+
+</PluginFields>
+
+
+

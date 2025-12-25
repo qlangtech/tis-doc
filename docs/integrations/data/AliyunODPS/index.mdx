@@ -33,7 +33,7 @@ import PluginFields from '/src/components/PluginFields';
 	* **说明:** 
 
 		描述：ODPS的server地址，例如，线上地址为 http://service.odps.aliyun.com/api 
-		
+		 
 		 [具体各地域Endpoint对照表](https://help.aliyun.com/document_detail/34951.html#section-f2d-51y-5db)
 
 3. tunnelServer
@@ -44,7 +44,7 @@ import PluginFields from '/src/components/PluginFields';
 	* **说明:** 
 
 		ODPS的tunnelserver地址，例如，线上地址为 http://dt.odps.aliyun.com
-		
+		 
 		 [具体各地域Endpoint对照表](https://help.aliyun.com/document_detail/34951.html#section-f2d-51y-5db)
 
 4. project
@@ -74,21 +74,21 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./datasource_authToken_accessKey.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. keyId
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		aliyun服务的accessId，用在私有云环境下，例如自建Elasticsearch，服务端如不需要连接凭证，则该项可为空
-
+			
 			2. 密码
-
+			
 				* **类型:** 密码
 				* **必须:** 是
 				* **默认值:** 无
 				* **说明:** 		aliyun服务的accessKeySecret，用在私有云环境下，例如自建Elasticsearch，服务端如不需要连接凭证，则该项可为空
-
+			
 
 </PluginFields>
 
@@ -151,34 +151,34 @@ import PluginFields from '/src/components/PluginFields';
 			<Figure img={require('./dataxWriter_autoCreateTable_off.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 别名前缀
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 		统一为目标表添加前缀，例如在构建分层数仓用于为ods层目标表统一添加前缀,例如：`ods_erp_`
-
+			
 		* on
 
 			<Figure img={require('./dataxWriter_autoCreateTable_on.png')}/>
 
 			* **配置项说明:** 
-
+			
 			1. 添加列注释
-
+			
 				* **类型:** 单行文本
 				* **必须:** 是
 				* **默认值:** on
 				* **说明:** 		在建表DDL上添加列注释，需要依赖源端表列是否定义注释，如源端列上没有列注释，则目标端建表列DDL上也没有列注释
-
+			
 			2. 别名前缀
-
+			
 				* **类型:** 单行文本
 				* **必须:** 否
 				* **默认值:** 无
 				* **说明:** 		统一为目标表添加前缀，例如在构建分层数仓用于为ods层目标表统一添加前缀,例如：`ods_erp_`
-
+			
 6. batchSize
 
 	* **类型:** 整型数字

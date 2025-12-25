@@ -36,3 +36,64 @@
 .tis-feature p{
   color: #878787;
 }
+
+/* ========================================
+   博客页面专属样式优化
+   ======================================== */
+
+/* 1. 博客页面容器宽度扩大20% */
+article[class*="blogPostContainer"] .container,
+.blog-wrapper .container {
+  max-width: 1768px !important; /* 从默认1140px增加到1368px（提升20%） */
+}
+
+/* 2. 左侧博客列表添加数字前缀 */
+.theme-blog-sidebar-item-list {
+  counter-reset: blog-counter;
+}
+
+.theme-blog-sidebar-item {
+  position: relative;
+}
+
+.theme-blog-sidebar-item::before {
+  counter-increment: blog-counter;
+  content: counter(blog-counter) ". ";
+  font-weight: 500;
+  color: var(--ifm-color-primary);
+  margin-right: 0.3rem;
+}
+
+/* 3. 减小博客标题字体大小 */
+/* 使用多种选择器确保覆盖 Docusaurus CSS Modules 样式 */
+h1[itemprop="headline"],
+h1[class*="Title"],
+h1[class*="title"],
+article h1[itemprop="headline"],
+.markdown > h1,
+article[class*="blogPostContainer"] h1,
+article[class*="blogPostContainer"] header h1 {
+  font-size: 2rem !important; /* 从默认2rem减小到1.6rem */
+  line-height: 1.3 !important;
+}
+
+/* 4. 右侧博客目录（TOC）宽度增加20% */
+.theme-doc-toc-desktop {
+  width: 360px !important; /* 从默认300px增加到360px（提升20%） */
+}
+
+.table-of-contents {
+  width: 360px !important;
+}
+
+/* 博客内容区域宽度优化 */
+article[class*="blogPostContainer"] .markdown {
+  max-width: 100% !important;
+}
+
+/* 确保博客主内容区域充分利用宽度 */
+.blog-wrapper .col--8 {
+  --ifm-col-width: calc(8 / 12 * 100%);
+  flex: 0 0 var(--ifm-col-width);
+  max-width: var(--ifm-col-width);
+}

@@ -1,0 +1,60 @@
+---
+title: Http
+date: 2025-03-12
+type: book
+sidebar_position: 1
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+import PluginFields from '/src/components/PluginFields';
+
+## Http_Chan
+
+<Figure img={require('./HttpCallbackAlertChannel.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. name
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		实例的唯一性名称，取一个方便记忆的名称
+
+2. 回调URL
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		HTTP回调的目标URL地址，系统将通过POST请求发送告警信息到此地址，例如：http://your-server.com/api/alert/callback
+
+3. 自定义请求头
+
+	* **类型:** 富文本
+	* **必须:** 否
+	* **默认值:** 无
+	* **说明:** 		自定义HTTP请求头，每行一个，格式为 Header-Name: Header-Value。例如添加认证信息
+
+4. 发送JSON格式
+
+	* **类型:** 单选
+	* **必须:** 否
+	* **默认值:** false
+	* **说明:** 		勾选后将完整的状态对象序列化为JSON发送；不勾选则发送包含渲染后模板内容的简化JSON
+
+5. 模版
+
+	* **类型:** 富文本
+	* **必须:** 是
+	* **默认值:** com.qlangtech.tis.plugin.alert.impl.HttpCallbackAlertChannel.loadDefaultTpl()
+	* **说明:** 		报警信息模版(velocity)，请谨慎修改避免不必要的错误。可用变量: title, subject, jobName, status, startTime, endTime, duration, link, restart, restartIndex, totalRestart等
+
+
+</PluginFields>
+
+
+

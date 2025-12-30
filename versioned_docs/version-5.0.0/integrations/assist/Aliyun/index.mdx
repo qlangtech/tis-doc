@@ -1,0 +1,63 @@
+---
+title: Aliyun
+date: 2025-03-12
+type: book
+sidebar_position: 1
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+import PluginFields from '/src/components/PluginFields';
+
+## aliyunToken
+
+<Figure img={require('./AliyunEndpoint.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. name
+	* **类型:** 单行文本
+	* **必须:** 是
+2. endpoint
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** http://oss.aliyuncs.com
+	* **说明:** 		Server的EndPoint地址，例如http://oss.aliyuncs.com
+
+3. 认证方式
+
+	* **类型:** 单行文本
+	* **必须:** 否
+	* **默认值:** accessKey
+	* **说明:** 		无
+
+	* **可选项说明:** 可选`accessKey`以下是详细说明：
+		* accessKey
+
+			<Figure img={require('./AliyunEndpoint_authToken_accessKey.png')}/>
+
+			* **配置项说明:** 
+			
+			1. keyId
+			
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		aliyun服务的accessId，用在私有云环境下，例如自建Elasticsearch，服务端如不需要连接凭证，则该项可为空
+			
+			2. 密码
+			
+				* **类型:** 密码
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 		aliyun服务的accessKeySecret，用在私有云环境下，例如自建Elasticsearch，服务端如不需要连接凭证，则该项可为空
+			
+
+</PluginFields>
+
+
+

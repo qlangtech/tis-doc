@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import PipelineAIAgentFeature from '@site/src/components/PipelineAIAgentFeature';
 import QuickInstall from '@site/src/components/QuickInstall';
 import Contact from '@site/src/components/Contact';
 import StructuredData from '@site/src/components/SEO/StructuredData';
@@ -40,6 +41,7 @@ export default function Home() {
       <StructuredData />
       <HomepageHeader />
       <main>
+          <PipelineAIAgentFeature />
           <HomepageFeatures />
 
           <section className={styles.sourceSinkSection}>

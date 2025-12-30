@@ -1,0 +1,83 @@
+---
+title: Deepseek
+date: 2025-03-12
+type: book
+sidebar_position: 1
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+import PluginFields from '/src/components/PluginFields';
+
+## DeepSeek
+
+<Figure img={require('./DeepSeekProvider.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. name
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		实例的唯一性名称，取一个方便记忆的名称
+
+2. Base URL
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** https://api.deepseek.com
+	* **说明:** 
+
+		DeepSeek API-KEY 申请地址：[https://platform.deepseek.com/usage](https://platform.deepseek.com/usage)
+
+3. API Key
+
+	* **类型:** 密码
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		连接密钥，请妥善保管
+
+4. maxTokens
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 4000
+	* **说明:** 		最大生成 token 数量
+
+5. model
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** deepseek-chat
+	* **说明:** 		模型的 ID
+
+6. temperature
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 1
+	* **说明:** 		采样温度，介于 0 和 2 之间。更高的值，如 0.8，会使输出更随机，而更低的值，如 0.2，会使其更加集中和确定。 我们通常建议可以更改这个值或者更改 top_p，但不建议同时对两者进行修改。
+
+7. readTimeout
+
+	* **类型:** 时间跨度
+	* **必须:** 是
+	* **默认值:** com.qlangtech.tis.manage.common.ConfigFileContext.StreamProcess.dftSocketReadTimeout.getSeconds()
+	* **说明:** 		Socket 读取数据超时时间
+
+8. printLog
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** false
+	* **说明:** 		是否打印与模型交互的执行日志
+
+
+</PluginFields>
+
+
+

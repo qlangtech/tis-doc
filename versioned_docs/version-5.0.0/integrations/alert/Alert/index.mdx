@@ -1,0 +1,46 @@
+---
+title: Alert
+date: 2025-03-12
+type: book
+sidebar_position: 1
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+import PluginFields from '/src/components/PluginFields';
+
+## Add Monitor for Alert
+
+<Figure img={require('./AddMonitorForEvents.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. name
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** alert
+	* **说明:** 		一个数据管道只能定义一个监控
+
+2. 启用
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** true
+	* **说明:** 		配置完成之后，使用过程中可以控制报警渠道暂时失效，可选择‘否’
+
+3. 报警渠道
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		选择需要的报警发送渠道
+
+
+</PluginFields>
+
+
+

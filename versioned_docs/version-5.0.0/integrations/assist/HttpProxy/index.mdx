@@ -1,0 +1,75 @@
+---
+title: HttpProxy
+date: 2025-03-12
+type: book
+sidebar_position: 1
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+import PluginFields from '/src/components/PluginFields';
+
+## Http-Proxy
+
+<Figure img={require('./HttpRequestProxy.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. name
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** httpProxy
+	* **说明:** 		实例名称
+
+2. Enable
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** true
+	* **说明:** 		是否启用，运行期可以暂时关闭http代理
+
+3. 代理Host
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		代理主机host地址
+
+4. 代理Port
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		代理端口
+
+5. 用户凭证
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** off
+	* **说明:** 		设置代理的用户凭证
+
+	* **可选项说明:** 可选`User&Pass`,`off`以下是详细说明：
+		* User&Pass
+
+			<Figure img={require('./HttpRequestProxy_auth_User&Pass.png')}/>
+
+			* **配置项说明:** 
+			
+			1. userName
+				* **类型:** 单行文本
+				* **必须:** 是
+			2. password
+				* **类型:** 密码
+				* **必须:** 是
+		* off
+
+
+</PluginFields>
+
+
+

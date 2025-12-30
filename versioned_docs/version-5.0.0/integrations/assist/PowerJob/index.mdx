@@ -1,0 +1,442 @@
+---
+title: PowerJob
+date: 2025-03-12
+type: book
+sidebar_position: 1
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+import PluginFields from '/src/components/PluginFields';
+
+## powerjob-job-tpl
+
+<Figure img={require('./K8SDataXPowerJobJobTemplate.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. Instance重试数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 0
+	* **说明:** 		实例级别，失败了整个任务实例重试，会更换 TaskTracker（本次任务实例的Master节点），代价较大，大型Map/MapReduce慎用
+
+2. 最大实例数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 1
+	* **说明:** 		最大同时执行实例数：该任务允许同时执行的数量，0代表不限（默认为 0），建议使用默认值1，可以保证不会重复触发执行
+
+3. Task重试数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 0
+	* **说明:** 		Task 级别，每个子 Task 失败后单独重试，会更换 ProcessorTracker（本次任务实际执行的 Worker 节点），代价较小，推荐使用。
+
+4. 单机线程并发数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 2
+	* **说明:** 		单机线程并发数：该实例执行过程中每个 Worker 使用的线程数量（MapReduce 任务生效，其余无论填什么，都只会使用必要的线程数...）
+
+5. 任务超时时间
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 0
+	* **说明:** 		运行时间限制：限定任务的最大运行时间，超时则视为失败，单位毫秒，0 代表不限制超时时间（不建议不限制超时时间）
+
+6. 最大使用机器数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 3
+	* **说明:** 		最大执行机器数量：限定调动执行的机器数量
+
+7. 忽略失败
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** false
+	* **说明:** 		workflow 节点执行过程中，如果失败是否跳过继续执行下游节点？
+
+
+</PluginFields>
+
+## powerjob-job-tpl-app-overwrite
+
+<Figure img={require('./K8SDataXPowerJobOverwriteTemplate.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. 定时执行
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** off
+	* **说明:** 		数据同步任务可定时执行
+
+	* **可选项说明:** 可选`Crontab`,`off`以下是详细说明：
+		* Crontab
+
+			<Figure img={require('./K8SDataXPowerJobOverwriteTemplate_triggerStrategy_Crontab.png')}/>
+
+			* **配置项说明:** 
+			
+			1. 表达式
+			
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 
+			
+					填写 CRON 表达式 [在线生成网站](https://cron.qqe2.com/)
+					
+					例子：
+					
+					1. `0 0 12 * * ?`    每天中午12点触发
+					2. `0 15 10 ? * *`    每天上午10:15触发
+					3. `0 15 10 * * ? 2005`    2005年的每天上午10:15触发
+			
+		* off
+
+2. Instance重试数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 0
+	* **说明:** 		实例级别，失败了整个任务实例重试，会更换 TaskTracker（本次任务实例的Master节点），代价较大，大型Map/MapReduce慎用
+
+3. 最大实例数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 1
+	* **说明:** 		最大同时执行实例数：该任务允许同时执行的数量，0代表不限（默认为 0），建议使用默认值1，可以保证不会重复触发执行
+
+4. Task重试数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 0
+	* **说明:** 		Task 级别，每个子 Task 失败后单独重试，会更换 ProcessorTracker（本次任务实际执行的 Worker 节点），代价较小，推荐使用。
+
+5. 单机线程并发数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 2
+	* **说明:** 		单机线程并发数：该实例执行过程中每个 Worker 使用的线程数量（MapReduce 任务生效，其余无论填什么，都只会使用必要的线程数...）
+
+6. 任务超时时间
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 0
+	* **说明:** 		运行时间限制：限定任务的最大运行时间，超时则视为失败，单位毫秒，0 代表不限制超时时间（不建议不限制超时时间）
+
+7. 最大使用机器数
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 3
+	* **说明:** 		最大执行机器数量：限定调动执行的机器数量
+
+8. 忽略失败
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** false
+	* **说明:** 		workflow 节点执行过程中，如果失败是否跳过继续执行下游节点？
+
+
+</PluginFields>
+
+## powerjob-use-exist-cluster
+
+<Figure img={require('./K8SDataXPowerJobUsingExistCluster.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. 调度中心地址
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		调度中心（powerjob-server）地址列表
+
+2. 宿主应用名
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		宿主应用名称，需要提前在控制台完成注册
+
+3. 密码
+
+	* **类型:** 密码
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		宿主应用对应的密码
+
+
+</PluginFields>
+
+## powerjob-server
+
+<Figure img={require('./K8SDataXPowerJobServer.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. k8sImage
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** datax-worker
+	* **说明:** 		选择一个与该执行器匹配的Docker Image实例
+
+2. 服务暴露
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		Powerjob 启动之后将默认7700端口对外部暴露，可选择K8S相应暴露服务端口方式，如：NodePort，Ingress，LoadBalance
+
+	* **可选项说明:** 可选`Ingress`,`LoadBalance`,`NodePort`以下是详细说明：
+		* Ingress
+
+			<Figure img={require('./K8SDataXPowerJobServer_serverPortExport_Ingress.png')}/>
+
+			* **配置项说明:** 
+			
+			1. serverPort
+			
+				* **类型:** 整型数字
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@6d9ee75a
+				* **说明:** 		SpringBoot配置，HTTP端口号，默认7700，不建议更改
+			
+			2. host
+				* **类型:** 单行文本
+				* **必须:** 是
+			3. path
+				* **类型:** 单行文本
+				* **必须:** 是
+		* LoadBalance
+
+			<Figure img={require('./K8SDataXPowerJobServer_serverPortExport_LoadBalance.png')}/>
+
+			* **配置项说明:** 
+			
+			1. serverPort
+			
+				* **类型:** 整型数字
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@2befb16f
+				* **说明:** 		SpringBoot配置，HTTP端口号，默认7700，不建议更改
+			
+		* NodePort
+
+			<Figure img={require('./K8SDataXPowerJobServer_serverPortExport_NodePort.png')}/>
+
+			* **配置项说明:** 
+			
+			1. serverPort
+			
+				* **类型:** 整型数字
+				* **必须:** 是
+				* **默认值:** com.qlangtech.tis.trigger.util.UnCacheString@cd93621
+				* **说明:** 		SpringBoot配置，HTTP端口号，默认7700，不建议更改
+			
+			2. INTERNAL-IP
+			
+				* **类型:** 单行文本
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 
+			
+					通过执行如下命令：
+					```shell
+					kubectl get nodes -o wide
+					```
+					得到如下输出结果：
+					```shell
+					NAME            STATUS   ROLES           AGE    VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION           CONTAINER-RUNTIME
+					baisui-test-2   Ready    control-plane   242d   v1.28.3   192.168.28.201   <none>        CentOS Linux 7 (Core)   3.10.0-1127.el7.x86_64   docker://24.0.5
+					```
+					可`任选一条`记录的`INTERNAL-IP`填入输入框中
+			
+			3. nodePort
+			
+				* **类型:** 整型数字
+				* **必须:** 是
+				* **默认值:** 31000
+				* **说明:** 
+			
+					NodePort服务是让外部请求直接访问服务的最原始方式，NodePort是在所有的节点上开放指定的端口，所有发送到这个端口的请求都会直接转发到服务中的pod里；
+					
+					这种方式不足：
+					1. 一个端口只提供一个服务使用
+					2. 只能使用30000-32767之间的端口
+					3. 如果节点/虚拟机的IP地址发送变化，需要人工处理；
+					
+					所以在生产环境，不推荐这种方式发布服务
+			
+3. 宿主应用名称
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		宿主应用名称，需要提前在控制台完成注册, 必填项，否则启动报错
+
+4. 宿主应用密码
+
+	* **类型:** 密码
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		宿主应用密码，需要提前在控制台完成注册, 必填项，否则启动报错
+
+5. coreDS
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** Embedded
+	* **说明:** 
+
+		保存Powerjob server元数据的关系型数据库连接配置，目前支持两种方式：
+		1. `Embedded`: 由K8S集群启动MySQL类型的Powerjob Server元数据服务，由于容器MySQL持久化存储卷存在丢失风险，请谨慎使用该种方式。
+		2. `Customized`: 由用户事先部署的MySQL的数据库服务，提供Powerjob Server元数据服务，因该种数据库服务可提供高可用容灾解决方案（推荐使用）
+
+	* **可选项说明:** 可选`Customized`,`Embedded`以下是详细说明：
+		* Customized
+
+			<Figure img={require('./K8SDataXPowerJobServer_coreDS_Customized.png')}/>
+
+			* **配置项说明:** 
+			
+			1. dbName
+			
+				* **类型:** 单选
+				* **必须:** 是
+				* **默认值:** 无
+				* **说明:** 
+			
+					可先在生产环境中部署MySQL8版本数据库，使用SQL脚本[powerjob-mysql.sql](https://github.com/PowerJob/PowerJob/blob/v4.3.6/others/powerjob-mysql.sql)
+			
+		* Embedded
+
+6. omsProfile
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** OMSProfile
+	* **说明:** 		OMS相关配置
+
+	* **可选项说明:** 可选`OMSProfile`以下是详细说明：
+		* OMSProfile
+
+			<Figure img={require('./K8SDataXPowerJobServer_omsProfile_OMSProfile.png')}/>
+
+			* **配置项说明:** 
+			
+			1. akkaPort
+			
+				* **类型:** 整型数字
+				* **必须:** 是
+				* **默认值:** 10086
+				* **说明:** 		PowerJob配置，Akka端口号，默认10086
+			
+			2. httpPort
+			
+				* **类型:** 整型数字
+				* **必须:** 是
+				* **默认值:** 10010
+				* **说明:** 		PowerJob配置，多语言客户端HTTP端口号，默认10010, 不建议更改
+			
+			3. retentionLocal
+			
+				* **类型:** 整型数字
+				* **必须:** 是
+				* **默认值:** 7
+				* **说明:** 		本地容器保留天数，负数代表永久保留
+			
+			4. retentionRemote
+			
+				* **类型:** 整型数字
+				* **必须:** 是
+				* **默认值:** 7
+				* **说明:** 		远程容器保留天数，负数代表永久保留
+			
+
+</PluginFields>
+
+## powerjob-worker
+
+<Figure img={require('./K8SDataXPowerJobWorker.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. WorkerPort
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 27777
+	* **说明:** 		Worker 工作端口
+
+2. 本地存储策略
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** MEMORY
+	* **说明:** 
+
+		本地存储策略，枚举值磁盘/内存，大型MapReduce 等会产生大量 Task 的任务推荐使用磁盘降低内存压力，否则建议使用内存加速计算
+
+3. maxResultLength
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 8096
+	* **说明:** 		每个Task返回结果的默认长度，超长将被截断，过长可能导致网络拥塞
+
+4. 轻量任务上限
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 50
+	* **说明:** 		同时运行的轻量级任务数量上限
+
+5. 重量任务上限
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 12
+	* **说明:** 		同时运行的重量级任务数量上限
+
+6. 状态上报间隔
+
+	* **类型:** 整型数字
+	* **必须:** 是
+	* **默认值:** 10
+	* **说明:** 		worker 健康状态上报的间隔（秒）
+
+
+</PluginFields>
+
+
+

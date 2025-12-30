@@ -1,0 +1,60 @@
+---
+title: Lark
+date: 2025-03-12
+type: book
+sidebar_position: 1
+---
+
+import Link from '/src/components/Link';
+import Figure from '/src/components/Figure';
+import BZhan from '/src/components/BZhan';
+import PluginFields from '/src/components/PluginFields';
+
+## Lark_Chan
+
+<Figure img={require('./LarkAlertChannel.png')}/>
+
+* **配置项说明:** 
+
+<PluginFields>
+
+1. name
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		实例的唯一性名称，取一个方便记忆的名称
+
+2. Webhook URL
+
+	* **类型:** 单行文本
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		飞书群机器人的Webhook完整地址。在群设置中添加自定义机器人后获取
+
+3. 签名密钥
+
+	* **类型:** 密码
+	* **必须:** 是
+	* **默认值:** 无
+	* **说明:** 		飞书机器人的签名密钥(Secret)，用于验证请求合法性。如果机器人启用了签名验证则必填
+
+4. @所有人
+
+	* **类型:** 单选
+	* **必须:** 是
+	* **默认值:** false
+	* **说明:** 		是否在消息中@所有群成员
+
+5. 模版
+
+	* **类型:** 富文本
+	* **必须:** 是
+	* **默认值:** com.qlangtech.tis.plugin.alert.impl.LarkAlertChannel.loadDefaultTpl()
+	* **说明:** 		报警信息模版(velocity)，请谨慎修改避免不必要的错误。可用变量: title, subject, jobName, status, startTime, endTime, duration, link, restart, restartIndex, totalRestart等
+
+
+</PluginFields>
+
+
+

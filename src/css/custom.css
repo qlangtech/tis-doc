@@ -82,8 +82,16 @@ article[class*="blogPostContainer"] header h1 {
   width: 360px !important; /* 从默认300px增加到360px（提升20%） */
 }
 
-.table-of-contents {
+/* 只针对右侧边栏的TOC设置固定宽度 */
+.theme-doc-toc-desktop .table-of-contents {
   width: 360px !important;
+}
+
+/* 确保主内容区的内联TOC不受宽度限制 */
+article .table-of-contents,
+.markdown .table-of-contents {
+  width: auto !important;
+  max-width: 100% !important;
 }
 
 /* 博客内容区域宽度优化 */

@@ -1,0 +1,357 @@
+/* 外层包装器 - 添加渐变背景 */
+.pipeline-ai-agent-wrapper {
+    background: linear-gradient(to bottom, #fafafa 0%, #f5f5f5 100%);
+    padding: 80px 0;
+}
+
+.pipeline-ai-agent {
+    padding: 0 60px;
+}
+
+.ai-agent-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 40px;
+}
+
+.ai-agent-desc h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #2c3e50;
+    line-height: 1.3;
+}
+
+.ai-agent-desc h3 {
+    font-weight: 300;
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.feature-highlights {
+    margin: 0 0 35px 0;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.highlight-item:last-child {
+    margin-bottom: 0;
+}
+
+/* 图标样式 - 使用圆形背景 */
+.highlight-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0;
+}
+
+.icon-target {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.icon-brain {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.icon-bolt {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.highlight-text {
+    color: #34495e;
+    font-size: 15px;
+}
+
+.ai-agent-actions {
+    margin-top: 35px;
+}
+
+.ai-agent-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+/* ============= 轮播组件样式 ============= */
+
+/* 轮播外层包装器 - 包含左右箭头 */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px; /* 从 780px 增加到 1000px */
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 720px; /* 从 720px 增加到 920px，进一步增加宽度 */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+}
+
+.carousel-images {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3; /* 从 16/10 改为 4/3，大幅增加高度以匹配左侧文字 */
+    min-height: 540px; /* 确保最小高度，920px * 3/4 = 690px */
+    overflow: hidden;
+}
+
+.carousel-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    cursor: pointer;
+}
+
+.carousel-image-wrapper.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.feature-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 左右箭头按钮 - 放置在轮播容器外侧 */
+.carousel-arrow {
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 60px;
+    border-radius: 4px;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.carousel-arrow:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.15);
+}
+
+.carousel-arrow:active {
+    transform: scale(1.05);
+}
+
+/* 底部指示器 */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+.carousel-dot.active {
+    background: white;
+    width: 12px;
+    height: 12px;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 996px) {
+    .pipeline-ai-agent-wrapper {
+        padding: 50px 0;
+    }
+
+    .pipeline-ai-agent {
+        padding: 0 30px;
+    }
+
+    .ai-agent-desc {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .ai-agent-desc h2 {
+        font-size: 28px;
+    }
+
+    .ai-agent-desc h3 {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .feature-highlights {
+        margin-bottom: 30px;
+    }
+
+    .highlight-item {
+        font-size: 14px;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+
+    .highlight-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 16px;
+    }
+
+    .highlight-text {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .ai-agent-image {
+        padding-left: 0;
+    }
+
+    /* 平板端:箭头移到图片上,节省空间 */
+    .carousel-wrapper {
+        max-width: 100%;
+        gap: 0;
+    }
+
+    .carousel-container {
+        max-width: 100%;
+    }
+
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 35px;
+        height: 70px;
+        font-size: 32px;
+        z-index: 10;
+    }
+
+    .carousel-arrow:hover {
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-arrow-left {
+        left: 10px;
+    }
+
+    .carousel-arrow-right {
+        right: 10px;
+    }
+
+    .ai-agent-actions {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .pipeline-ai-agent-wrapper {
+        padding: 40px 0;
+    }
+
+    .pipeline-ai-agent {
+        padding: 0 20px;
+    }
+
+    .ai-agent-desc h2 {
+        font-size: 24px;
+    }
+
+    .ai-agent-desc h3 {
+        font-size: 15px;
+    }
+
+    .highlight-item {
+        font-size: 13px;
+        align-items: flex-start;
+    }
+
+    .highlight-icon {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 14px;
+        margin-top: 2px;
+    }
+
+    .highlight-text {
+        font-size: 13px;
+    }
+
+    .carousel-arrow {
+        width: 28px;
+        height: 55px;
+        font-size: 24px;
+    }
+
+    .carousel-arrow-left {
+        left: 5px;
+    }
+
+    .carousel-arrow-right {
+        right: 5px;
+    }
+
+    .carousel-indicators {
+        bottom: 15px;
+        gap: 8px;
+    }
+
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .carousel-dot.active {
+        width: 10px;
+        height: 10px;
+    }
+}

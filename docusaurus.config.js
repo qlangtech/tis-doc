@@ -11,6 +11,7 @@ const includeCurrentVersion = process.env.INCLUDE_CURRENT_VERSION
     ? process.env.INCLUDE_CURRENT_VERSION === 'true'
     : isDevelopment;
 
+
 console.log(`[Docusaurus Config] Environment: ${process.env.NODE_ENV}, Include Current Version: ${includeCurrentVersion}`);
 
 /** @type {import('@docusaurus/types').Config} */
